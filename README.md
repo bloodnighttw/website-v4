@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Website-v4
 
-## Getting Started
+This is website that I created to showcase my projects, contact and my blog. It is a next.js project that is responsive and 
+mobile friendly. It is built using HTML, CSS, Typescript, React and Next.js. The website is hosted on GitHub Pages and can be accessed 
+[here](https://bntw.dev).
+It is the fourth version of my personal website, and build upon website-v3 with next.js and tailwindcss. It will host on
+Vercel.
 
-First, run the development server:
+## Features
+- **Projects**: The website has a projects page that showcases my projects. Each project has a title, description, and
+  link to the GitHub repository.
+- **Blog**: The website has a blog page that showcases my blog posts. Each blog post has a title, description, and link
+  to the blog post.
+- **Contact**: The website has a contact page that showcases my contact information. It has a contact form that allows
+  users to send me a message.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## What I Focused On
+- **Responsive Design**: The website is designed to be responsive and mobile friendly. It is built using a mobile-first
+- **SEO**: The website is optimized for search engines. It uses next-seo to set meta tags and open graph tags.
+- **Performance**: The website is optimized for performance. It uses next.js to generate static pages and tailwindcss to
+  reduce the size of the CSS file.
+- **Accessibility**: The website is designed to be accessible. It uses semantic HTML and has a high contrast mode.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js**: Next.js is a React framework that is used to build static websites and server-side rendered websites.
+- **TailwindCSS**: TailwindCSS is a utility-first CSS framework that is used to style the website.
+- **React**: React is a JavaScript library that is used to build the website.
+- **TypeScript**: TypeScript is a superset of JavaScript that is used to add static types to the website.
+- **ESLint**: ESLint is a static code analysis tool that is used to enforce coding standards.
+- **pnpm**: pnpm is a package manager that is used to install the dependencies.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## How to Run the Website
+1. Clone the repository
+2. Install the dependencies by running `pnpm install`
+3. Run the development server by running `pnpm dev`
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
