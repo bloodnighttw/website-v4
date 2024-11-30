@@ -11,6 +11,8 @@ export interface PostMeta {
 // cache the data, so we don't have to read the file every time
 // if the data has new posts, the server will need to be restarted,
 // so we don't have to worry about the cache being outdated.
+// We might use a database in the future to store the data.
+// For now, this is good enough.
 let dataCache: PostMeta[] | null = null;
 
 // read the file under the posts directory /posts
