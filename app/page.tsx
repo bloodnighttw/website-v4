@@ -24,13 +24,13 @@ export default function Home() {
 						/>
 					</div>
 
-					<div className="h-auto flex flex-col">
-						<p className="text-center text-xl sm:hidden block sm:text-start">{"👋 hi! I'm"}</p>
-						<p className="text-center text-xl hidden sm:block sm:text-start">👋 hi!</p>
-						<h1 className="text-center text-5xl hidden sm:block sm:text-start">
+					<div className="introduce-text">
+						<p className="rwd-show">{"👋 hi! I'm"}</p>
+						<p className="rwd-hidden">👋 hi!</p>
+						<h1 className="rwd-hidden">
 							{"I'm"}
 						</h1>
-						<h1 className="text-center text-5xl sm:text-start">
+						<h1 className="">
 							bloodnighttw
 						</h1>
 						<div
