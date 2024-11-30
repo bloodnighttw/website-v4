@@ -3,7 +3,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import "./globals.css";
 
 export const metadata: Metadata = {
-	title: "Create Next App",
+	title: "bloodnighttw",
 	description: "Bloodnighttw's personal website and blog",
 };
 
