@@ -8,19 +8,28 @@ interface PostMeta {
 	date: string;
 }
 
+// cache the data, so we don't have to read the file every time
+// if the data has new posts, the server will need to be restarted,
+// so we don't have to worry about the cache being outdated.
+let dataCache: PostMeta[] | null = null;
+
+// read the file under the posts directory /posts
 export async function getPostMeta() {
-	// read the file under the posts directory /posts
+
+	if(dataCache) {
+		return dataCache
+	}
 
 	const posts = await fs.promises.readdir(path.join(process.cwd(), 'posts'));
 
 	const mdxPosts = posts.filter((post) => post.endsWith('.mdx'));
 
-	const ouo:Array<PostMeta> = [];
+	const postMetas:Array<PostMeta> = [];
 
 	for(const post of mdxPosts) {
 		const postContent = await fs.promises.readFile(path.join(process.cwd(), 'posts', post), 'utf8');
 		const { data } = matter(postContent);
-		ouo.push({
+		postMetas.push({
 			date: "1970-01-01",
 			title: "This article is missing a title",
 			path: post.replace(/\.[^/.]+$/, ""), // remove the file extension
@@ -28,7 +37,9 @@ export async function getPostMeta() {
 		});
 	}
 
-	return ouo;
+	dataCache = postMetas;
+
+	return postMetas;
 }
 
 export default getPostMeta;
