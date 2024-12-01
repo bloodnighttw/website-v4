@@ -12,6 +12,10 @@
         @apply flex min-h-screen items-center justify-center;
     }
 
+    .introduce-card{
+        @apply flex flex-col sm:flex-row-reverse gap-x-12 gap-y-4 sm:items-start items-center;
+    }
+
     .introduce-text {
         @apply flex flex-col sm:h-40 sm:w-96;
     }

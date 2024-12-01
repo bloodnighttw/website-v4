@@ -12,7 +12,7 @@ export default function Home() {
 			exit={{opacity: 0.01}}
 			className="introduce"
 		>
-			<div className="flex flex-col sm:flex-row-reverse gap-x-12 gap-y-4 sm:items-start items-center">
+			<div className="introduce-card">
 				<Image
 					alt="View bloodnighttw's full-sized avatar"
 					src="https://avatars.githubusercontent.com/u/44264182?s=460&u=b59e580f37ab7e6a3979ab8a6df1f12ba6588069&v=4"
