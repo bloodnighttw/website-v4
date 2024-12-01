@@ -4,7 +4,7 @@
 
 @layer components {
 
-    * {
+    body {
         @apply text-white;
     }
 
@@ -30,6 +30,14 @@
 
     .introduce-text > p {
         @apply text-lg sm:text-sm;
+    }
+
+    .introduce-content {
+        @apply flex flex-col sm:flex-row-reverse items-center justify-center align-middle min-h-screen py-16 gap-x-16 gap-y-4;
+    }
+
+    .introduce-links{
+        @apply justify-center sm:justify-start sm:text-start mt-2 sm:mt-auto flex flex-row gap-2;
     }
 
 }
