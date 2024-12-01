@@ -8,8 +8,12 @@
         @apply text-white;
     }
 
+    .introduce {
+        @apply flex min-h-screen items-center justify-center;
+    }
+
     .introduce-text {
-        @apply flex flex-col;
+        @apply flex flex-col sm:h-40 sm:w-96;
     }
 
     .introduce-text > * {
@@ -32,12 +36,8 @@
         @apply text-lg sm:text-sm;
     }
 
-    .introduce-content {
-        @apply flex flex-col sm:flex-row-reverse items-center justify-center align-middle min-h-screen py-16 gap-x-16 gap-y-4;
-    }
-
-    .introduce-links{
-        @apply justify-center sm:justify-start sm:text-start mt-2 sm:mt-auto flex flex-row gap-2;
+    .introduce-text > .introduce-links{
+        @apply flex flex-row gap-x-2 justify-center sm:justify-start mt-4 sm:mt-auto;
     }
 
 }
