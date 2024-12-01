@@ -4,6 +4,10 @@ import Image from "next/image";
 import {motion} from "motion/react";
 import Link from "next/link";
 
+const hello = "👋 hi! ";
+const text1 = "I'm"
+const text2 = "bloodnighttw";
+
 export default function Home() {
 	return (
 		<motion.div
@@ -23,13 +27,13 @@ export default function Home() {
 				/>
 
 				<div className="introduce-text">
-					<p className="rwd-show">{"👋 hi! I'm"}</p>
-					<p className="rwd-hidden">👋 hi!</p>
+					<p className="rwd-show">{hello+text1}</p>
+					<p className="rwd-hidden">{hello}</p>
 					<h1 className="rwd-hidden">
-						{"I'm"}
+						{text1}
 					</h1>
 					<h1>
-						bloodnighttw
+						{text2}
 					</h1>
 					<div
 						className="introduce-links">
