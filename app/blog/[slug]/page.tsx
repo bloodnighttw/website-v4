@@ -19,11 +19,10 @@ export default async function Blog({params} :{ params:Promise<BlogProps> }) {
 	const [ast] = await Promise.all([markdown2ast(`${name}.mdx`)]);
 	const [content] = await Promise.all([ast2html(ast)]);
 
-	console.log(content);
-
 	return (
 		<div>
 			<article
+				className="prose prose-invert prose-stone sm:prose-lg m-auto p-4"
 				dangerouslySetInnerHTML={{__html: content}}
 			/>
 		</div>
