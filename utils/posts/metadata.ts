@@ -24,13 +24,19 @@ export interface Metadata{
 	summery: string;
 }
 
+// This defined the text node in the AST
+interface TextNode{
+	type: "text";
+	value: string;
+}
+
 // This function will flat all the children of the AST and filter the text type
-function textFlatAndFilter(ast: RootContent[] | undefined) : RootContent[] {
+function textFlatAndFilter(ast: RootContent[] | undefined) : TextNode[] {
 	if (ast === undefined) return [];
 
-	const previewText: RootContent[] = []
+	const previewText: TextNode[] = []
 
-	for (const node of ast as RootContent[]) {
+	for (const node of ast) {
 
 		// @ts-expect-error node["children"] might be undefined, but doesn't matter
 		const temp = textFlatAndFilter(node["children"]); // Recursively decode children
@@ -38,7 +44,7 @@ function textFlatAndFilter(ast: RootContent[] | undefined) : RootContent[] {
 		previewText.push(...temp);
 
 		if (node.type === "text") {
-			previewText.push(node)
+			previewText.push(node as TextNode)
 		}
 	}
 
@@ -67,8 +73,7 @@ async function decodeMetadata(file:string) : Promise<Metadata> {
 		path: file.replace(/\.[^/.]+$/, ""), // remove the file extension
 		title: metadata?.title ?? "Untitled",
 		date: new Date(metadata?.date ?? "1970-1-1"),
-		// @ts-expect-error node.value is string, but doesn't matter
-		summery: flat.map((node) => (node.value as string)).join(" ").slice(0, MAX_SUMMERY_LENGTH)
+		summery: flat.map((node) => (node.value)).join(" ").slice(0, MAX_SUMMERY_LENGTH)
 	};
 
 }
