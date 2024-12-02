@@ -64,8 +64,8 @@ export function yamlParse(ast: RootContent[]) {
 
 // This function will decode the metadata of the markdown file
 async function decodeMetadata(file:string) : Promise<Metadata> {
-	const content = await fs.promises.readFile(path.join(process.cwd(), "posts", file), "utf8");
-	const ast = markdown2ast(content);
+
+	const ast = await markdown2ast(file);
 	const flat = textFlatAndFilter(ast.children);
 	const metadata = yamlParse(ast.children);
 
