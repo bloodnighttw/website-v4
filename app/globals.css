@@ -12,6 +12,10 @@
         @apply flex min-h-screen items-center justify-center py-12;
     }
 
+    .introduce-image{
+        @apply items-center rounded-full w-28 h-28 sm:w-40 sm:h-40
+    }
+
     .introduce-card{
         @apply flex flex-col sm:flex-row-reverse gap-x-12 gap-y-4 sm:items-start items-center;
     }

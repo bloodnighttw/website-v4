@@ -20,7 +20,7 @@ export default function Home() {
 				<Image
 					alt="View bloodnighttw's full-sized avatar"
 					src="https://avatars.githubusercontent.com/u/44264182?s=460&u=b59e580f37ab7e6a3979ab8a6df1f12ba6588069&v=4"
-					className="items-center rounded-full w-28 h-28 sm:w-40 sm:h-40"
+					className="introduce-image"
 					width={160}
 					height={160}
 					loading="eager"
