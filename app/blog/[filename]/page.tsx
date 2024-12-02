@@ -3,7 +3,6 @@
 import {getPostByPath} from "@/utils/post";
 import { unified } from 'unified'
 import remarkGfm from 'remark-gfm'
-import remarkToc from "remark-toc";
 import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
 import rehypeSanitize from 'rehype-sanitize'
@@ -16,7 +15,6 @@ export default async function Blog() {
 	const rawHtml = await unified()
 		.use(remarkParse) // Convert into markdown AST
 		.use(remarkGfm) // Enable GFM
-		.use(remarkToc) // Generate table of contents
 		.use(remarkRehype) // Transform to HTML AST
 		.use(rehypeSanitize) // Sanitize HTML input
 		.use(rehypeStringify) // Convert AST into serialized HTML
