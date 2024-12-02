@@ -44,4 +44,10 @@ export async function getPostMeta() {
 	return postMetas;
 }
 
+export async function getPostByPath(name: string) {
+	const postContent = await fs.promises.readFile(path.join(process.cwd(), 'posts', name + '.mdx'), 'utf8');
+	const {content} = matter(postContent);
+	return content;
+}
+
 export default getPostMeta;
