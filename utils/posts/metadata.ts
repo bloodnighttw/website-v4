@@ -38,7 +38,8 @@ function textFlatAndFilter(ast: RootContent[] | undefined) : TextNode[] {
 
 	for (const node of ast) {
 
-		// @ts-expect-error node["children"] might be undefined, but doesn't matter
+		// @ts-expect-error node["children"] might be undefined,
+		// but we don't care since we will instantly return if it's undefined
 		const temp = textFlatAndFilter(node["children"]); // Recursively decode children
 
 		previewText.push(...temp);
