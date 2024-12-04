@@ -43,13 +43,11 @@ interface TOCNode {
 // Convert the ast to table content with depth, title, and link id
 function* contentAst2TOCAST(ast: HRoot):Generator<TOCNode> {
 	for (const node of ast.children){
-		if(node.type === "element"){
-			if(Mapping.has(node.tagName) && node.properties.id){
-				yield {
-					title: node.children,
-					id: node.properties.id as string,
-					depth: Mapping.get(node.tagName)!
-				}
+		if(node.type === "element" && Mapping.has(node.tagName) && node.properties.id){
+			yield {
+				title: node.children,
+				id: node.properties.id as string,
+				depth: Mapping.get(node.tagName)!
 			}
 		}
 	}
