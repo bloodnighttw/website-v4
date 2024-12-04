@@ -12,6 +12,7 @@
         "@types/mdast": "^4.0.4",
         "@vercel/speed-insights": "^1.1.0",
         "hast": "^1.0.0",
+        "hastscript": "^9.0.0",
         "mdast": "^3.0.0",
         "motion": "12.0.0-alpha.2",
         "next": "15.0.3",
