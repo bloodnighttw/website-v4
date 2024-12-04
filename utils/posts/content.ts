@@ -41,7 +41,7 @@ interface TOCNode {
 }
 
 // Convert the ast to table content with depth, title, and link id
-function* contentAst2TOCAST(ast: HRoot):Generator<TOCNode> {
+function* astAnalyze(ast: HRoot):Generator<TOCNode> {
 	for (const node of ast.children){
 		if(node.type === "element" && Mapping.has(node.tagName) && node.properties.id){
 			yield {
@@ -57,6 +57,7 @@ interface TOC {
 	// id of the element
 	// if the id is null, it means the element is a container, and we don't need to generate a link nor an id for it
 	id: string | null,
+	sectionTitle?: string,
 	children: TOC[],
 	depth: number
 }
@@ -120,7 +121,7 @@ function contentAst2TOC(arr:Generator<TOCNode>):TOC[] {
 // This function will return the HTML string from the AST of the markdown file
 export const ast2html = async (ast: MDRoot) => {
 	const result = await ast2htmlAst.run(ast);
-	const TOCAst = contentAst2TOCAST(result);
+	const TOCAst = astAnalyze(result);
 	const toc = contentAst2TOC(TOCAst);
 	console.log(toc);
 	return htmlAst2htmlUnified.stringify(result);
