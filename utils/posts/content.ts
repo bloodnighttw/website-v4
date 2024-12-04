@@ -8,6 +8,8 @@ import rehypeSlug from 'rehype-slug'
 import {Root as MDRoot} from "mdast";
 import {Root as HRoot, ElementContent} from "hast";
 
+import {h} from "hastscript"
+
 
 // To check if a post exists, note postName should be the name of the file without the extension
 export async function postExists(postName: string) {
@@ -23,6 +25,8 @@ const ast2htmlAst = unified()
 const htmlAst2htmlUnified = unified()
 	.use(rehypeStringify);
 
+// The html tag name that we want to filter
+// Order by the depth of the value we want to filter
 const TableOfContentFilter = [
 	"h1",
 	"h2",
@@ -34,14 +38,14 @@ const TableOfContentFilter = [
 
 const Mapping = new Map(TableOfContentFilter.map((value,index) => [value, index+1]));
 
-interface TOCNode {
+interface FilteredContent {
 	title: ElementContent[],
 	id: string,
 	depth: number
 }
 
-// Convert the ast to table content with depth, title, and link id
-function* astAnalyze(ast: HRoot):Generator<TOCNode> {
+// It iterates over the AST then filter,returns the Header content we need.
+function* astAnalyze(ast: HRoot):Generator<FilteredContent> {
 	for (const node of ast.children){
 		if(node.type === "element" && Mapping.has(node.tagName) && node.properties.id){
 			yield {
@@ -53,19 +57,21 @@ function* astAnalyze(ast: HRoot):Generator<TOCNode> {
 	}
 }
 
-interface TOC {
+// TOC, a.k.a Table of Content, is a tree structure that represents the table of content in the html.
+// The TOCNode is the node of the TOC tree.
+interface TOCNode {
 	// id of the element
 	// if the id is null, it means the element is a container, and we don't need to generate a link nor an id for it
-	id: string | null,
+	id?: string,
 	sectionTitle?: string,
-	children: TOC[],
+	children: TOCNode[],
 	depth: number
 }
 
-function contentAst2TOC(arr:Generator<TOCNode>):TOC[] {
+// Create the TOCNode tree from the array of FilteredContent
+function generateTOC(arr:Generator<FilteredContent>){
 
-	const stack:TOC[] = [{
-		id: null,
+	const stack:TOCNode[] = [{
 		children: [],
 		depth: 0
 	}]
@@ -83,7 +89,6 @@ function contentAst2TOC(arr:Generator<TOCNode>):TOC[] {
 		// that depth of the tree is continuous
 		while(temp[0].depth !== stackPeek()!.depth + 1){
 			stack.push({
-				id: null,
 				children: [],
 				depth: stackPeek()!.depth + 1
 			})
@@ -92,6 +97,9 @@ function contentAst2TOC(arr:Generator<TOCNode>):TOC[] {
 		stackPeek()!.children.push(...temp.reverse());
 	}
 
+	// iterate over the array of FilteredContent, then put it into the stack
+	// if the depth of the node is less than the top of the stack, we will collect the same depth node on top of the stack
+	// then push the node into the children of the top stack element
 	for (const node of arr){
 		if(node.depth < stackPeek()!.depth){
 			do{
@@ -108,6 +116,8 @@ function contentAst2TOC(arr:Generator<TOCNode>):TOC[] {
 		)
 	}
 
+	// currently, the stack is having an array of TOCNode
+	// we will need to merge the array of TOCNode into a single root TOCNode
 	while (stack.length > 1){
 		collectSameDepthOnTopAsChild()
 	}
@@ -122,7 +132,7 @@ function contentAst2TOC(arr:Generator<TOCNode>):TOC[] {
 export const ast2html = async (ast: MDRoot) => {
 	const result = await ast2htmlAst.run(ast);
 	const TOCAst = astAnalyze(result);
-	const toc = contentAst2TOC(TOCAst);
+	const toc = generateTOC(TOCAst);
 	console.log(toc);
 	return htmlAst2htmlUnified.stringify(result);
 };
