@@ -39,11 +39,10 @@ export default async function Blog({params}: { params: Promise<BlogProps> }) {
 			<div
 				className="article w-full"
 			>
-				<h1 className="text-ellipsis text-balance mr-2">This is a very long-long-long-long-long-long-long-long-long-long title-long-long</h1>
-				<hr className="mr-2"/>
-				<hr className="mr-2"/>
+				<h1 className="text-ellipsis text-balance">This is a very long-long-long-long-long-long-long-long-long-long title-long-long</h1>
+				<hr/>
+				<hr />
 				<article
-					className="xl:mr-2 "
 					dangerouslySetInnerHTML={{__html: content}}
 				/>
 			</div>

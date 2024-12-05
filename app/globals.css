@@ -79,6 +79,10 @@
         no-scrollbar;
     }
 
+    .article > * {
+        @apply xl:mr-2;
+    }
+
 }
 
 @layer utilities {
