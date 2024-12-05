@@ -48,4 +48,42 @@
         @apply flex flex-row gap-x-2 justify-center sm:justify-start mt-4 sm:mt-auto;
     }
 
+    .toc {
+        @apply text-gray-400 gap-0 mx-0 list-inside;
+        font-size: 24px;
+    }
+
+    .toc ul {
+        @apply scale-100 text-start ml-4;
+        font-size: 0.95em;
+    }
+}
+
+@layer utilities {
+    .no-scrollbar{
+        scrollbar-gutter: stable;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+        width: 8px;
+        opacity: 0;
+    }
+
+    .no-scrollbar::-webkit-scrollbar-button {
+        display: none;
+    }
+
+    .no-scrollbar::-webkit-scrollbar-thumb {
+        border-radius: 240px;
+        @apply  bg-stone-100 bg-opacity-0 lg:bg-opacity-15;
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb:hover {
+        @apply bg-stone-100 bg-opacity-0 lg:bg-opacity-15;
+    }
+
+    .no-scrollbar::-webkit-scrollbar-track {
+        border-radius: 50px;
+    }
+
 }
