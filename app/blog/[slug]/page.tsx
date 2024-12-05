@@ -39,7 +39,10 @@ export default async function Blog({params}: { params: Promise<BlogProps> }) {
 			<div
 				className="article w-full"
 			>
-				<h1 className="text-ellipsis text-balance">This is a very long-long-long-long-long-long-long-long-long-long title-long-long</h1>
+				<h1
+					className="text-ellipsis text-balance"
+					id="title"
+				>This is a very long-long-long-long-long-long-long-long-long-long title-long-long</h1>
 				<hr/>
 				<hr />
 				<article
@@ -49,7 +52,9 @@ export default async function Blog({params}: { params: Promise<BlogProps> }) {
 			<div
 				className="hidden xl:flex overflow-y-auto no-scrollbar hover:scrollbar h-full w-72  flex-col gap-2 duration-200"
 			>
-				<h1 className="text-2xl text-green-400">Table of Content</h1>
+				<h1 className="text-xl truncate">This is a very long long</h1>
+				<hr/>
+				<h1 className="text-xl text-green-400">Table of Content</h1>
 				<hr/>
 				<div
 					className="toc"
