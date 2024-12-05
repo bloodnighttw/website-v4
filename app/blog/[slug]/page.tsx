@@ -19,7 +19,7 @@ const cacheTOCAndContent = unstable_cache(
 	[],
 	{
 		tags: ["blog"],
-		revalidate: 3600
+		revalidate: 60
 	}
 );
 
@@ -36,10 +36,10 @@ export default async function Blog({params}: { params: Promise<BlogProps> }) {
 	return (
 		<div className="flex p-4 justify-center gap-4 pb-0 border-gray-50 xl:h-[calc(100vh-0.5em)]">
 			<div
-				className="article"
+				className="article "
 			>
 				<article
-					className="xl:pr-2"
+					className="xl:pr-2 xl:min-w-[56rem] lg:min-w-[48rem] md:min-w-[40rem]"
 					dangerouslySetInnerHTML={{__html: content}}
 				/>
 				<div className="w-2">
