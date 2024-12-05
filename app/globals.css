@@ -58,6 +58,27 @@
         font-size: 0.95em;
     }
 
+    .article {
+        @apply prose prose-invert prose-stone sm:prose-xl xl:prose-2xl
+        prose-a:underline prose-a:font-light prose-a:duration-200 prose-a:text-stone-200 hover:prose-a:font-black hover:prose-a:text-blue-200
+        prose-img:rounded
+        prose-headings:m-0
+        prose-h1:mb-8 prose-h1:font-black
+        prose-h2:mb-8 prose-h2:font-extrabold
+        prose-h3:mb-6 prose-h3:font-bold
+        prose-h4:mb-4 prose-h4:font-semibold
+        prose-h5:mb-4 prose-h5:font-medium
+        prose-h6:mb-4 prose-h6:font-normal
+        prose-p:m-0 prose-p:mb-4 prose-p:font-light
+        prose-ul:m-0 prose-ul:mb-4
+        prose-li:m-0
+        prose-ol:m-0
+        prose-hr:my-8
+        scroll-smooth
+        overflow-y-scroll
+        no-scrollbar;
+    }
+
 }
 
 @layer utilities {
