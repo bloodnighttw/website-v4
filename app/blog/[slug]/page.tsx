@@ -3,10 +3,25 @@
 import {ast2html, postExists} from "@/utils/posts/content";
 import {notFound} from "next/navigation";
 import {markdown2ast} from "@/utils/post";
+import {unstable_cache} from "next/cache";
 
 interface BlogProps {
 	slug: string;
 }
+
+async function getTOCAndContent(name: string) {
+	const ast = await markdown2ast(`${name}.mdx`);
+	return await ast2html(ast);
+}
+
+const cacheTOCAndContent = unstable_cache(
+	getTOCAndContent,
+	[],
+	{
+		tags: ["blog"],
+		revalidate: 3600
+	}
+);
 
 export default async function Blog({params}: { params: Promise<BlogProps> }) {
 
@@ -16,8 +31,7 @@ export default async function Blog({params}: { params: Promise<BlogProps> }) {
 		return notFound();
 	}
 
-	const [ast] = await Promise.all([markdown2ast(`${name}.mdx`)]);
-	const [table, content] = await ast2html(ast);
+	const [table, content] = await cacheTOCAndContent(name);
 
 	return (
 		<div className="flex p-4 justify-center gap-4 pb-0 border-gray-50 xl:h-[calc(100vh-0.5em)]">
