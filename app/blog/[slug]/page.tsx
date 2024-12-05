@@ -20,10 +20,10 @@ export default async function Blog({params}: { params: Promise<BlogProps> }) {
 	const [table, content] = await ast2html(ast);
 
 	return (
-		<div className="flex justify-center gap-4 sm:p-2 pb-0 border-gray-50 xl:h-screen">
+		<div className="flex p-4 justify-center gap-4 pb-0 border-gray-50 xl:h-[calc(100vh-0.5em)]">
 			<div
 				className="
-			    prose prose-invert prose-stone sm:prose-2xl
+			    prose prose-invert prose-stone sm:prose-xl xl:prose-2xl
 			    prose-a:underline prose-a:font-light prose-a:duration-200 prose-a:text-stone-200 hover:prose-a:font-black hover:prose-a:text-blue-200
 			    prose-img:rounded
 			    prose-headings:m-0
@@ -42,21 +42,37 @@ export default async function Blog({params}: { params: Promise<BlogProps> }) {
 				h-full
 				overflow-y-scroll
 				no-scrollbar
-				hover:scrollbar
-				flex
 			    "
 			>
 				<article
-					className="border-r-0 border-opacity-0"
+					className="xl:pr-2"
 					dangerouslySetInnerHTML={{__html: content}}
 				/>
 				<div className="w-2">
+					123
 				</div>
 			</div>
 			<div
-				className="hidden xl:block toc overflow-y-auto no-scrollbar hover:scrollbar h-full w-72"
-				dangerouslySetInnerHTML={{__html: table}}
-			/>
+				className="hidden xl:flex overflow-y-auto no-scrollbar hover:scrollbar h-full w-72  flex-col gap-2 duration-200"
+			>
+				<h1 className="text-2xl text-green-400">Table of Content</h1>
+				<hr/>
+				<div
+					className="toc"
+					dangerouslySetInnerHTML={{__html: table}}
+				/>
+				<hr/>
+
+				<div className="text-xl text-cyan-400">Categories:</div>
+				<hr/>
+				<div className="text-xl text-rose-400">Comment</div>
+				<hr/>
+				<div className="text-xl mt-auto text-orange-400">
+					GOTO:
+					<div className="flex text-white text-base">Back / Home / Contact / Blog / About </div>
+				</div>
+				<div className=""/>
+			</div>
 		</div>
 	);
 }
