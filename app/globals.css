@@ -53,9 +53,13 @@
         font-size: 24px;
     }
 
-    .toc ul {
+    .toc ul li ul {
         @apply scale-100 text-start ml-4;
         font-size: 0.95em;
+    }
+
+    .toc {
+
     }
 }
 
