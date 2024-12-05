@@ -35,11 +35,15 @@ export default async function Blog({params}: { params: Promise<BlogProps> }) {
 
 	return (
 		<div className="flex p-4 justify-center gap-4 pb-0 border-gray-50 xl:h-[calc(100vh-0.5em)]">
+
 			<div
 				className="article w-full"
 			>
+				<h1 className="text-ellipsis verflow-hidden mr-2">This is a very longgggggggggggggggggg title</h1>
+				<hr className="mr-2"/>
+				<hr className="mr-2"/>
 				<article
-					className="xl:pr-2 "
+					className="xl:mr-2 "
 					dangerouslySetInnerHTML={{__html: content}}
 				/>
 			</div>
