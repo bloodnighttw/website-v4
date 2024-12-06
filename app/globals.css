@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 @layer components {
-
     body {
         @apply text-white;
     }
@@ -12,12 +11,12 @@
         @apply flex min-h-screen items-center justify-center py-12;
     }
 
-    .introduce-image{
-        @apply items-center rounded-full w-28 h-28 sm:w-40 sm:h-40
+    .introduce-image {
+        @apply h-28 w-28 items-center rounded-full sm:h-40 sm:w-40;
     }
 
-    .introduce-card{
-        @apply flex flex-col sm:flex-row-reverse gap-x-12 gap-y-4 sm:items-start items-center;
+    .introduce-card {
+        @apply flex flex-col items-center gap-x-12 gap-y-4 sm:flex-row-reverse sm:items-start;
     }
 
     .introduce-text {
@@ -25,15 +24,15 @@
     }
 
     .introduce-text > * {
-        @apply text-center sm:text-start justify-center sm:justify-start;
+        @apply justify-center text-center sm:justify-start sm:text-start;
     }
 
-    .introduce-text > h1{
+    .introduce-text > h1 {
         @apply text-5xl font-bold;
     }
 
     .introduce-text > .rwd-show {
-        @apply sm:hidden ;
+        @apply sm:hidden;
     }
 
     .introduce-text > .rwd-hidden {
@@ -44,48 +43,30 @@
         @apply text-lg sm:text-sm;
     }
 
-    .introduce-text > .introduce-links{
-        @apply flex flex-row gap-x-2 justify-center sm:justify-start mt-4 sm:mt-auto;
+    .introduce-text > .introduce-links {
+        @apply mt-4 flex flex-row justify-center gap-x-2 sm:mt-auto sm:justify-start;
     }
 
     .toc {
-        @apply text-gray-400 gap-0 mx-0 list-inside font-extralight text-ellipsis text-2xl;
+        @apply mx-0 list-inside gap-0 text-ellipsis text-2xl font-extralight text-gray-400;
     }
 
     .toc ul li ul {
-        @apply scale-100 text-start ml-4;
+        @apply ml-4 scale-100 text-start;
         font-size: 0.95em;
     }
 
     .article {
-        @apply prose prose-invert prose-stone sm:prose-xl xl:prose-2xl
-        prose-a:underline prose-a:font-light prose-a:duration-200 prose-a:text-stone-200 hover:prose-a:font-black hover:prose-a:text-blue-200
-        prose-img:rounded
-        prose-headings:m-0
-        prose-h1:mb-8 prose-h1:font-black
-        prose-h2:mb-8 prose-h2:font-extrabold
-        prose-h3:mb-6 prose-h3:font-bold
-        prose-h4:mb-4 prose-h4:font-semibold
-        prose-h5:mb-4 prose-h5:font-medium
-        prose-h6:mb-4 prose-h6:font-normal
-        prose-p:m-0 prose-p:mb-4 prose-p:font-light
-        prose-ul:m-0 prose-ul:mb-4
-        prose-li:m-0
-        prose-ol:m-0
-        prose-hr:my-8
-        scroll-smooth
-        overflow-y-scroll
-        no-scrollbar;
+        @apply no-scrollbar prose prose-stone prose-invert overflow-y-scroll scroll-smooth sm:prose-xl xl:prose-2xl prose-headings:m-0 prose-h1:mb-8 prose-h1:font-black prose-h2:mb-8 prose-h2:font-extrabold prose-h3:mb-6 prose-h3:font-bold prose-h4:mb-4 prose-h4:font-semibold prose-h5:mb-4 prose-h5:font-medium prose-h6:mb-4 prose-h6:font-normal prose-p:m-0 prose-p:mb-4 prose-p:font-light prose-a:font-light prose-a:text-stone-200 prose-a:underline prose-a:duration-200 hover:prose-a:font-black hover:prose-a:text-blue-200 prose-ol:m-0 prose-ul:m-0 prose-ul:mb-4 prose-li:m-0 prose-img:rounded prose-hr:my-8;
     }
 
     .article > * {
         @apply xl:mr-2;
     }
-
 }
 
 @layer utilities {
-    .no-scrollbar{
+    .no-scrollbar {
         scrollbar-gutter: stable;
     }
 
@@ -100,11 +81,10 @@
 
     .no-scrollbar::-webkit-scrollbar-thumb {
         border-radius: 240px;
-        @apply  bg-stone-100 bg-opacity-0 lg:bg-opacity-15;
+        @apply bg-stone-100 bg-opacity-0 lg:bg-opacity-15;
     }
 
     .no-scrollbar::-webkit-scrollbar-track {
         border-radius: 50px;
     }
-
 }
