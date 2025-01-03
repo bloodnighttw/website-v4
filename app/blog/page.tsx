@@ -9,8 +9,14 @@ export default async function Blog() {
     >
         <div className="py-8">
             <h1 className="text-4xl text-center">Blog</h1>
-            <div className="mt-auto text-center">
-                Home / Contact / Blog / About{" "}
+            <div className="flex text-base text-stone-100 space-x-1 justify-center">
+                <Link href="/">Home</Link>
+                <p>/</p>
+                <Link href="/contact">Contact</Link>
+                <p>/</p>
+                <Link href="/blog">Blog</Link>
+                <p>/</p>
+                <Link href="/about">About</Link>
             </div>
         </div>
 
@@ -24,7 +30,7 @@ export default async function Blog() {
                         key={post.path}
                     >
 
-                        <h1 className="text-3xl line-clamp-1">{post.title}</h1>
+                    <h1 className="text-3xl line-clamp-1">{post.title}</h1>
                         <p className="text-gray-400 pt-1">{post.date.toISOString().slice(0, 10)}</p>
                         <p className="text-gray-300 pt-2 line-clamp-3">{post.summery}</p>
                     </div>
