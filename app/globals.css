@@ -56,7 +56,7 @@
         font-size: 0.95em;
     }
 
-    .toc li{
+    .toc a{
         @apply hover:text-white text-stone-400 duration-200;
     }
 
