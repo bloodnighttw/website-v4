@@ -44,7 +44,11 @@
     }
 
     .introduce-text > .introduce-links {
-        @apply mt-4 flex flex-row justify-center gap-x-2 sm:mt-auto sm:justify-start;
+        @apply mt-4 flex flex-row justify-center gap-x-2 sm:mt-auto sm:justify-start hover:text-xl;
+    }
+
+    .introduce-text > .introduce-links > a{
+        @apply duration-200 hover:text-blue-500
     }
 
     .toc {
