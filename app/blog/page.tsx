@@ -1,13 +1,40 @@
 import { getAllMetadata } from "@/utils/posts/metadata";
+import Link from "next/link";
 
 export default async function Blog() {
     const posts = await getAllMetadata();
 
-    return posts.map((post) => (
-        <div key={post.path}>
-            <h1>{post.title}</h1>
-            <p>{post.date.toString()}</p>
-            <p>{post.summery}</p>
+    return <div
+        className="mx-auto max-w-3xl"
+    >
+        <div className="py-8">
+            <h1 className="text-4xl text-center">Blog</h1>
+            <div className="mt-auto text-center">
+                Home / Contact / Blog / About{" "}
+            </div>
         </div>
-    ));
+
+        <div className="space-y-2">
+            {posts.map((post) => (
+                <Link
+                    href={`/blog/${post.path}`}
+                >
+                    <div
+                        className="p-4 rounded w-full border border-stone-700 hover:bg-stone-800 duration-200 mx-auto sm:hover:scale-105"
+                        key={post.path}
+                    >
+
+                        <h1 className="text-3xl line-clamp-1">{post.title}</h1>
+                        <p className="text-gray-400 pt-1">{post.date.toISOString().slice(0, 10)}</p>
+                        <p className="text-gray-300 pt-2 line-clamp-3">{post.summery}</p>
+                    </div>
+                    <br/>
+                </Link>
+
+
+            ))}
+        </div>
+
+
+    </div>
 }
