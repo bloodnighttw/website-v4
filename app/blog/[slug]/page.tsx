@@ -36,10 +36,10 @@ export default async function Blog({ params }: { params: Promise<BlogProps> }) {
     return (
         <div className="flex justify-center gap-4 border-gray-50 p-4 pb-0 xl:h-[calc(100vh-0.5em)]">
             <div className="article w-full">
-                <h1 className="text-ellipsis text-balance" id="title">
+                <h1 className="text-ellipsis text-balance my-0 text-5xl" id="title">
                     {metadata.title}
                 </h1>
-                <hr />
+                <hr className="my-4"/>
                 <article dangerouslySetInnerHTML={{ __html: content }} />
             </div>
             <div
@@ -63,7 +63,7 @@ export default async function Blog({ params }: { params: Promise<BlogProps> }) {
                         height={24}
                         loading="eager"
                     />
-                    <p >bloodnighttw</p>
+                    <p>bloodnighttw</p>
                 </div>
                 <div className="mt-2 text-stone-300 rounded bg-stone-800 p-4 space-y-2">
                     <div className="flex text-base text-stone-100 space-x-1">
