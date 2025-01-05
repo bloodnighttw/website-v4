@@ -43,7 +43,7 @@ export default async function Blog({ params }: { params: Promise<BlogProps> }) {
                 <article dangerouslySetInnerHTML={{ __html: content }} />
             </div>
             <div
-                className="no-scrollbar hover:scrollbar hidden h-full w-72 flex-col overflow-y-auto duration-200 xl:flex">
+                className="hidden h-full w-72 flex-col overflow-y-auto duration-200 xl:flex">
                 <h1 className="truncate text-2xl">{metadata.title}</h1>
                 <h1 className="text-sm text-stone-400 mt-0.5">{metadata.date.toDateString()}</h1>
 
