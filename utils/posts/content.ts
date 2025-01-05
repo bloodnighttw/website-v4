@@ -14,7 +14,7 @@ import { h } from "hastscript";
 export async function postExists(postName: string) {
     return fs.promises
         .access(
-            path.join(process.cwd(), "posts", `${postName}.mdx`),
+            path.join(process.cwd(), "posts", `${postName}.md`),
             fs.constants.F_OK,
         )
         .then(() => true)

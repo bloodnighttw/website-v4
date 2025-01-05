@@ -85,7 +85,7 @@ export async function getAllMetadata() {
     const files = await fs.promises.readdir(path.join(process.cwd(), "posts"));
 
     // filter the markdownX files
-    const markdownFiles = files.filter((file) => file.endsWith(".mdx"));
+    const markdownFiles = files.filter((file) => file.endsWith(".md"));
 
     // decode the metadata of each file
     return await Promise.all(markdownFiles.map(decodeMetadata));

@@ -14,7 +14,7 @@ interface BlogProps {
 }
 
 async function getTOCAndContent(name: string) {
-    const ast = await markdown2ast(`${name}.mdx`);
+    const ast = await markdown2ast(`${name}.md`);
     return await ast2html(ast);
 }
 
@@ -31,7 +31,7 @@ export default async function Blog({ params }: { params: Promise<BlogProps> }) {
     }
 
     const [table, content] = await cacheTOCAndContent(name);
-    const metadata = await decodeMetadata(`${name}.mdx`);
+    const metadata = await decodeMetadata(`${name}.md`);
 
     return (
         <div className="flex justify-center gap-4 border-gray-50 p-4 pb-0 xl:h-[calc(100vh-0.5em)]">
