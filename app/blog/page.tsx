@@ -2,7 +2,7 @@ import { getAllMetadata } from "@/utils/posts/metadata";
 import Link from "next/link";
 
 export default async function Blog() {
-    const posts = await getAllMetadata();
+    let  posts = await getAllMetadata();
 
     return <div
         className="mx-auto max-w-3xl"
@@ -21,7 +21,8 @@ export default async function Blog() {
         </div>
 
         <div className="space-y-2">
-            {posts.map((post) => (
+            {posts.sort((a, b) => a.date < b.date ? 1 : a.date == b.date ? 0 : -1)
+                .map((post) => (
                 <Link
                     href={`/blog/${post.path}`}
                 >
