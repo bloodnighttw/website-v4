@@ -1,7 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import { motion } from "motion/react";
 import Link from "next/link";
 
 const hello = "👋 hi! ";
@@ -10,10 +7,7 @@ const text2 = "bloodnighttw";
 
 export default function Home() {
     return (
-        <motion.div
-            initial={{ opacity: 0.01 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0.01 }}
+        <div
             className="introduce"
         >
             <div className="introduce-card">
@@ -39,6 +33,6 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-        </motion.div>
+        </div>
     );
 }

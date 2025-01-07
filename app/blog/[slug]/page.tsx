@@ -20,7 +20,7 @@ async function getTOCAndContent(name: string) {
 
 const cacheTOCAndContent = unstable_cache(getTOCAndContent, [], {
     tags: ["blog"],
-    revalidate: 60,
+    revalidate:  process.env.NODE_ENV === "production" ? 600 : 1,
 });
 
 export default async function Blog({ params }: { params: Promise<BlogProps> }) {

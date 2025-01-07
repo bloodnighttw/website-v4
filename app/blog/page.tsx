@@ -25,6 +25,7 @@ export default async function Blog() {
                 .map((post) => (
                 <Link
                     href={`/blog/${post.path}`}
+                    key={post.path}
                 >
                     <div
                         className="p-4 rounded w-full border border-stone-700 hover:bg-stone-800 duration-200 mx-auto sm:hover:scale-105"
