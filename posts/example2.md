@@ -1,6 +1,6 @@
 ---
 title: Example
-date: 2020-01-01
+date: 2020-01-02
 ---
 
 # Heading 1
@@ -50,3 +50,5 @@ console.log("Example");
 | Example | Example |
 
 ---
+
+![Example](https://r2.bntw.dev/test.png)
