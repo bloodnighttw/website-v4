@@ -41,14 +41,12 @@ export async function generateMetadata({ params }: { params: Promise<BlogProps> 
             title: metadata.title,
             description: metadata.summery,
             type: "article",
-            images: [
+            images: metadata.previewImage ? [
                 {
-                    url: "https://avatars.githubusercontent.com/u/44264182?s=460&u=b59e580f37ab7e6a3979ab8a6df1f12ba6588069&v=4",
-                    width: 460,
-                    height: 460,
-                    alt: "bloodnighttw's avatar",
+                    url: metadata.previewImage,
+                    alt: metadata.title
                 }
-            ]
+            ] : []
         }
 
     }
