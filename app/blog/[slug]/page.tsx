@@ -47,6 +47,18 @@ export async function generateMetadata({ params }: { params: Promise<BlogProps> 
                     alt: metadata.title
                 }
             ] : []
+        },
+        twitter: {
+            title: metadata.title,
+            description: metadata.summery,
+            site: "@bloodnighttw",
+            card: "summary_large_image",
+            images: metadata.previewImage ? [
+                {
+                    url: metadata.previewImage,
+                    alt: metadata.title
+                }
+            ] : []
         }
 
     }
