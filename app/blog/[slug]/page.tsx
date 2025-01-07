@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { decodeMetadata } from "@/utils/posts/metadata";
 import Image from "next/image";
+import { Metadata } from "next";
 
 
 interface BlogProps {
@@ -22,6 +23,36 @@ const cacheTOCAndContent = unstable_cache(getTOCAndContent, [], {
     tags: ["blog"],
     revalidate:  process.env.NODE_ENV === "production" ? 600 : 1,
 });
+
+export async function generateMetadata({ params }: { params: Promise<BlogProps> } ):Promise<Metadata> {
+    const name = (await params).slug;
+
+    const metadata = await decodeMetadata(`${name}.md`);
+
+    return {
+        title: metadata.title,
+        description: metadata.summery,
+        authors: [
+            {
+                name: "bloodnighttw",
+            }
+        ],
+        openGraph:{
+            title: metadata.title,
+            description: metadata.summery,
+            type: "article",
+            images: [
+                {
+                    url: "https://avatars.githubusercontent.com/u/44264182?s=460&u=b59e580f37ab7e6a3979ab8a6df1f12ba6588069&v=4",
+                    width: 460,
+                    height: 460,
+                    alt: "bloodnighttw's avatar",
+                }
+            ]
+        }
+
+    }
+}
 
 export default async function Blog({ params }: { params: Promise<BlogProps> }) {
     const name = (await params).slug;
