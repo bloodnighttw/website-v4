@@ -65,12 +65,21 @@
     }
 
     .article {
-        @apply no-scrollbar prose prose-stone prose-invert overflow-y-scroll scroll-smooth xl:max-w-4xl;
+        @apply no-scrollbar prose prose-stone prose-invert overflow-y-scroll scroll-smooth xl:max-w-4xl prose-li:m-0 prose-ul:m-0;
     }
 
     .article > * {
         @apply xl:mr-2;
     }
+
+    .article code{
+        @apply bg-stone-700 p-1 rounded before:content-none after:content-none font-extralight;
+    }
+
+    .article pre code{
+        @apply bg-transparent p-0;
+    }
+
 }
 
 @layer utilities {
