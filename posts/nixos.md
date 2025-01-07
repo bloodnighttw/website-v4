@@ -52,12 +52,13 @@ Home Manager 是一個管理user設定的工具，他可以幫你管理你的hom
 
 [設定檔案在這](https://github.com/bloodnighttw/dotfile/blob/main/home-manager/home.nix)
 
+## Nvidia
+還沒處理，遇到再說，反正可以參考[這篇](https://nixos.wiki/wiki/Nvidia)說明。
+![so nvidia, fuck you](https://i.imgur.com/NqhBNru.jpeg)
+
+
 ## 其他設定
 
 我得其他設定，像是picom的設定檔、rofi的設定檔、bspwm的設定檔等等，`我都放在我的config裡面`，並讓 home manager下去管理他要去的位置。
 ![bspwm](https://i.imgur.com/5k5zpxH.jpeg)
 [你可以參考這裡](https://github.com/bloodnighttw/dotfile/tree/main/config)，並參考上一個章節說的home manager設定檔案。
-
-## Nvidia
-還沒處理，遇到再說，反正可以參考[這篇](https://nixos.wiki/wiki/Nvidia)說明。
-![so nvidia, fuck you](https://i.imgur.com/NqhBNru.jpeg)
