@@ -1,5 +1,4 @@
 import type { MetadataRoute } from 'next'
-import { getAllMetadata } from "@/utils/posts/metadata";
 
 export default function sitemap(): MetadataRoute.Sitemap {
 
