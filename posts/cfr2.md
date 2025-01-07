@@ -35,11 +35,12 @@ categories:
 
 # 實作
 
-剛開始我是找到了
+這個網站的部分程式是我[之前的專案](https://github.com/bloodnighttw/website-v3)拿過來改的，也是一個基於tailwind的專案，不同的點是，他沒有用到`react`/`nextjs`。
 
-```bash
-npx create-next-app@latest
-```
+剛開始我是找到了 [contentlayer](https://contentlayer.dev/)這個套件，但是這個套件有幾個問題:
+1. 我要怎麼獲取markdown的預覽內容？
+2. 我要怎麼從這個套件生成table of content？
+
 
 # 結果
 
