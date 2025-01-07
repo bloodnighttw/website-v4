@@ -1,1 +1,1 @@
-Sitemap: /sitemap.xml
+Sitemap: https://bntw.dev/sitemap.xml
