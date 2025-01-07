@@ -1,8 +1,9 @@
 import type { MetadataRoute } from 'next'
+import { getAllMetadata } from "@/utils/posts/metadata";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
-    return [
+    const staticPages:MetadataRoute.Sitemap = [
         {
             url: '/',
             lastModified: new Date(),
@@ -28,4 +29,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.9,
         }
     ]
+
+    const allPosts = await getAllMetadata()
+
+    const posts:MetadataRoute.Sitemap = allPosts.map((post) => ({
+        url: `/blog/${post.path}`,
+        lastModified: post.date,
+        changeFrequency: 'daily',
+        priority: 0.7,
+    }))
+
+    return [...staticPages, ...posts]
+
 }
