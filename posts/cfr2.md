@@ -35,23 +35,49 @@ categories:
 
 # 實作
 
-這個網站的部分程式是我[之前的專案](https://github.com/bloodnighttw/website-v3)拿過來改的，也是一個基於tailwind的專案，不同的點是，他沒有用到`react`/`nextjs`。
+這部分程式是我[之前的專案](https://github.com/bloodnighttw/website-v3)拿過來改的，也是一個基於tailwind的專案，不同的點是，他沒有用到`react`/`nextjs`，另外使用的是next.js的ISR模式。
 
-剛開始我是找到了 [contentlayer](https://contentlayer.dev/)這個套件，但是這個套件有幾個問題:
+## Markdown 解析
+
+剛開始我是找到了 [contentlayer](https://contentlayer.dev/) 這個套件，但是這個套件有幾個問題:
 1. 我要怎麼獲取markdown的預覽內容？
 2. 我要怎麼從這個套件生成table of content？
 
+想解決這兩個問題，勢必得往更底層去尋找答案了。
+
+那在研究一段時間後，我發現很多系統的markdown支援，都是依賴這幾個套件。
+1. `unified.js`  ast轉換工具，下面這兩個工具部分功能可以依賴這套件。
+2. `remark.js`   用於解析markdown語法的相關套件  (ast <--> markdown)
+3. `rehype.js `  用於解析html語法的相關套件      (ast <--> html)
+
+我的做法是，我先用`remark.js`把markdown轉換成ast，然後透過這個ast去產生預覽內容。
+
+接著我用`remark2rehype`把ast轉換成rehype ast，然後再透過這個html ast去產生table of content。
+
+最後我在把這個html ast轉換成html，顯示於網頁上。
+
+## Cloudflare R2 作為圖床
+剛開始我自己是打算把圖片放在[imgur](https://imgur.com/)上，但是後來發現imgur有可能刪除圖片，導致圖片失效，剛好想到之前拜讀的
+[這篇文章](https://ivonblog.com/posts/cloudflare-r2-image-hosting/)，最後決定使用Cloudflare R2作為圖片的圖床。
+
+使用Cloudflare R2的好處是:
+1. 流量不收費 (這個是其他類似服務最難預測的費用)
+2. 使用量在一定額度內是免費的
+3. 有使用Cloudflare CDN的加速
+4. 跟aws s3相容的API，也就是說我們可以使用相關工具操啜R2。
+
+![r2](https://r2.bntw.dev/how-i-made-my-blog/r2.png)
 
 # 結果
 
 下面這張是在無痕模式下的lighthouse分數，可以看到四個指標都是100分。
-![lighthouse score with arc browser](https://r2.bntw.dev/lighthouse.png)
+![lighthouse score with arc browser](https://r2.bntw.dev/how-i-made-my-blog/lighthouse.png)
 
 # 未來可加入的功能
-1. MDX
-    - 未來可以加入mdx，這樣可以讓我在markdown中加入react component。
+1. SEO 優化
+    - 目前文章是不包含description與其他可以優化SEO的部分，未來會加入這些功能。
 2. WYSIWYG
-    - 未來可以加入WYSIWYG，這樣可以讓我在寫文章時更方便。
+    - 未來可以加入WYSIWYG，並棄用markdown，這樣可以讓我在寫文章時更方便 (這功能沒有很急)。
 3. RSS
     - 未來可以加入RSS，這樣可以讓訂閱者可以更方便的訂閱我的文章。
 4. 留言系統
