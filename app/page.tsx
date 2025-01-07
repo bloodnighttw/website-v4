@@ -5,6 +5,11 @@ const hello = "👋 hi! ";
 const text1 = "I'm";
 const text2 = "bloodnighttw";
 
+export const metadata = {
+    title: "Hi! I'm bloodnighttw",
+    description: "Bloodnighttw's personal website and blog, where I write about programming, technology, and life.",
+}
+
 export default function Home() {
     return (
         <div
