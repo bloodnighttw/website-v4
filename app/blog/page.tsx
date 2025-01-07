@@ -1,6 +1,11 @@
 import { getAllMetadata } from "@/utils/posts/metadata";
 import Link from "next/link";
 
+export const metadata = {
+    title: "Bloodnighttw's Blog",
+    description: "A collection of blog posts",
+}
+
 export default async function Blog() {
     let  posts = await getAllMetadata();
 
