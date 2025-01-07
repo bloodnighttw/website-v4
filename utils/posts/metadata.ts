@@ -22,6 +22,7 @@ export interface Metadata {
     date: Date;
     category: category;
     summery: string;
+    previewImage: string | undefined;
 }
 
 // This defined the text node in the AST
@@ -31,24 +32,29 @@ interface TextNode {
 }
 
 // This function will flat all the children of the AST and filter the text type
-function textFlatAndFilter(ast: RootContent[] | undefined): TextNode[] {
-    if (ast === undefined) return [];
+function decodeAST(ast: RootContent[] | undefined): [TextNode[],string | undefined] {
+    if (ast === undefined) return [[],undefined];
 
     const previewText: TextNode[] = [];
+    let previewImage: string | undefined = undefined;
 
     for (const node of ast) {
         // @ts-expect-error node["children"] might be undefined,
         // but we don't care since we will instantly return if it's undefined
-        const temp = textFlatAndFilter(node["children"]); // Recursively decode children
+        const [temp,img] = decodeAST(node["children"]); // Recursively decode children
+        previewImage = previewImage ?? img;
 
         previewText.push(...temp);
 
         if (node.type === "text") {
             previewText.push(node as TextNode);
+        } else if (node.type === "image" && previewImage === undefined) {
+            previewImage = node.url;
         }
+
     }
 
-    return previewText;
+    return [previewText,previewImage];
 }
 
 // This function will parse the yaml metadata in the markdown file
@@ -64,7 +70,7 @@ export function yamlParse(ast: RootContent[]) {
 // This function will decode the metadata of the markdown file
 export async function decodeMetadata(file: string): Promise<Metadata> {
     const ast = await markdown2ast(file);
-    const flat = textFlatAndFilter(ast.children);
+    const [flat,img] = decodeAST(ast.children);
     const metadata = yamlParse(ast.children);
 
     return {
@@ -76,6 +82,7 @@ export async function decodeMetadata(file: string): Promise<Metadata> {
             .map((node) => node.value)
             .join(" ")
             .slice(0, MAX_SUMMERY_LENGTH),
+        previewImage: img,
     };
 }
 
