@@ -1,4 +1,4 @@
-import { getAllMetadata } from "@/utils/posts/metadata";
+import { getAllMetadata } from "@/utils/blog";
 import Link from "next/link";
 
 export const metadata = {

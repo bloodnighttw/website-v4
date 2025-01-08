@@ -10,17 +10,6 @@ import { Element, ElementContent, Root as HRoot } from "hast";
 
 import { h } from "hastscript";
 
-// To check if a post exists, note postName should be the name of the file without the extension
-export async function postExists(postName: string) {
-    return fs.promises
-        .access(
-            path.join(process.cwd(), "posts", `${postName}.md`),
-            fs.constants.F_OK,
-        )
-        .then(() => true)
-        .catch(() => false);
-}
-
 const ast2htmlAst = unified().use(remark2rehype).use(rehypeSlug);
 
 const htmlAst2htmlUnified = unified().use(rehypeStringify);
@@ -175,7 +164,7 @@ function TOCNode2Element(node: TOCNode[]) {
 
 // Convert the AST to HTML
 // This function will return the HTML string from the AST of the markdown file
-export const ast2html = async (ast: MDRoot) => {
+export async function ast2html(ast: MDRoot){
     const result = await ast2htmlAst.run(ast);
     const filteredContents = astAnalyze(result);
     const tocAst = generateTOC(filteredContents);
@@ -184,4 +173,4 @@ export const ast2html = async (ast: MDRoot) => {
         htmlAst2htmlUnified.stringify(toc),
         htmlAst2htmlUnified.stringify(result),
     ];
-};
+}
