@@ -1,33 +1,34 @@
-"use server";
-
-import { ast2html, postExists } from "@/utils/posts/content";
-import { markdown2ast } from "@/utils/post";
-import { unstable_cache } from "next/cache";
-import { notFound } from "next/navigation";
 import Link from "next/link";
-import { decodeMetadata } from "@/utils/posts/metadata";
+import { decodePostMetadata, getPostPaths, ast2post,markdown2ast } from "@/utils/blog";
 import Image from "next/image";
 import { Metadata } from "next";
 
+export async function generateStaticParams(){
+    let posts = await getPostPaths();
+
+    return posts.map((post_path) => {
+        return {
+            slug: post_path
+        }
+    })
+}
+
+// if not on the list of generateStaticParams, return 404.
+export const dynamicParams = false
 
 interface BlogProps {
     slug: string;
 }
 
 async function getTOCAndContent(name: string) {
-    const ast = await markdown2ast(`${name}.md`);
-    return await ast2html(ast);
+    const ast = await markdown2ast(name);
+    return await ast2post(ast);
 }
-
-const cacheTOCAndContent = unstable_cache(getTOCAndContent, [], {
-    tags: ["blog"],
-    revalidate:  process.env.NODE_ENV === "production" ? 600 : 1,
-});
 
 export async function generateMetadata({ params }: { params: Promise<BlogProps> } ):Promise<Metadata> {
     const name = (await params).slug;
 
-    const metadata = await decodeMetadata(`${name}.md`);
+    const metadata = await decodePostMetadata(name);
 
     return {
         title: metadata.title,
@@ -67,12 +68,8 @@ export async function generateMetadata({ params }: { params: Promise<BlogProps> 
 export default async function Blog({ params }: { params: Promise<BlogProps> }) {
     const name = (await params).slug;
 
-    if (!(await postExists(name))) {
-        return notFound();
-    }
-
-    const [table, content] = await cacheTOCAndContent(name);
-    const metadata = await decodeMetadata(`${name}.md`);
+    const post = await getTOCAndContent(name);
+    const metadata = await decodePostMetadata(name);
 
     return (
         <div className="flex justify-center gap-4 border-gray-50 p-4 pb-0 xl:h-[calc(100vh-0.5em)]">
@@ -81,7 +78,7 @@ export default async function Blog({ params }: { params: Promise<BlogProps> }) {
                     {metadata.title}
                 </h1>
                 <hr className="my-4"/>
-                <article dangerouslySetInnerHTML={{ __html: content }} />
+                <article dangerouslySetInnerHTML={{ __html: post.rawHTML }} />
             </div>
             <div
                 className="hidden h-full w-72 flex-col overflow-y-auto duration-200 xl:flex">
@@ -92,7 +89,7 @@ export default async function Blog({ params }: { params: Promise<BlogProps> }) {
 
                 <div
                     className="toc"
-                    dangerouslySetInnerHTML={{ __html: table }}
+                    dangerouslySetInnerHTML={{ __html: post.rawTableOfContent }}
                 />
 
                 <div className="flex mt-auto p-4 bg-stone-800 gap-2 rounded">
@@ -117,7 +114,6 @@ export default async function Blog({ params }: { params: Promise<BlogProps> }) {
                         <Link href="/about">About</Link>
                     </div>
                 </div>
-                <div className="" />
             </div>
         </div>
     );

@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { getAllMetadata } from "@/utils/posts/metadata";
+import { getAllMetadata } from "@/utils/blog";
 
 const BASE_URL = 'https://bntw.dev'
 
