@@ -1,20 +1,21 @@
 import { ast2html } from "@/utils/posts/content";
-import { markdown2ast } from "@/utils/post";
+import { markdown2ast } from "@/utils/blog";
 import Link from "next/link";
-import { decodeMetadata, getAllMetadata } from "@/utils/posts/metadata";
+import { decodePostMetadata, getPostPaths } from "@/utils/blog";
 import Image from "next/image";
 import { Metadata } from "next";
 
 export async function generateStaticParams(){
-    let posts = await getAllMetadata();
+    let posts = await getPostPaths();
 
-    return posts.map((post) => {
+    return posts.map((postpath) => {
         return {
-            slug: post.path
+            slug: postpath
         }
     })
 }
 
+// if not on the list of generateStaticParams, return 404.
 export const dynamicParams = false
 
 interface BlogProps {
@@ -29,7 +30,7 @@ async function getTOCAndContent(name: string) {
 export async function generateMetadata({ params }: { params: Promise<BlogProps> } ):Promise<Metadata> {
     const name = (await params).slug;
 
-    const metadata = await decodeMetadata(`${name}.md`);
+    const metadata = await decodePostMetadata(name);
 
     return {
         title: metadata.title,
@@ -70,7 +71,7 @@ export default async function Blog({ params }: { params: Promise<BlogProps> }) {
     const name = (await params).slug;
 
     const [table, content] = await getTOCAndContent(name);
-    const metadata = await decodeMetadata(`${name}.md`);
+    const metadata = await decodePostMetadata(name);
 
     return (
         <div className="flex justify-center gap-4 border-gray-50 p-4 pb-0 xl:h-[calc(100vh-0.5em)]">
@@ -115,7 +116,6 @@ export default async function Blog({ params }: { params: Promise<BlogProps> }) {
                         <Link href="/about">About</Link>
                     </div>
                 </div>
-                <div className="" />
             </div>
         </div>
     );
