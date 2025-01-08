@@ -1,14 +1,21 @@
 "use server";
 
-import { ast2html, postExists } from "@/utils/posts/content";
+import { ast2html } from "@/utils/posts/content";
 import { markdown2ast } from "@/utils/post";
-import { unstable_cache } from "next/cache";
-import { notFound } from "next/navigation";
 import Link from "next/link";
-import { decodeMetadata } from "@/utils/posts/metadata";
+import { decodeMetadata, getAllMetadata } from "@/utils/posts/metadata";
 import Image from "next/image";
 import { Metadata } from "next";
 
+export async function generateStaticParams(){
+    let posts = await getAllMetadata();
+
+    return posts.map((post) => {
+        return {
+            slug: post.path
+        }
+    })
+}
 
 interface BlogProps {
     slug: string;
@@ -18,11 +25,6 @@ async function getTOCAndContent(name: string) {
     const ast = await markdown2ast(`${name}.md`);
     return await ast2html(ast);
 }
-
-const cacheTOCAndContent = unstable_cache(getTOCAndContent, [], {
-    tags: ["blog"],
-    revalidate:  process.env.NODE_ENV === "production" ? 600 : 1,
-});
 
 export async function generateMetadata({ params }: { params: Promise<BlogProps> } ):Promise<Metadata> {
     const name = (await params).slug;
@@ -67,11 +69,7 @@ export async function generateMetadata({ params }: { params: Promise<BlogProps> 
 export default async function Blog({ params }: { params: Promise<BlogProps> }) {
     const name = (await params).slug;
 
-    if (!(await postExists(name))) {
-        return notFound();
-    }
-
-    const [table, content] = await cacheTOCAndContent(name);
+    const [table, content] = await getTOCAndContent(name);
     const metadata = await decodeMetadata(`${name}.md`);
 
     return (
