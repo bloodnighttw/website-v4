@@ -64,7 +64,7 @@ categories:
 1. 流量不收費 (這個是其他類似服務最難預測的費用)
 2. 使用量在一定額度內是免費的
 3. 有使用Cloudflare CDN的加速
-4. 跟aws s3相容的API，也就是說我們可以使用相關工具操啜R2。
+4. 跟aws s3相容的API，也就是說我們可以使用相關工具操作R2。
 
 ![r2](https://r2.bntw.dev/how-i-made-my-blog/r2.png)
 
