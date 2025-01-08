@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { decodePostMetadata, getPostPaths, ast2html,markdown2ast } from "@/utils/blog";
+import { decodePostMetadata, getPostPaths, ast2post,markdown2ast } from "@/utils/blog";
 import Image from "next/image";
 import { Metadata } from "next";
 
@@ -22,7 +22,7 @@ interface BlogProps {
 
 async function getTOCAndContent(name: string) {
     const ast = await markdown2ast(name);
-    return await ast2html(ast);
+    return await ast2post(ast);
 }
 
 export async function generateMetadata({ params }: { params: Promise<BlogProps> } ):Promise<Metadata> {

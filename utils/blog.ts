@@ -307,7 +307,7 @@ export interface Post{
 
 // Convert the AST to HTML
 // This function will return the HTML string from the AST of the markdown file
-export async function ast2html(ast: MDRoot):Promise<Post>{
+export async function ast2post(ast: MDRoot):Promise<Post>{
     const result = await ast2htmlAst.run(ast);
     const tocAst = generateTOC(result);
     const toc = TOCNode2Element(tocAst);
