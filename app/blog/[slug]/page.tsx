@@ -1,5 +1,3 @@
-"use server";
-
 import { ast2html } from "@/utils/posts/content";
 import { markdown2ast } from "@/utils/post";
 import Link from "next/link";
@@ -16,6 +14,8 @@ export async function generateStaticParams(){
         }
     })
 }
+
+export const dynamicParams = false
 
 interface BlogProps {
     slug: string;
