@@ -10,6 +10,14 @@ const nextConfig: NextConfig = {
             },
         ],
     },
+    redirects: async () => [
+        {
+            source: '/:path*',
+            has: [{ type: 'host', value: 'www.bntw.dev' }],
+            destination: 'https://bntw.dev/:path*',
+            permanent: true
+        }
+    ]
 };
 
 export default nextConfig;
