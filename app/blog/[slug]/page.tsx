@@ -1,16 +1,14 @@
-import { ast2html } from "@/utils/posts/content";
-import { markdown2ast } from "@/utils/blog";
 import Link from "next/link";
-import { decodePostMetadata, getPostPaths } from "@/utils/blog";
+import { decodePostMetadata, getPostPaths, ast2html,markdown2ast } from "@/utils/blog";
 import Image from "next/image";
 import { Metadata } from "next";
 
 export async function generateStaticParams(){
     let posts = await getPostPaths();
 
-    return posts.map((postpath) => {
+    return posts.map((post_path) => {
         return {
-            slug: postpath
+            slug: post_path
         }
     })
 }
@@ -23,7 +21,7 @@ interface BlogProps {
 }
 
 async function getTOCAndContent(name: string) {
-    const ast = await markdown2ast(`${name}.md`);
+    const ast = await markdown2ast(name);
     return await ast2html(ast);
 }
 
@@ -70,7 +68,7 @@ export async function generateMetadata({ params }: { params: Promise<BlogProps> 
 export default async function Blog({ params }: { params: Promise<BlogProps> }) {
     const name = (await params).slug;
 
-    const [table, content] = await getTOCAndContent(name);
+    const post = await getTOCAndContent(name);
     const metadata = await decodePostMetadata(name);
 
     return (
@@ -80,7 +78,7 @@ export default async function Blog({ params }: { params: Promise<BlogProps> }) {
                     {metadata.title}
                 </h1>
                 <hr className="my-4"/>
-                <article dangerouslySetInnerHTML={{ __html: content }} />
+                <article dangerouslySetInnerHTML={{ __html: post.rawHTML }} />
             </div>
             <div
                 className="hidden h-full w-72 flex-col overflow-y-auto duration-200 xl:flex">
@@ -91,7 +89,7 @@ export default async function Blog({ params }: { params: Promise<BlogProps> }) {
 
                 <div
                     className="toc"
-                    dangerouslySetInnerHTML={{ __html: table }}
+                    dangerouslySetInnerHTML={{ __html: post.rawTableOfContent }}
                 />
 
                 <div className="flex mt-auto p-4 bg-stone-800 gap-2 rounded">
