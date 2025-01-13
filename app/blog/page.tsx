@@ -4,6 +4,9 @@ import Link from "next/link";
 export const metadata = {
     title: "Bloodnighttw's Blog",
     description: "A collection of blog posts",
+    alternates:{
+        canonical: `https://bntw.dev/blog`
+    }
 }
 
 export default async function Blog() {

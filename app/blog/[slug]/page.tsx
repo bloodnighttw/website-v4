@@ -59,9 +59,11 @@ export async function generateMetadata({ params }: { params: Promise<BlogProps> 
                     url: metadata.previewImage,
                     alt: metadata.title
                 }
-            ] : []
+            ] : [],
+        },
+        alternates:{
+            canonical: `https://bntw.dev/blog/${name}`
         }
-
     }
 }
 
