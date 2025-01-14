@@ -16,7 +16,7 @@ export default function About() {
                     <strong className="text-cyan-400">react.js</strong>
                     {" & "}
                     <strong className="text-blue-400">typescript</strong>
-                    {", and I really enjoying it."}
+                    {", and I really enjoy it."}
                 </p>
                 <p>
                     {"I using "}
