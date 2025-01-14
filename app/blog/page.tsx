@@ -14,15 +14,9 @@ export default async function Blog() {
     const posts = await getAllMetadata();
 
     return (
-        <div className="mx-auto">
-            <div className="override-nav">
-                <div className="mx-auto max-w-4xl">
-                    <Nav title={"blog"} />
-                </div>
-            </div>
-
-
-            <div className="mx-auto max-w-4xl mt-8">
+        <>
+            <Nav title={"blog"} className="max-w-4xl" />
+            <div className="mx-auto mt-8 max-w-4xl">
                 {posts
                     .sort((a, b) =>
                         a.date < b.date ? 1 : a.date == b.date ? 0 : -1,
@@ -47,6 +41,6 @@ export default async function Blog() {
                         </Link>
                     ))}
             </div>
-        </div>
+        </>
     );
 }
