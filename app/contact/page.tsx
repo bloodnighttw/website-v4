@@ -51,15 +51,18 @@ const Contacts: ContactInformation[] = [
 
 export default function Contact() {
     return (
-        <div className="p-2 mx-auto">
-            <div className="mx-auto w-full max-w-2xl text-center">
-                <Nav title={"contact"} />
-
+        <div className="mx-auto max-w-2xl">
+            <div className="override-nav">
+                <div className="mx-auto max-w-2xl">
+                    <Nav title={"blog"} />
+                </div>
+            </div>
+            <div className="contact">
                 {Contacts.map((info) => (
                     <a
                         href={info.link}
                         key={info.link}
-                        className="m-4 mx-auto grid grid-cols-3 rounded border border-stone-700 p-4 duration-200 hover:bg-stone-800 sm:hover:scale-105"
+                        className="contact-card"
                     >
                         <Image
                             src={info.image}
@@ -68,12 +71,8 @@ export default function Contact() {
                             width="32"
                             height="32"
                         />
-                        <div className="m-auto justify-center text-xl">
-                            {info.name}
-                        </div>
-                        <div className="my-auto hidden text-right text-sm text-stone-400 md:block">
-                            {info.id ?? ""}
-                        </div>
+                        <div className="name">{info.name}</div>
+                        <div className="id">{info.id ?? ""}</div>
                     </a>
                 ))}
             </div>
