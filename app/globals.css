@@ -65,7 +65,7 @@
     }
 
     .article {
-        @apply no-scrollbar prose prose-stone prose-invert overflow-y-scroll scroll-smooth xl:max-w-4xl prose-li:m-0 prose-ul:m-0;
+        @apply no-scrollbar prose prose-stone prose-invert overflow-y-scroll scroll-smooth max-w-4xl prose-li:m-0 prose-ul:m-0;
     }
 
     .article > * {
