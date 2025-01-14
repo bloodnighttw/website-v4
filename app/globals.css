@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 @layer components {
-
     html {
         @apply scroll-smooth;
     }
@@ -48,11 +47,11 @@
     }
 
     .introduce-text > .introduce-links {
-        @apply mt-4 flex flex-row justify-center gap-x-2 sm:mt-auto sm:justify-start text-lg;
+        @apply mt-4 flex flex-row justify-center gap-x-2 text-lg sm:mt-auto sm:justify-start;
     }
 
-    .introduce-text > .introduce-links > a{
-        @apply duration-200 hover:text-blue-500
+    .introduce-text > .introduce-links > a {
+        @apply duration-200 hover:text-blue-500;
     }
 
     .toc {
@@ -64,74 +63,73 @@
         font-size: 0.97em;
     }
 
-    .toc div{
-        @apply hover:bg-stone-800 hover:px-2 hover:text-stone-100 rounded duration-200 py-0.5
+    .toc div {
+        @apply rounded py-0.5 duration-200 hover:bg-stone-800 hover:px-2 hover:text-stone-100;
     }
 
     .article {
-        @apply prose prose-stone prose-invert prose-li:m-0 prose-ul:m-0;
+        @apply prose prose-stone prose-invert prose-ul:m-0 prose-li:m-0;
         /* we preserve 0.5 as right space */
         @apply xl:-translate-x-[9.5rem];
         max-width: 56rem;
     }
 
-    .article-sidebar{
-        @apply opacity-0 fixed min-h-screen flex-col overflow-y-auto h-screen;
+    .article-sidebar {
+        @apply fixed h-screen min-h-screen flex-col overflow-y-auto opacity-0;
         /* we preserve 0.5 as left space */
         @apply xl:translate-x-[28.5rem] xl:opacity-100;
         width: 18rem;
     }
 
-    .article code{
-        @apply bg-stone-700 rounded before:content-none after:content-none font-extralight;
+    .article code {
+        @apply rounded bg-stone-700 font-extralight before:content-none after:content-none;
     }
 
-    .article pre code{
+    .article pre code {
         @apply bg-transparent p-0;
     }
 
     .about {
-        @apply mx-auto max-w-4xl space-y-8 text-xl
+        @apply mx-auto max-w-4xl space-y-8 text-xl;
     }
 
-    .about strong{
-        @apply font-extrabold
+    .about strong {
+        @apply font-extrabold;
     }
 
-    .about a{
-        @apply underline
+    .about a {
+        @apply underline;
     }
 
-    .navbar{
-        @apply bg-stone-900 bg-opacity-65 backdrop-blur sticky top-0 w-full my-8 z-10;
+    .navbar {
+        @apply sticky top-0 z-10 my-8 w-full bg-stone-900 bg-opacity-65 backdrop-blur;
     }
 
     .navbar-panel {
-        @apply flex mx-auto gap-2 py-4;
+        @apply mx-auto flex gap-2 py-4;
     }
 
-    .navbar-panel p{
-        @apply my-auto text-xl
+    .navbar-panel p {
+        @apply my-auto text-xl;
     }
 
-    .navbar-panel .back{
+    .navbar-panel .back {
         @apply my-auto mr-4 cursor-pointer rounded border border-stone-700 px-4 py-1 text-sm duration-200 hover:bg-stone-800;
     }
 
     .contact {
-        @apply mx-auto grid max-w-2xl text-center space-y-4
+        @apply mx-auto grid max-w-2xl space-y-4 text-center;
     }
 
     .contact-card {
         @apply mx-auto grid w-full grid-cols-3 rounded border border-stone-700 p-4 duration-200 hover:bg-stone-800 sm:hover:scale-105;
     }
 
-    .contact-card .name{
+    .contact-card .name {
         @apply m-auto justify-center text-xl;
     }
 
-    .contact-card .id{
+    .contact-card .id {
         @apply my-auto hidden text-right text-sm text-stone-400 md:block;
     }
-
 }

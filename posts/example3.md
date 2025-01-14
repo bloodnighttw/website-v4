@@ -38,4 +38,3 @@ _Example_
     - 123
 
 [Example](https://example.com)
-

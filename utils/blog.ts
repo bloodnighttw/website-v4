@@ -71,8 +71,10 @@ interface TextNode {
 }
 
 // This function will flat all the children of the AST and filter the text type
-function decodeMDAST(ast: RootContent[] | undefined): [TextNode[],string | undefined] {
-    if (ast === undefined) return [[],undefined];
+function decodeMDAST(
+    ast: RootContent[] | undefined,
+): [TextNode[], string | undefined] {
+    if (ast === undefined) return [[], undefined];
 
     const previewText: TextNode[] = [];
     let previewImage: string | undefined = undefined;
@@ -80,7 +82,7 @@ function decodeMDAST(ast: RootContent[] | undefined): [TextNode[],string | undef
     for (const node of ast) {
         // @ts-expect-error node["children"] might be undefined,
         // but we don't care since we will instantly return if it's undefined
-        const [temp,img] = decodeMDAST(node["children"]); // Recursively decode children
+        const [temp, img] = decodeMDAST(node["children"]); // Recursively decode children
         previewImage = previewImage ?? img;
 
         previewText.push(...temp);
@@ -90,10 +92,9 @@ function decodeMDAST(ast: RootContent[] | undefined): [TextNode[],string | undef
         } else if (node.type === "image" && previewImage === undefined) {
             previewImage = node.url;
         }
-
     }
 
-    return [previewText,previewImage];
+    return [previewText, previewImage];
 }
 
 // This function will parse the yaml metadata in the markdown file
@@ -108,9 +109,8 @@ function yamlParse(ast: RootContent[]) {
 
 // This function will decode the metadata of the markdown file
 export async function decodePostMetadata(file: string): Promise<Metadata> {
-
     const ast = await markdown2ast(file);
-    const [flat,img] = decodeMDAST(ast.children);
+    const [flat, img] = decodeMDAST(ast.children);
     const metadata = yamlParse(ast.children);
 
     return {
@@ -129,15 +129,16 @@ export async function decodePostMetadata(file: string): Promise<Metadata> {
 // get all file path.
 export async function getPostPaths(): Promise<string[]> {
     const files = await fs.promises.readdir(path.join(process.cwd(), "posts"));
-    return files
-        .filter((file) => file.endsWith(".md"))
-        // remove file extension
-        .map((file)=>file.replace(/\.[^/.]+$/, ""));
+    return (
+        files
+            .filter((file) => file.endsWith(".md"))
+            // remove file extension
+            .map((file) => file.replace(/\.[^/.]+$/, ""))
+    );
 }
 
 // This function will return all the metadata of the markdown files in the posts directory
 export async function getAllMetadata() {
-
     // filter the markdownX files
     const markdownFiles = await getPostPaths();
 
@@ -278,7 +279,7 @@ function generateTOC(ast: HRoot) {
 function TOCNode2Element(node: TOCNode[]) {
     const liTree = (node: TOCNode): Element => {
         const a = node.id
-            ? h("a", { href: `#${node.id}` }, h("div",node.sectionTitle))
+            ? h("a", { href: `#${node.id}` }, h("div", node.sectionTitle))
             : h("span", node.sectionTitle);
 
         // leaf node
@@ -300,19 +301,19 @@ function TOCNode2Element(node: TOCNode[]) {
     return h(null, ul);
 }
 
-export interface Post{
+export interface Post {
     rawHTML: string;
     rawTableOfContent: string;
 }
 
 // Convert the AST to HTML
 // This function will return the HTML string from the AST of the markdown file
-export async function ast2post(ast: MDRoot):Promise<Post>{
+export async function ast2post(ast: MDRoot): Promise<Post> {
     const result = await ast2htmlAst.run(ast);
     const tocAst = generateTOC(result);
     const toc = TOCNode2Element(tocAst);
     return {
-        rawHTML:htmlAst2htmlUnified.stringify(result),
-        rawTableOfContent:htmlAst2htmlUnified.stringify(toc),
-    }
+        rawHTML: htmlAst2htmlUnified.stringify(result),
+        rawTableOfContent: htmlAst2htmlUnified.stringify(toc),
+    };
 }
