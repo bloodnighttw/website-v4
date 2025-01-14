@@ -80,6 +80,18 @@
         @apply bg-transparent p-0;
     }
 
+    .about {
+        @apply mx-auto max-w-4xl p-8 space-y-8 text-xl
+    }
+
+    .about strong{
+        @apply font-extrabold
+    }
+
+    .about a{
+        @apply underline
+    }
+
 }
 
 @layer utilities {
