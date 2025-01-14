@@ -13,7 +13,7 @@ export default async function Blog() {
     let  posts = await getAllMetadata();
 
     return <div
-        className="mx-auto max-w-3xl"
+        className="mx-auto max-w-4xl"
     >
         <div className="py-8">
             <h1 className="text-4xl text-center">Blog</h1>

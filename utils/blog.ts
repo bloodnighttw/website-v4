@@ -278,7 +278,7 @@ function generateTOC(ast: HRoot) {
 function TOCNode2Element(node: TOCNode[]) {
     const liTree = (node: TOCNode): Element => {
         const a = node.id
-            ? h("a", { href: `#${node.id}` }, node.sectionTitle)
+            ? h("a", { href: `#${node.id}` }, h("div",node.sectionTitle))
             : h("span", node.sectionTitle);
 
         // leaf node
