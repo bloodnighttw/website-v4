@@ -7,7 +7,6 @@ import {
 import { Metadata } from "next";
 
 export async function generateStaticParams() {
-
     const posts = await getPostPaths();
 
     return posts.map((post_path) => {
