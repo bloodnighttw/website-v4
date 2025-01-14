@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer components {
+
+    html {
+        @apply scroll-smooth;
+    }
     body {
         @apply text-white;
     }
