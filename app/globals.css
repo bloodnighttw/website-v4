@@ -102,27 +102,19 @@
         @apply underline
     }
 
-    .background-blur{
-        @apply bg-stone-900 bg-opacity-65 backdrop-blur;
+    .navbar{
+        @apply bg-stone-900 bg-opacity-65 backdrop-blur sticky top-0 w-full my-8 z-10;
     }
 
-    .nav {
-        @apply flex w-full gap-2 text-center sticky top-0  z-10 py-4 background-blur;
+    .navbar-panel {
+        @apply flex mx-auto gap-2 py-4;
     }
 
-    .override-nav{
-        @apply sticky top-0 z-10 w-full my-8 background-blur;
-    }
-
-    .override-nav .nav{
-        @apply backdrop-blur-none bg-opacity-0;
-    }
-
-    .nav p{
+    .navbar-panel p{
         @apply my-auto text-xl
     }
 
-    .nav .back{
+    .navbar-panel .back{
         @apply my-auto mr-4 cursor-pointer rounded border border-stone-700 px-4 py-1 text-sm duration-200 hover:bg-stone-800;
     }
 
