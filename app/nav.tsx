@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import useBack from "@/utils/back";
+import Link from "next/link";
 
 interface NavProps {
     title: string;
@@ -29,7 +30,9 @@ export function Nav(props: NavProps) {
                     height={24}
                     loading="eager"
                 />
-                <p>bloodnighttw</p>
+                <Link href="/">
+                    <p>bloodnighttw</p>
+                </Link>
                 <p>|</p>
                 <p>{props.title}</p>
                 <div className="mx-auto"></div>
