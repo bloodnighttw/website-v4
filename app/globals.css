@@ -52,16 +52,16 @@
     }
 
     .toc {
-        @apply mx-0 list-inside gap-0 text-ellipsis text-xl font-extralight;
+        @apply list-inside gap-0 text-ellipsis text-xl font-extralight text-stone-400;
     }
 
     .toc ul li ul {
         @apply ml-4 scale-100 text-start;
-        font-size: 0.95em;
+        font-size: 0.97em;
     }
 
-    .toc a{
-        @apply hover:text-white text-stone-400 duration-200;
+    .toc div{
+        @apply hover:bg-stone-800 hover:px-2 hover:text-stone-100 rounded duration-200 py-0.5
     }
 
     .article {
