@@ -1,56 +1,49 @@
 import { getAllMetadata } from "@/utils/blog";
 import Link from "next/link";
+import { Nav } from "@/app/nav";
 
 export const metadata = {
     title: "Bloodnighttw's Blog",
     description: "A collection of blog posts",
-    alternates:{
-        canonical: `https://bntw.dev/blog`
-    }
-}
+    alternates: {
+        canonical: `https://bntw.dev/blog`,
+    },
+};
 
 export default async function Blog() {
-    let  posts = await getAllMetadata();
+    const posts = await getAllMetadata();
 
-    return <div
-        className="mx-auto max-w-4xl"
-    >
-        <div className="py-8">
-            <h1 className="text-4xl text-center">Blog</h1>
-            <div className="flex text-base text-stone-100 space-x-1 justify-center">
-                <Link href="/">Home</Link>
-                <p>/</p>
-                <Link href="/contact">Contact</Link>
-                <p>/</p>
-                <Link href="/blog">Blog</Link>
-                <p>/</p>
-                <Link href="/about">About</Link>
+    return (
+        <div className="mx-auto max-w-4xl">
+            <div className="my-4">
+                <Nav title={"blog"} />
+            </div>
+
+            <div className="space-y-2">
+                {posts
+                    .sort((a, b) =>
+                        a.date < b.date ? 1 : a.date == b.date ? 0 : -1,
+                    )
+                    .map((post) => (
+                        <Link href={`/blog/${post.path}`} key={post.path}>
+                            <div
+                                className="mx-auto w-full rounded border border-stone-700 p-4 duration-200 hover:bg-stone-800 sm:hover:scale-105"
+                                key={post.path}
+                            >
+                                <h1 className="line-clamp-1 text-3xl">
+                                    {post.title}
+                                </h1>
+                                <p className="pt-1 text-gray-400">
+                                    {post.date.toISOString().slice(0, 10)}
+                                </p>
+                                <p className="line-clamp-3 pt-2 text-gray-300">
+                                    {post.summery}
+                                </p>
+                            </div>
+                            <br />
+                        </Link>
+                    ))}
             </div>
         </div>
-
-        <div className="space-y-2">
-            {posts.sort((a, b) => a.date < b.date ? 1 : a.date == b.date ? 0 : -1)
-                .map((post) => (
-                <Link
-                    href={`/blog/${post.path}`}
-                    key={post.path}
-                >
-                    <div
-                        className="p-4 rounded w-full border border-stone-700 hover:bg-stone-800 duration-200 mx-auto sm:hover:scale-105"
-                        key={post.path}
-                    >
-
-                    <h1 className="text-3xl line-clamp-1">{post.title}</h1>
-                        <p className="text-gray-400 pt-1">{post.date.toISOString().slice(0, 10)}</p>
-                        <p className="text-gray-300 pt-2 line-clamp-3">{post.summery}</p>
-                    </div>
-                    <br/>
-                </Link>
-
-
-            ))}
-        </div>
-
-
-    </div>
+    );
 }
