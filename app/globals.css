@@ -91,7 +91,7 @@
     }
 
     .about {
-        @apply mx-auto max-w-4xl py-8 space-y-8 text-xl
+        @apply mx-auto max-w-4xl space-y-8 text-xl
     }
 
     .about strong{
@@ -102,8 +102,20 @@
         @apply underline
     }
 
+    .background-blur{
+        @apply bg-stone-900 bg-opacity-65 backdrop-blur;
+    }
+
     .nav {
-        @apply flex w-full gap-2 text-center sticky top-0 bg-stone-900 bg-opacity-85 z-10 py-4 backdrop-blur;
+        @apply flex w-full gap-2 text-center sticky top-0  z-10 py-4 background-blur;
+    }
+
+    .override-nav{
+        @apply sticky top-0 z-10 w-full my-8 background-blur;
+    }
+
+    .override-nav .nav{
+        @apply backdrop-blur-none bg-opacity-0;
     }
 
     .nav p{
@@ -112,6 +124,22 @@
 
     .nav .back{
         @apply my-auto mr-4 cursor-pointer rounded border border-stone-700 px-4 py-1 text-sm duration-200 hover:bg-stone-800;
+    }
+
+    .contact {
+        @apply mx-auto grid max-w-2xl text-center space-y-4
+    }
+
+    .contact-card {
+        @apply mx-auto grid w-full grid-cols-3 rounded border border-stone-700 p-4 duration-200 hover:bg-stone-800 sm:hover:scale-105;
+    }
+
+    .contact-card .name{
+        @apply m-auto justify-center text-xl;
+    }
+
+    .contact-card .id{
+        @apply my-auto hidden text-right text-sm text-stone-400 md:block;
     }
 
 }

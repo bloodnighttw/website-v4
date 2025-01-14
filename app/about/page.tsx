@@ -5,6 +5,7 @@ export default function About() {
     return (
         <>
             <div className="about">
+                <div />
                 <Nav title={"about"} />
 
                 <p>
