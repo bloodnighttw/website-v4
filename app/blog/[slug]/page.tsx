@@ -1,6 +1,4 @@
-import Link from "next/link";
 import { decodePostMetadata, getPostPaths, ast2post,markdown2ast } from "@/utils/blog";
-import Image from "next/image";
 import { Metadata } from "next";
 
 export async function generateStaticParams(){
