@@ -65,15 +65,21 @@
     }
 
     .article {
-        @apply no-scrollbar prose prose-stone prose-invert overflow-y-scroll scroll-smooth max-w-4xl prose-li:m-0 prose-ul:m-0;
+        @apply prose prose-stone prose-invert prose-li:m-0 prose-ul:m-0;
+        /* we preserve 0.5 as right space */
+        @apply xl:-translate-x-[9.5rem];
+        max-width: 56rem;
     }
 
-    .article > * {
-        @apply xl:mr-2;
+    .article-sidebar{
+        @apply opacity-0 fixed min-h-screen flex-col overflow-y-auto h-screen;
+        /* we preserve 0.5 as left space */
+        @apply xl:translate-x-[28.5rem] xl:opacity-100;
+        width: 18rem;
     }
 
     .article code{
-        @apply bg-stone-700 p-1 rounded before:content-none after:content-none font-extralight;
+        @apply bg-stone-700 rounded before:content-none after:content-none font-extralight;
     }
 
     .article pre code{
@@ -92,28 +98,4 @@
         @apply underline
     }
 
-}
-
-@layer utilities {
-    .no-scrollbar {
-        scrollbar-gutter: stable;
-    }
-
-    .no-scrollbar::-webkit-scrollbar {
-        width: 8px;
-        opacity: 0;
-    }
-
-    .no-scrollbar::-webkit-scrollbar-button {
-        display: none;
-    }
-
-    .no-scrollbar::-webkit-scrollbar-thumb {
-        border-radius: 240px;
-        @apply bg-stone-100 bg-opacity-0 lg:bg-opacity-15;
-    }
-
-    .no-scrollbar::-webkit-scrollbar-track {
-        border-radius: 50px;
-    }
 }
