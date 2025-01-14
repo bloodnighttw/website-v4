@@ -4,7 +4,7 @@ import { Nav } from "../nav";
 export default function About() {
     return (
         <>
-            <Nav title={"blog"} className="max-w-4xl" />
+            <Nav title={"about"} className="max-w-4xl" />
 
             <div className="about">
                 <p>
