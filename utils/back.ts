@@ -93,10 +93,9 @@ const useBack = ({
         setNavigating(false);
     }, [pathname]);
 
-    const router = useRouter();
-
     const handleBack = () => {
-        router.back();
+        setNavigating(true);
+        back();
     };
 
     return {
