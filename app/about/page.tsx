@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function About() {
     return (
@@ -9,7 +10,7 @@ export default function About() {
                 {"."}
             </p>
             <section>
-                <p>{"I'm a software developer from Taiwan."}</p>
+                <p>{"I'm a software developer from Taiwan, and I really enjoy in programing."}</p>
                 <p>
                     {"I develop website using "}
                     <strong className="text-cyan-400">react.js</strong>
@@ -37,6 +38,11 @@ export default function About() {
                 </p>
             </section>
 
+            <img
+                src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHV2c2F3Zjg5dW1qcmhnYTUyZWpxMHZ3dnozZ2RxMTY5cHhmbjI1cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QDjpIL6oNCVZ4qzGs7/giphy.gif"
+                alt="javscript"
+            />
+
             <section>
                 <p>
                     {"I'm also a "}
@@ -55,6 +61,12 @@ export default function About() {
                     {"."}
                 </p>
             </section>
+
+            <img
+                src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmxkMWh3bjJjdXUyMXFwYmwwOWhxbThuc3NodzFlYnNrbWhybTBpMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/4N5ddOOJJ7gtKTgNac/giphy.gif"
+                alt="linux"
+            />
+
         </div>
     );
 }
