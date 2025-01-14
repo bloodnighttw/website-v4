@@ -1,15 +1,14 @@
-import type { MetadataRoute } from 'next'
+import type { MetadataRoute } from "next";
 import { getAllMetadata } from "@/utils/blog";
 
-const BASE_URL = 'https://bntw.dev'
+const BASE_URL = "https://bntw.dev";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-
-    const staticPages:MetadataRoute.Sitemap = [
+    const staticPages: MetadataRoute.Sitemap = [
         {
             url: `${BASE_URL}/`,
             lastModified: new Date(),
-            changeFrequency: 'yearly',
+            changeFrequency: "yearly",
             priority: 1.0,
         },
         // {
@@ -27,20 +26,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         {
             url: `${BASE_URL}/blog`,
             lastModified: new Date(),
-            changeFrequency: 'daily',
+            changeFrequency: "daily",
             priority: 0.9,
-        }
-    ]
+        },
+    ];
 
-    const allPosts = await getAllMetadata()
+    const allPosts = await getAllMetadata();
 
-    const posts:MetadataRoute.Sitemap = allPosts.map((post) => ({
+    const posts: MetadataRoute.Sitemap = allPosts.map((post) => ({
         url: `${BASE_URL}/blog/${post.path}`,
         lastModified: post.date,
-        changeFrequency: 'daily',
+        changeFrequency: "daily",
         priority: 0.7,
-    }))
+    }));
 
-    return [...staticPages, ...posts]
-
+    return [...staticPages, ...posts];
 }
