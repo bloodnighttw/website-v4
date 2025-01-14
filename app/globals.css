@@ -91,7 +91,7 @@
     }
 
     .about {
-        @apply mx-auto max-w-4xl p-8 space-y-8 text-xl
+        @apply mx-auto max-w-4xl py-8 space-y-8 text-xl
     }
 
     .about strong{
@@ -100,6 +100,18 @@
 
     .about a{
         @apply underline
+    }
+
+    .nav {
+        @apply flex w-full gap-2 text-center sticky top-0 bg-stone-900 bg-opacity-85 z-10 py-4 backdrop-blur;
+    }
+
+    .nav p{
+        @apply my-auto text-xl
+    }
+
+    .nav .back{
+        @apply my-auto mr-4 cursor-pointer rounded border border-stone-700 px-4 py-1 text-sm duration-200 hover:bg-stone-800;
     }
 
 }
