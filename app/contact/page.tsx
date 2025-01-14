@@ -51,12 +51,8 @@ const Contacts: ContactInformation[] = [
 
 export default function Contact() {
     return (
-        <div className="mx-auto max-w-2xl">
-            <div className="override-nav">
-                <div className="mx-auto max-w-2xl">
-                    <Nav title={"blog"} />
-                </div>
-            </div>
+        <>
+            <Nav title={"contact"} className="max-w-2xl" />
             <div className="contact">
                 {Contacts.map((info) => (
                     <a
@@ -76,6 +72,6 @@ export default function Contact() {
                     </a>
                 ))}
             </div>
-        </div>
+        </>
     );
 }

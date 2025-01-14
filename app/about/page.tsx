@@ -4,10 +4,9 @@ import { Nav } from "../nav";
 export default function About() {
     return (
         <>
-            <div className="about">
-                <div />
-                <Nav title={"about"} />
+            <Nav title={"blog"} className="max-w-4xl" />
 
+            <div className="about">
                 <p>
                     {"Hi! I'm "}
                     <strong>bloodnighttw</strong>
