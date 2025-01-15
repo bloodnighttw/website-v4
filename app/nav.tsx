@@ -18,13 +18,13 @@ export function Nav(props: NavProps) {
                     height={24}
                     loading="eager"
                 />
-                <Link href="/">
+                <Link href="/" className="hidden md:block">
                     <p>bloodnighttw</p>
                 </Link>
-                <p>|</p>
-                <p>{props.title}</p>
+                <p className="hidden md:block">|</p>
+                <p className="truncate">{props.title}</p>
                 <div className="mx-auto"></div>
-                <p></p>
+                <p>123</p>
             </nav>
         </div>
     );
