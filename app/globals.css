@@ -70,14 +70,18 @@
     .article {
         @apply prose prose-stone prose-invert prose-ul:m-0 prose-li:m-0 w-full duration-200;
         /* we preserve 0.5 as right space */
-        @apply xl:-translate-x-[9.5rem];
+        /*@apply xl:-translate-x-[18.5rem];*/
         max-width: 56rem;
     }
 
-    .article-sidebar {
-        @apply fixed flex-col overflow-y-auto hidden top-24 left-1/2 z-20  p-4 rounded backdrop-blur bg-opacity-25 shadow-stone-300 duration-200;
+    .sidebar{
+        @apply hidden xl:block
+    }
+
+    .toc-card {
+        @apply sticky flex-col overflow-y-auto top-16 left-1/2 z-20 rounded backdrop-blur bg-opacity-25 duration-200;
         /* we preserve 0.5 as left space */
-        @apply xl:translate-x-[19.5rem] xl:block duration-200;
+        /*@apply xl:translate-x-[64.5rem] xl:block duration-200;*/
         width: 18rem;
     }
 

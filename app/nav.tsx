@@ -15,9 +15,9 @@ export enum NavSize{
 export function Nav(props: NavProps) {
 
     const sizeMapping = [
-        "max-w-2xl",
-        "max-w-4xl",
-        "max-w-4xl text-ellipsis duration-200 xl:max-w-[76rem]",
+        "max-w-2xl text-ellipsis duration-200",
+        "max-w-4xl text-ellipsis duration-200",
+        "max-w-4xl text-ellipsis duration-200 xl:max-w-[75rem]",
     ];
 
     return (
