@@ -82,7 +82,7 @@
     }
 
     .article code {
-        @apply rounded bg-stone-700 font-extralight before:content-none after:content-none;
+        @apply rounded bg-stone-700 font-extralight before:content-none after:content-none p-1;
     }
 
     .article pre code {
