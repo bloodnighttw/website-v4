@@ -1,12 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { Nav, NavSize } from "../nav";
+import { NavLG } from "../nav";
 
 export default function About() {
     return (
         <>
-            <Nav title={"about"} size={NavSize.lg} />
+            <NavLG title={"about"} />
 
             <div className="about">
                 <p>

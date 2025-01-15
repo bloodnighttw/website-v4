@@ -5,7 +5,7 @@ import {
     markdown2ast,
 } from "@/utils/blog";
 import { Metadata } from "next";
-import { Nav, NavSize } from "@/app/nav";
+import { NavXL } from "@/app/nav";
 
 export async function generateStaticParams() {
     const posts = await getPostPaths();
@@ -87,7 +87,7 @@ export default async function Blog({ params }: { params: Promise<BlogProps> }) {
 
     return (
         <>
-            <Nav title={metadata.title} size={NavSize.xl} />
+            <NavXL title={metadata.title} />
             <div className="m-auto flex w-full max-w-[75rem] flex-row-reverse gap-4 p-2">
                 <div className="sidebar">
                     <div className="toc-card">

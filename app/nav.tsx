@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -6,7 +8,7 @@ interface NavProps {
     size?: NavSize;
 }
 
-export enum NavSize {
+enum NavSize {
     "sm",
     "lg",
     "xl",
@@ -44,4 +46,16 @@ export function Nav(props: NavProps) {
             </nav>
         </div>
     );
+}
+
+export function NavLG(props: NavProps) {
+    return <Nav title={props.title} size={NavSize.lg} />;
+}
+
+export function NavXL(props: NavProps) {
+    return <Nav title={props.title} size={NavSize.xl} />;
+}
+
+export function NavMD(props: NavProps) {
+    return <Nav title={props.title} size={NavSize.xl} />;
 }

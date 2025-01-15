@@ -1,6 +1,6 @@
 import { getAllMetadata } from "@/utils/blog";
 import Link from "next/link";
-import { Nav, NavSize } from "@/app/nav";
+import { NavLG } from "@/app/nav";
 
 export const metadata = {
     title: "Bloodnighttw's Blog",
@@ -15,7 +15,7 @@ export default async function Blog() {
 
     return (
         <>
-            <Nav title={"blog"} size={NavSize.lg} />
+            <NavLG title="blog" />
             <div className="mx-auto mt-8 max-w-4xl px-2">
                 {posts
                     .sort((a, b) =>
