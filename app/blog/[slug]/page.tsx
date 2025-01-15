@@ -5,7 +5,7 @@ import {
     markdown2ast,
 } from "@/utils/blog";
 import { Metadata } from "next";
-import { NavXL } from "@/app/nav";
+import { NavXL } from "@/utils/nav";
 
 export async function generateStaticParams() {
     const posts = await getPostPaths();

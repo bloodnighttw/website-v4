@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { NavMD } from "@/app/nav";
+import { NavMD } from "@/utils/nav";
 
 interface ContactInformation {
     name: string;

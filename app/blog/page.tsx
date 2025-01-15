@@ -1,6 +1,6 @@
 import { getAllMetadata } from "@/utils/blog";
 import Link from "next/link";
-import { NavLG } from "@/app/nav";
+import { NavLG } from "@/utils/nav";
 
 export const metadata = {
     title: "Bloodnighttw's Blog",
