@@ -121,6 +121,14 @@
         @apply my-auto mr-4 cursor-pointer rounded border border-stone-700 px-4 py-1 text-sm duration-200 hover:bg-stone-800;
     }
 
+    .navbar-panel .jump{
+        @apply my-auto p-2 hover:text-blue-500 hover:bg-stone-800 rounded duration-200 cursor-pointer active:scale-90 border border-stone-700;
+    }
+
+    .navbar-panel .jump svg{
+        @apply my-auto
+    }
+
     .contact {
         @apply mx-auto grid max-w-2xl space-y-4 text-center px-2;
     }
@@ -135,5 +143,17 @@
 
     .contact-card .id {
         @apply my-auto hidden text-right text-sm text-stone-400 md:block;
+    }
+
+    .menu-bg {
+        @apply fixed z-30 h-dvh w-full -translate-y-[8.125rem] bg-stone-700 bg-opacity-80 backdrop-blur flex flex-col;
+    }
+
+    .menu-bg .menu {
+        @apply m-auto max-h-[30rem] w-full max-w-[30rem] grid grid-cols-1 gap-y-3 rounded-lg bg-stone-900 px-8 py-4 shadow-lg text-center;
+    }
+
+    .menu-bg .menu .dropdown-item{
+        @apply border border-stone-600 p-4 rounded hover:scale-105 hover:bg-stone-800 duration-200
     }
 }
