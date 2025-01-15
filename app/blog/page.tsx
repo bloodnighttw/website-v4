@@ -1,6 +1,6 @@
 import { getAllMetadata } from "@/utils/blog";
 import Link from "next/link";
-import { Nav } from "@/app/nav";
+import { Nav, NavSize } from "@/app/nav";
 
 export const metadata = {
     title: "Bloodnighttw's Blog",
@@ -15,8 +15,8 @@ export default async function Blog() {
 
     return (
         <>
-            <Nav title={"blog"} className="max-w-4xl" />
-            <div className="mx-auto mt-8 max-w-4xl">
+            <Nav title={"blog"} size={NavSize.lg} />
+            <div className="mx-auto mt-8 max-w-4xl px-2">
                 {posts
                     .sort((a, b) =>
                         a.date < b.date ? 1 : a.date == b.date ? 0 : -1,

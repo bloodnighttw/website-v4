@@ -90,7 +90,7 @@
     }
 
     .about {
-        @apply mx-auto max-w-4xl space-y-8 text-xl;
+        @apply mx-auto max-w-4xl space-y-8 text-xl px-2;
     }
 
     .about strong {
@@ -118,7 +118,7 @@
     }
 
     .contact {
-        @apply mx-auto grid max-w-2xl space-y-4 text-center;
+        @apply mx-auto grid max-w-2xl space-y-4 text-center px-2;
     }
 
     .contact-card {

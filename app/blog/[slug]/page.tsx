@@ -1,11 +1,6 @@
-import {
-    decodePostMetadata,
-    getPostPaths,
-    ast2post,
-    markdown2ast,
-} from "@/utils/blog";
+import { ast2post, decodePostMetadata, getPostPaths, markdown2ast } from "@/utils/blog";
 import { Metadata } from "next";
-import { Nav } from "@/app/nav";
+import { Nav, NavSize } from "@/app/nav";
 
 export async function generateStaticParams() {
     const posts = await getPostPaths();
@@ -87,10 +82,7 @@ export default async function Blog({ params }: { params: Promise<BlogProps> }) {
 
     return (
         <>
-            <Nav
-                title={metadata.title}
-                className="max-w-4xl text-ellipsis duration-200 xl:max-w-[76rem]"
-            />
+            <Nav title={metadata.title} size={NavSize.xl} />
             <div className="article-sidebar">
                 <h1 className="text-xl text-stone-200">Table of Content</h1>
                 <hr className="my-2 text-stone-100" />
