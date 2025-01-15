@@ -6,14 +6,13 @@ interface NavProps {
     size?: NavSize;
 }
 
-export enum NavSize{
+export enum NavSize {
     "sm",
     "lg",
     "xl",
 }
 
 export function Nav(props: NavProps) {
-
     const sizeMapping = [
         "max-w-2xl text-ellipsis duration-200",
         "max-w-4xl text-ellipsis duration-200",
@@ -22,7 +21,11 @@ export function Nav(props: NavProps) {
 
     return (
         <div className="navbar">
-            <nav className={"navbar-panel " + (sizeMapping[props.size??4] ?? "")}>
+            <nav
+                className={
+                    "navbar-panel " + (sizeMapping[props.size ?? 4] ?? "")
+                }
+            >
                 <Image
                     alt="View bloodnighttw's full-sized avatar"
                     src="https://avatars.githubusercontent.com/u/44264182?s=460&u=b59e580f37ab7e6a3979ab8a6df1f12ba6588069&v=4"
