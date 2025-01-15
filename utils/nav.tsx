@@ -46,23 +46,6 @@ export function Nav(props: NavProps) {
     const [dropdown, setDropdown] = useState(false);
     const dropdownRef = useRef<HTMLDivElement | null>(null);
 
-    const idxRef = useRef(
-        lunr(function () {
-            this.field("title");
-            this.ref("id");
-
-            props.contents?.forEach((content, id) => {
-                console.log(content);
-                this.add({
-                    id: id,
-                    title: content,
-                });
-            });
-        }),
-    );
-
-    const idx = idxRef.current;
-
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
             // console.log(props.contents);
@@ -142,12 +125,6 @@ export function Nav(props: NavProps) {
                         <Link href="/about">
                             <div className="dropdown-item">About</div>
                         </Link>
-                        <div
-                            className="dropdown-item"
-                            onClick={() => console.log(idx.search("medium"))}
-                        >
-                            Test
-                        </div>
                     </motion.div>
                     <p className="text-center text-stone-500">
                         press any place to close
