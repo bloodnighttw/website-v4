@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Nav } from "@/app/nav";
+import { NavMD } from "@/app/nav";
 
 interface ContactInformation {
     name: string;
@@ -54,7 +54,7 @@ const Contacts: ContactInformation[] = [
 export default function Contact() {
     return (
         <>
-            <Nav title={"contact"} className="max-w-2xl" />
+            <NavMD title={"contact"} />
             <div className="contact">
                 {Contacts.map((info) => (
                     <a

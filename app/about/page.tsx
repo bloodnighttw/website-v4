@@ -1,12 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { Nav } from "../nav";
+import { NavLG } from "../nav";
 
 export default function About() {
     return (
         <>
-            <Nav title={"about"} className="max-w-4xl" />
+            <NavLG title={"about"} />
 
             <div className="about">
                 <p>

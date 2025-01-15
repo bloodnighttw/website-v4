@@ -1,10 +1,11 @@
 import {
+    ast2post,
     decodePostMetadata,
     getPostPaths,
-    ast2post,
     markdown2ast,
 } from "@/utils/blog";
 import { Metadata } from "next";
+import { NavXL } from "@/app/nav";
 
 export async function generateStaticParams() {
     const posts = await getPostPaths();
@@ -85,33 +86,35 @@ export default async function Blog({ params }: { params: Promise<BlogProps> }) {
     const metadata = await decodePostMetadata(name);
 
     return (
-        <div className="my-4 flex justify-center">
-            <div className="article w-full">
-                <h1
-                    className="my-0 text-ellipsis text-balance text-5xl"
-                    id="title"
-                >
-                    {metadata.title}
-                </h1>
-                <hr className="my-4" />
-                <article dangerouslySetInnerHTML={{ __html: post.rawHTML }} />
-            </div>
-            <div className="article-sidebar">
-                <h1 className="truncate text-2xl">{metadata.title}</h1>
-                <h1 className="mt-0.5 text-sm text-stone-400">
-                    {metadata.date.toDateString()}
-                </h1>
+        <>
+            <NavXL title={metadata.title} />
+            <div className="m-auto flex w-full max-w-[75rem] flex-row-reverse gap-4 p-2">
+                <div className="sidebar">
+                    <div className="toc-card">
+                        <h1 className="text-xl text-stone-200">
+                            Table of Content
+                        </h1>
+                        <hr className="my-2 text-stone-100" />
 
-                <h1 className="mt-8 text-xl text-stone-200">
-                    Table of Content
-                </h1>
-                <hr className="my-2 text-stone-100" />
-
-                <div
-                    className="toc"
-                    dangerouslySetInnerHTML={{ __html: post.rawTableOfContent }}
-                />
+                        <div
+                            className="toc"
+                            dangerouslySetInnerHTML={{
+                                __html: post.rawTableOfContent,
+                            }}
+                        />
+                    </div>
+                </div>
+                <div className="article mx-auto">
+                    <p className="m-0 text-4xl sm:hidden">{metadata.title}</p>
+                    <p className="mt-2 text-sm text-stone-400">
+                        {metadata.date.toDateString()}
+                    </p>
+                    <article
+                        dangerouslySetInnerHTML={{ __html: post.rawHTML }}
+                        className=" "
+                    />
+                </div>
             </div>
-        </div>
+        </>
     );
 }
