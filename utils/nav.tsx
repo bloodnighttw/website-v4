@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
+import lunr from "lunr";
 
 const variants = {
     hidden: { opacity: 0 },
@@ -23,9 +24,10 @@ const jump = (
     </svg>
 );
 
-interface NavProps {
+export interface NavProps {
     title: string;
     size?: NavSize;
+    contents?: string[];
 }
 
 enum NavSize {
@@ -44,9 +46,26 @@ export function Nav(props: NavProps) {
     const [dropdown, setDropdown] = useState(false);
     const dropdownRef = useRef<HTMLDivElement | null>(null);
 
+    const idxRef = useRef(
+        lunr(function () {
+            this.field("title");
+            this.ref("id");
+
+            props.contents?.forEach((content, id) => {
+                console.log(content);
+                this.add({
+                    id: id,
+                    title: content,
+                });
+            });
+        }),
+    );
+
+    const idx = idxRef.current;
+
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
-            console.log("hi");
+            // console.log(props.contents);
             if (
                 !(
                     dropdownRef.current &&
@@ -123,6 +142,12 @@ export function Nav(props: NavProps) {
                         <Link href="/about">
                             <div className="dropdown-item">About</div>
                         </Link>
+                        <div
+                            className="dropdown-item"
+                            onClick={() => console.log(idx.search("medium"))}
+                        >
+                            Test
+                        </div>
                     </motion.div>
                     <p className="text-center text-stone-500">
                         press any place to close
@@ -134,13 +159,13 @@ export function Nav(props: NavProps) {
 }
 
 export function NavLG(props: NavProps) {
-    return <Nav title={props.title} size={NavSize.lg} />;
+    return <Nav size={NavSize.lg} {...props} />;
 }
 
 export function NavXL(props: NavProps) {
-    return <Nav title={props.title} size={NavSize.xl} />;
+    return <Nav size={NavSize.xl} {...props} />;
 }
 
 export function NavMD(props: NavProps) {
-    return <Nav title={props.title} size={NavSize.sm} />;
+    return <Nav size={NavSize.sm} {...props} />;
 }

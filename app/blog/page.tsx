@@ -1,6 +1,6 @@
 import { getAllMetadata } from "@/utils/blog";
 import Link from "next/link";
-import { NavLG } from "@/utils/nav";
+import { NavLgWarp } from "@/utils/warp/navwarp";
 
 export const metadata = {
     title: "Bloodnighttw's Blog",
@@ -12,10 +12,14 @@ export const metadata = {
 
 export default async function Blog() {
     const posts = await getAllMetadata();
+    const nav = await NavLgWarp({
+        title: "blog",
+        contents: posts.map((post) => post.summery),
+    });
 
     return (
         <>
-            <NavLG title="blog" />
+            {nav}
             <div className="mx-auto mt-8 max-w-4xl px-2">
                 {posts
                     .sort((a, b) =>

@@ -1,7 +1,5 @@
-"use client";
-
 import Image from "next/image";
-import { NavMD } from "@/utils/nav";
+import { NavMdWarp } from "@/utils/warp/navwarp";
 
 interface ContactInformation {
     name: string;
@@ -51,10 +49,13 @@ const Contacts: ContactInformation[] = [
     },
 ];
 
-export default function Contact() {
+export default async function Contact() {
+    const nav = await NavMdWarp({ title: "contact" });
+
     return (
         <>
-            <NavMD title={"contact"} />
+            {nav}
+
             <div className="contact">
                 {Contacts.map((info) => (
                     <a

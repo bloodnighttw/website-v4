@@ -5,7 +5,7 @@ import {
     markdown2ast,
 } from "@/utils/blog";
 import { Metadata } from "next";
-import { NavXL } from "@/utils/nav";
+import { NavXLWarp } from "@/utils/warp/navwarp";
 
 export async function generateStaticParams() {
     const posts = await getPostPaths();
@@ -85,9 +85,11 @@ export default async function Blog({ params }: { params: Promise<BlogProps> }) {
     const post = await getTOCAndContent(name);
     const metadata = await decodePostMetadata(name);
 
+    const nav = await NavXLWarp({ title: "blog" });
+
     return (
         <>
-            <NavXL title={metadata.title} />
+            {nav}
             <div className="m-auto flex w-full max-w-[75rem] flex-row-reverse gap-4 p-2">
                 <div className="sidebar">
                     <div className="toc-card">
