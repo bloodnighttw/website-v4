@@ -37,3 +37,13 @@ export function generateSummary(ast: Root): string {
         .join(" ")
         .slice(0, MAX_SUMMARY_LENGTH);
 }
+
+interface ImageNode {
+    type: "image";
+    url: string;
+}
+
+export function generateThumbnail(ast: Root): string | null {
+    const image = select("image", ast) as ImageNode | undefined;
+    return image ? image.url : null;
+}
