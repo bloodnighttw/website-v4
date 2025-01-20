@@ -5,20 +5,35 @@
 
 // This function will parse the yaml metadata in the markdown file
 import { Root } from "mdast";
-import { find } from "unist-util-find";
 import yaml from "yaml";
+import { select, selectAll } from "unist-util-select";
+
+const MAX_SUMMARY_LENGTH = 500;
 
 interface YAMLNode {
     type: "yaml";
     value: string;
 }
 
-export default function yamlParse<T>(ast: Root): T | null {
-    const yamlContent = find(ast, { type: "yaml" }) as YAMLNode;
+export function yamlParse<T>(ast: Root): T | null {
+    const yamlContent = select("yaml", ast) as YAMLNode;
 
     if (yamlContent) {
         return yaml.parse(yamlContent.value) as T;
     }
 
     return null;
+}
+
+interface TextNode {
+    type: "text";
+    value: string;
+}
+
+export function generateSummary(ast: Root): string {
+    const text = selectAll("text", ast) as TextNode[];
+    return text
+        .map((node) => node.value)
+        .join(" ")
+        .slice(0, MAX_SUMMARY_LENGTH);
 }
