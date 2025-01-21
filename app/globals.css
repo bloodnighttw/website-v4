@@ -110,7 +110,7 @@
     }
 
     .navbar {
-        @apply sticky top-0 z-10 my-8 w-full bg-stone-900 bg-opacity-65 backdrop-blur;
+        @apply sticky top-0 z-10 my-8 bg-stone-900 bg-opacity-65 backdrop-blur;
     }
 
     .navbar-panel {
