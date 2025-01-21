@@ -1,0 +1,3407 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`HastTableOfContent 1`] = `
+<HastTOC
+  ast={
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 5,
+                  "line": 8,
+                  "offset": 76,
+                },
+                "start": {
+                  "column": 3,
+                  "line": 8,
+                  "offset": 74,
+                },
+              },
+              "type": "text",
+              "value": "前言",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 5,
+              "line": 8,
+              "offset": 76,
+            },
+            "start": {
+              "column": 1,
+              "line": 8,
+              "offset": 72,
+            },
+          },
+          "properties": {
+            "id": "前言",
+          },
+          "tagName": "h1",
+          "type": "element",
+        },
+        {
+          "type": "text",
+          "value": "
+",
+        },
+        {
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 53,
+                  "line": 10,
+                  "offset": 130,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 10,
+                  "offset": 78,
+                },
+              },
+              "type": "text",
+              "value": "我原先一直使用medium來寫文章，但畢竟還是別人的平台，是在幫別人打工，所以我決定自己來寫部落格系統。",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 53,
+              "line": 10,
+              "offset": 130,
+            },
+            "start": {
+              "column": 1,
+              "line": 10,
+              "offset": 78,
+            },
+          },
+          "properties": {},
+          "tagName": "p",
+          "type": "element",
+        },
+        {
+          "type": "text",
+          "value": "
+",
+        },
+        {
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 74,
+                  "line": 12,
+                  "offset": 205,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 12,
+                  "offset": 132,
+                },
+              },
+              "type": "text",
+              "value": "原先我有個僅使用tailwindcss的個人網站，上面放了聯絡資訊，但是後來發現這樣的網站沒有什麼意義，所以我決定把他改成部落格，並採用下列技術。",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 74,
+              "line": 12,
+              "offset": 205,
+            },
+            "start": {
+              "column": 1,
+              "line": 12,
+              "offset": 132,
+            },
+          },
+          "properties": {},
+          "tagName": "p",
+          "type": "element",
+        },
+        {
+          "type": "text",
+          "value": "
+",
+        },
+        {
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 9,
+                  "line": 14,
+                  "offset": 215,
+                },
+                "start": {
+                  "column": 4,
+                  "line": 14,
+                  "offset": 210,
+                },
+              },
+              "type": "text",
+              "value": "用到的技術",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 9,
+              "line": 14,
+              "offset": 215,
+            },
+            "start": {
+              "column": 1,
+              "line": 14,
+              "offset": 207,
+            },
+          },
+          "properties": {
+            "id": "用到的技術",
+          },
+          "tagName": "h2",
+          "type": "element",
+        },
+        {
+          "type": "text",
+          "value": "
+",
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "
+",
+            },
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 11,
+                      "line": 16,
+                      "offset": 227,
+                    },
+                    "start": {
+                      "column": 4,
+                      "line": 16,
+                      "offset": 220,
+                    },
+                  },
+                  "type": "text",
+                  "value": "Next.js",
+                },
+                {
+                  "type": "text",
+                  "value": "
+",
+                },
+                {
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "
+",
+                    },
+                    {
+                      "children": [
+                        {
+                          "position": {
+                            "end": {
+                              "column": 64,
+                              "line": 17,
+                              "offset": 291,
+                            },
+                            "start": {
+                              "column": 7,
+                              "line": 17,
+                              "offset": 234,
+                            },
+                          },
+                          "type": "text",
+                          "value": "一個React的框架，他提供了很多好用的功能，像是SSR, SSG, ISR等等，讓我不太需要去擔心SEO的問題。",
+                        },
+                      ],
+                      "position": {
+                        "end": {
+                          "column": 64,
+                          "line": 17,
+                          "offset": 291,
+                        },
+                        "start": {
+                          "column": 5,
+                          "line": 17,
+                          "offset": 232,
+                        },
+                      },
+                      "properties": {},
+                      "tagName": "li",
+                      "type": "element",
+                    },
+                    {
+                      "type": "text",
+                      "value": "
+",
+                    },
+                  ],
+                  "position": {
+                    "end": {
+                      "column": 64,
+                      "line": 17,
+                      "offset": 291,
+                    },
+                    "start": {
+                      "column": 5,
+                      "line": 17,
+                      "offset": 232,
+                    },
+                  },
+                  "properties": {},
+                  "tagName": "ul",
+                  "type": "element",
+                },
+                {
+                  "type": "text",
+                  "value": "
+",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 64,
+                  "line": 17,
+                  "offset": 291,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 16,
+                  "offset": 217,
+                },
+              },
+              "properties": {},
+              "tagName": "li",
+              "type": "element",
+            },
+            {
+              "type": "text",
+              "value": "
+",
+            },
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 15,
+                      "line": 18,
+                      "offset": 306,
+                    },
+                    "start": {
+                      "column": 4,
+                      "line": 18,
+                      "offset": 295,
+                    },
+                  },
+                  "type": "text",
+                  "value": "Tailwindcss",
+                },
+                {
+                  "type": "text",
+                  "value": "
+",
+                },
+                {
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "
+",
+                    },
+                    {
+                      "children": [
+                        {
+                          "position": {
+                            "end": {
+                              "column": 46,
+                              "line": 19,
+                              "offset": 352,
+                            },
+                            "start": {
+                              "column": 7,
+                              "line": 19,
+                              "offset": 313,
+                            },
+                          },
+                          "type": "text",
+                          "value": "一個css框架，讓我可以直接用現有的design system直接實作就好了。",
+                        },
+                      ],
+                      "position": {
+                        "end": {
+                          "column": 46,
+                          "line": 19,
+                          "offset": 352,
+                        },
+                        "start": {
+                          "column": 5,
+                          "line": 19,
+                          "offset": 311,
+                        },
+                      },
+                      "properties": {},
+                      "tagName": "li",
+                      "type": "element",
+                    },
+                    {
+                      "type": "text",
+                      "value": "
+",
+                    },
+                  ],
+                  "position": {
+                    "end": {
+                      "column": 46,
+                      "line": 19,
+                      "offset": 352,
+                    },
+                    "start": {
+                      "column": 5,
+                      "line": 19,
+                      "offset": 311,
+                    },
+                  },
+                  "properties": {},
+                  "tagName": "ul",
+                  "type": "element",
+                },
+                {
+                  "type": "text",
+                  "value": "
+",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 46,
+                  "line": 19,
+                  "offset": 352,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 18,
+                  "offset": 292,
+                },
+              },
+              "properties": {},
+              "tagName": "li",
+              "type": "element",
+            },
+            {
+              "type": "text",
+              "value": "
+",
+            },
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 12,
+                      "line": 20,
+                      "offset": 364,
+                    },
+                    "start": {
+                      "column": 4,
+                      "line": 20,
+                      "offset": 356,
+                    },
+                  },
+                  "type": "text",
+                  "value": "Markdown",
+                },
+                {
+                  "type": "text",
+                  "value": "
+",
+                },
+                {
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "
+",
+                    },
+                    {
+                      "children": [
+                        {
+                          "position": {
+                            "end": {
+                              "column": 27,
+                              "line": 21,
+                              "offset": 391,
+                            },
+                            "start": {
+                              "column": 7,
+                              "line": 21,
+                              "offset": 371,
+                            },
+                          },
+                          "type": "text",
+                          "value": "我使用markdown來寫文章，這邊使用",
+                        },
+                        {
+                          "children": [
+                            {
+                              "position": {
+                                "end": {
+                                  "column": 41,
+                                  "line": 21,
+                                  "offset": 405,
+                                },
+                                "start": {
+                                  "column": 27,
+                                  "line": 21,
+                                  "offset": 391,
+                                },
+                              },
+                              "type": "text",
+                              "value": "unified.js",
+                            },
+                          ],
+                          "position": {
+                            "end": {
+                              "column": 41,
+                              "line": 21,
+                              "offset": 405,
+                            },
+                            "start": {
+                              "column": 27,
+                              "line": 21,
+                              "offset": 391,
+                            },
+                          },
+                          "properties": {},
+                          "tagName": "code",
+                          "type": "element",
+                        },
+                        {
+                          "position": {
+                            "end": {
+                              "column": 89,
+                              "line": 21,
+                              "offset": 453,
+                            },
+                            "start": {
+                              "column": 41,
+                              "line": 21,
+                              "offset": 405,
+                            },
+                          },
+                          "type": "text",
+                          "value": "來做到把markdown->html的部分，未來有機會可以改用WHSIWHG的編輯器與呈現方式。",
+                        },
+                      ],
+                      "position": {
+                        "end": {
+                          "column": 89,
+                          "line": 21,
+                          "offset": 453,
+                        },
+                        "start": {
+                          "column": 5,
+                          "line": 21,
+                          "offset": 369,
+                        },
+                      },
+                      "properties": {},
+                      "tagName": "li",
+                      "type": "element",
+                    },
+                    {
+                      "type": "text",
+                      "value": "
+",
+                    },
+                  ],
+                  "position": {
+                    "end": {
+                      "column": 89,
+                      "line": 21,
+                      "offset": 453,
+                    },
+                    "start": {
+                      "column": 5,
+                      "line": 21,
+                      "offset": 369,
+                    },
+                  },
+                  "properties": {},
+                  "tagName": "ul",
+                  "type": "element",
+                },
+                {
+                  "type": "text",
+                  "value": "
+",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 89,
+                  "line": 21,
+                  "offset": 453,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 20,
+                  "offset": 353,
+                },
+              },
+              "properties": {},
+              "tagName": "li",
+              "type": "element",
+            },
+            {
+              "type": "text",
+              "value": "
+",
+            },
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 10,
+                      "line": 22,
+                      "offset": 463,
+                    },
+                    "start": {
+                      "column": 4,
+                      "line": 22,
+                      "offset": 457,
+                    },
+                  },
+                  "type": "text",
+                  "value": "Github",
+                },
+                {
+                  "type": "text",
+                  "value": "
+",
+                },
+                {
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "
+",
+                    },
+                    {
+                      "children": [
+                        {
+                          "position": {
+                            "end": {
+                              "column": 46,
+                              "line": 23,
+                              "offset": 509,
+                            },
+                            "start": {
+                              "column": 7,
+                              "line": 23,
+                              "offset": 470,
+                            },
+                          },
+                          "type": "text",
+                          "value": "用於版本管理，以及區分production 和 development的分支。",
+                        },
+                      ],
+                      "position": {
+                        "end": {
+                          "column": 46,
+                          "line": 23,
+                          "offset": 509,
+                        },
+                        "start": {
+                          "column": 5,
+                          "line": 23,
+                          "offset": 468,
+                        },
+                      },
+                      "properties": {},
+                      "tagName": "li",
+                      "type": "element",
+                    },
+                    {
+                      "type": "text",
+                      "value": "
+",
+                    },
+                  ],
+                  "position": {
+                    "end": {
+                      "column": 46,
+                      "line": 23,
+                      "offset": 509,
+                    },
+                    "start": {
+                      "column": 5,
+                      "line": 23,
+                      "offset": 468,
+                    },
+                  },
+                  "properties": {},
+                  "tagName": "ul",
+                  "type": "element",
+                },
+                {
+                  "type": "text",
+                  "value": "
+",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 46,
+                  "line": 23,
+                  "offset": 509,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 22,
+                  "offset": 454,
+                },
+              },
+              "properties": {},
+              "tagName": "li",
+              "type": "element",
+            },
+            {
+              "type": "text",
+              "value": "
+",
+            },
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 10,
+                      "line": 24,
+                      "offset": 519,
+                    },
+                    "start": {
+                      "column": 4,
+                      "line": 24,
+                      "offset": 513,
+                    },
+                  },
+                  "type": "text",
+                  "value": "Vercel",
+                },
+                {
+                  "type": "text",
+                  "value": "
+",
+                },
+                {
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "
+",
+                    },
+                    {
+                      "children": [
+                        {
+                          "position": {
+                            "end": {
+                              "column": 29,
+                              "line": 25,
+                              "offset": 548,
+                            },
+                            "start": {
+                              "column": 7,
+                              "line": 25,
+                              "offset": 526,
+                            },
+                          },
+                          "type": "text",
+                          "value": "輕鬆的deploy我的部落格，最主要是免費。",
+                        },
+                      ],
+                      "position": {
+                        "end": {
+                          "column": 29,
+                          "line": 25,
+                          "offset": 548,
+                        },
+                        "start": {
+                          "column": 5,
+                          "line": 25,
+                          "offset": 524,
+                        },
+                      },
+                      "properties": {},
+                      "tagName": "li",
+                      "type": "element",
+                    },
+                    {
+                      "type": "text",
+                      "value": "
+",
+                    },
+                  ],
+                  "position": {
+                    "end": {
+                      "column": 29,
+                      "line": 25,
+                      "offset": 548,
+                    },
+                    "start": {
+                      "column": 5,
+                      "line": 25,
+                      "offset": 524,
+                    },
+                  },
+                  "properties": {},
+                  "tagName": "ul",
+                  "type": "element",
+                },
+                {
+                  "type": "text",
+                  "value": "
+",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 29,
+                  "line": 25,
+                  "offset": 548,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 24,
+                  "offset": 510,
+                },
+              },
+              "properties": {},
+              "tagName": "li",
+              "type": "element",
+            },
+            {
+              "type": "text",
+              "value": "
+",
+            },
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 17,
+                      "line": 26,
+                      "offset": 565,
+                    },
+                    "start": {
+                      "column": 4,
+                      "line": 26,
+                      "offset": 552,
+                    },
+                  },
+                  "type": "text",
+                  "value": "Cloudflare R2",
+                },
+                {
+                  "type": "text",
+                  "value": "
+",
+                },
+                {
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "
+",
+                    },
+                    {
+                      "children": [
+                        {
+                          "position": {
+                            "end": {
+                              "column": 91,
+                              "line": 27,
+                              "offset": 656,
+                            },
+                            "start": {
+                              "column": 7,
+                              "line": 27,
+                              "offset": 572,
+                            },
+                          },
+                          "type": "text",
+                          "value": "我的圖片是用Cloudflare的R2來存放的，這樣可以讓我的圖片不用放在github上，這樣可以讓我的repo比較乾淨，同時享受到Cloudflare CDN的優勢。",
+                        },
+                      ],
+                      "position": {
+                        "end": {
+                          "column": 91,
+                          "line": 27,
+                          "offset": 656,
+                        },
+                        "start": {
+                          "column": 5,
+                          "line": 27,
+                          "offset": 570,
+                        },
+                      },
+                      "properties": {},
+                      "tagName": "li",
+                      "type": "element",
+                    },
+                    {
+                      "type": "text",
+                      "value": "
+",
+                    },
+                  ],
+                  "position": {
+                    "end": {
+                      "column": 91,
+                      "line": 27,
+                      "offset": 656,
+                    },
+                    "start": {
+                      "column": 5,
+                      "line": 27,
+                      "offset": 570,
+                    },
+                  },
+                  "properties": {},
+                  "tagName": "ul",
+                  "type": "element",
+                },
+                {
+                  "type": "text",
+                  "value": "
+",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 91,
+                  "line": 27,
+                  "offset": 656,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 26,
+                  "offset": 549,
+                },
+              },
+              "properties": {},
+              "tagName": "li",
+              "type": "element",
+            },
+            {
+              "type": "text",
+              "value": "
+",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 91,
+              "line": 27,
+              "offset": 656,
+            },
+            "start": {
+              "column": 1,
+              "line": 16,
+              "offset": 217,
+            },
+          },
+          "properties": {},
+          "tagName": "ol",
+          "type": "element",
+        },
+        {
+          "type": "text",
+          "value": "
+",
+        },
+        {
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 8,
+                  "line": 29,
+                  "offset": 665,
+                },
+                "start": {
+                  "column": 4,
+                  "line": 29,
+                  "offset": 661,
+                },
+              },
+              "type": "text",
+              "value": "設計目標",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 8,
+              "line": 29,
+              "offset": 665,
+            },
+            "start": {
+              "column": 1,
+              "line": 29,
+              "offset": 658,
+            },
+          },
+          "properties": {
+            "id": "設計目標",
+          },
+          "tagName": "h2",
+          "type": "element",
+        },
+        {
+          "type": "text",
+          "value": "
+",
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "
+",
+            },
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 8,
+                      "line": 30,
+                      "offset": 673,
+                    },
+                    "start": {
+                      "column": 4,
+                      "line": 30,
+                      "offset": 669,
+                    },
+                  },
+                  "type": "text",
+                  "value": "不要太醜",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 8,
+                  "line": 30,
+                  "offset": 673,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 30,
+                  "offset": 666,
+                },
+              },
+              "properties": {},
+              "tagName": "li",
+              "type": "element",
+            },
+            {
+              "type": "text",
+              "value": "
+",
+            },
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 6,
+                      "line": 31,
+                      "offset": 679,
+                    },
+                    "start": {
+                      "column": 4,
+                      "line": 31,
+                      "offset": 677,
+                    },
+                  },
+                  "type": "text",
+                  "value": "簡潔",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 6,
+                  "line": 31,
+                  "offset": 679,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 31,
+                  "offset": 674,
+                },
+              },
+              "properties": {},
+              "tagName": "li",
+              "type": "element",
+            },
+            {
+              "type": "text",
+              "value": "
+",
+            },
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 19,
+                      "line": 32,
+                      "offset": 698,
+                    },
+                    "start": {
+                      "column": 4,
+                      "line": 32,
+                      "offset": 683,
+                    },
+                  },
+                  "type": "text",
+                  "value": "lighthouse 100分",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 19,
+                  "line": 32,
+                  "offset": 698,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 32,
+                  "offset": 680,
+                },
+              },
+              "properties": {},
+              "tagName": "li",
+              "type": "element",
+            },
+            {
+              "type": "text",
+              "value": "
+",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 19,
+              "line": 32,
+              "offset": 698,
+            },
+            "start": {
+              "column": 1,
+              "line": 30,
+              "offset": 666,
+            },
+          },
+          "properties": {},
+          "tagName": "ol",
+          "type": "element",
+        },
+        {
+          "type": "text",
+          "value": "
+",
+        },
+        {
+          "children": [],
+          "position": {
+            "end": {
+              "column": 4,
+              "line": 34,
+              "offset": 703,
+            },
+            "start": {
+              "column": 1,
+              "line": 34,
+              "offset": 700,
+            },
+          },
+          "properties": {},
+          "tagName": "hr",
+          "type": "element",
+        },
+        {
+          "type": "text",
+          "value": "
+",
+        },
+        {
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 5,
+                  "line": 36,
+                  "offset": 709,
+                },
+                "start": {
+                  "column": 3,
+                  "line": 36,
+                  "offset": 707,
+                },
+              },
+              "type": "text",
+              "value": "實作",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 5,
+              "line": 36,
+              "offset": 709,
+            },
+            "start": {
+              "column": 1,
+              "line": 36,
+              "offset": 705,
+            },
+          },
+          "properties": {
+            "id": "實作",
+          },
+          "tagName": "h1",
+          "type": "element",
+        },
+        {
+          "type": "text",
+          "value": "
+",
+        },
+        {
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 8,
+                  "line": 38,
+                  "offset": 718,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 38,
+                  "offset": 711,
+                },
+              },
+              "type": "text",
+              "value": "這部分程式是我",
+            },
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 14,
+                      "line": 38,
+                      "offset": 724,
+                    },
+                    "start": {
+                      "column": 9,
+                      "line": 38,
+                      "offset": 719,
+                    },
+                  },
+                  "type": "text",
+                  "value": "之前的專案",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 59,
+                  "line": 38,
+                  "offset": 769,
+                },
+                "start": {
+                  "column": 8,
+                  "line": 38,
+                  "offset": 718,
+                },
+              },
+              "properties": {
+                "href": "https://github.com/bloodnighttw/website-v3",
+              },
+              "tagName": "a",
+              "type": "element",
+            },
+            {
+              "position": {
+                "end": {
+                  "column": 94,
+                  "line": 38,
+                  "offset": 804,
+                },
+                "start": {
+                  "column": 59,
+                  "line": 38,
+                  "offset": 769,
+                },
+              },
+              "type": "text",
+              "value": "拿過來改的，也是一個基於tailwind的專案，不同的點是，他沒有用到",
+            },
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 101,
+                      "line": 38,
+                      "offset": 811,
+                    },
+                    "start": {
+                      "column": 94,
+                      "line": 38,
+                      "offset": 804,
+                    },
+                  },
+                  "type": "text",
+                  "value": "react",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 101,
+                  "line": 38,
+                  "offset": 811,
+                },
+                "start": {
+                  "column": 94,
+                  "line": 38,
+                  "offset": 804,
+                },
+              },
+              "properties": {},
+              "tagName": "code",
+              "type": "element",
+            },
+            {
+              "position": {
+                "end": {
+                  "column": 102,
+                  "line": 38,
+                  "offset": 812,
+                },
+                "start": {
+                  "column": 101,
+                  "line": 38,
+                  "offset": 811,
+                },
+              },
+              "type": "text",
+              "value": "/",
+            },
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 110,
+                      "line": 38,
+                      "offset": 820,
+                    },
+                    "start": {
+                      "column": 102,
+                      "line": 38,
+                      "offset": 812,
+                    },
+                  },
+                  "type": "text",
+                  "value": "nextjs",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 110,
+                  "line": 38,
+                  "offset": 820,
+                },
+                "start": {
+                  "column": 102,
+                  "line": 38,
+                  "offset": 812,
+                },
+              },
+              "properties": {},
+              "tagName": "code",
+              "type": "element",
+            },
+            {
+              "position": {
+                "end": {
+                  "column": 131,
+                  "line": 38,
+                  "offset": 841,
+                },
+                "start": {
+                  "column": 110,
+                  "line": 38,
+                  "offset": 820,
+                },
+              },
+              "type": "text",
+              "value": "，另外使用的是next.js的ISR模式。",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 131,
+              "line": 38,
+              "offset": 841,
+            },
+            "start": {
+              "column": 1,
+              "line": 38,
+              "offset": 711,
+            },
+          },
+          "properties": {},
+          "tagName": "p",
+          "type": "element",
+        },
+        {
+          "type": "text",
+          "value": "
+",
+        },
+        {
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 15,
+                  "line": 40,
+                  "offset": 857,
+                },
+                "start": {
+                  "column": 4,
+                  "line": 40,
+                  "offset": 846,
+                },
+              },
+              "type": "text",
+              "value": "Markdown 解析",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 15,
+              "line": 40,
+              "offset": 857,
+            },
+            "start": {
+              "column": 1,
+              "line": 40,
+              "offset": 843,
+            },
+          },
+          "properties": {
+            "id": "markdown-解析",
+          },
+          "tagName": "h2",
+          "type": "element",
+        },
+        {
+          "type": "text",
+          "value": "
+",
+        },
+        {
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 10,
+                  "line": 42,
+                  "offset": 868,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 42,
+                  "offset": 859,
+                },
+              },
+              "type": "text",
+              "value": "剛開始我是找到了 ",
+            },
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 23,
+                      "line": 42,
+                      "offset": 881,
+                    },
+                    "start": {
+                      "column": 11,
+                      "line": 42,
+                      "offset": 869,
+                    },
+                  },
+                  "type": "text",
+                  "value": "contentlayer",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 51,
+                  "line": 42,
+                  "offset": 909,
+                },
+                "start": {
+                  "column": 10,
+                  "line": 42,
+                  "offset": 868,
+                },
+              },
+              "properties": {
+                "href": "https://contentlayer.dev/",
+              },
+              "tagName": "a",
+              "type": "element",
+            },
+            {
+              "position": {
+                "end": {
+                  "column": 69,
+                  "line": 42,
+                  "offset": 927,
+                },
+                "start": {
+                  "column": 51,
+                  "line": 42,
+                  "offset": 909,
+                },
+              },
+              "type": "text",
+              "value": " 這個套件，但是這個套件有幾個問題:",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 69,
+              "line": 42,
+              "offset": 927,
+            },
+            "start": {
+              "column": 1,
+              "line": 42,
+              "offset": 859,
+            },
+          },
+          "properties": {},
+          "tagName": "p",
+          "type": "element",
+        },
+        {
+          "type": "text",
+          "value": "
+",
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "
+",
+            },
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 24,
+                      "line": 43,
+                      "offset": 951,
+                    },
+                    "start": {
+                      "column": 4,
+                      "line": 43,
+                      "offset": 931,
+                    },
+                  },
+                  "type": "text",
+                  "value": "我要怎麼獲取markdown的預覽內容？",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 24,
+                  "line": 43,
+                  "offset": 951,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 43,
+                  "offset": 928,
+                },
+              },
+              "properties": {},
+              "tagName": "li",
+              "type": "element",
+            },
+            {
+              "type": "text",
+              "value": "
+",
+            },
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 32,
+                      "line": 44,
+                      "offset": 983,
+                    },
+                    "start": {
+                      "column": 4,
+                      "line": 44,
+                      "offset": 955,
+                    },
+                  },
+                  "type": "text",
+                  "value": "我要怎麼從這個套件生成table of content？",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 32,
+                  "line": 44,
+                  "offset": 983,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 44,
+                  "offset": 952,
+                },
+              },
+              "properties": {},
+              "tagName": "li",
+              "type": "element",
+            },
+            {
+              "type": "text",
+              "value": "
+",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 32,
+              "line": 44,
+              "offset": 983,
+            },
+            "start": {
+              "column": 1,
+              "line": 43,
+              "offset": 928,
+            },
+          },
+          "properties": {},
+          "tagName": "ol",
+          "type": "element",
+        },
+        {
+          "type": "text",
+          "value": "
+",
+        },
+        {
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 24,
+                  "line": 46,
+                  "offset": 1008,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 46,
+                  "offset": 985,
+                },
+              },
+              "type": "text",
+              "value": "想解決這兩個問題，勢必得往更底層去尋找答案了。",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 24,
+              "line": 46,
+              "offset": 1008,
+            },
+            "start": {
+              "column": 1,
+              "line": 46,
+              "offset": 985,
+            },
+          },
+          "properties": {},
+          "tagName": "p",
+          "type": "element",
+        },
+        {
+          "type": "text",
+          "value": "
+",
+        },
+        {
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 40,
+                  "line": 48,
+                  "offset": 1049,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 48,
+                  "offset": 1010,
+                },
+              },
+              "type": "text",
+              "value": "那在研究一段時間後，我發現很多系統的markdown支援，都是依賴這幾個套件。",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 40,
+              "line": 48,
+              "offset": 1049,
+            },
+            "start": {
+              "column": 1,
+              "line": 48,
+              "offset": 1010,
+            },
+          },
+          "properties": {},
+          "tagName": "p",
+          "type": "element",
+        },
+        {
+          "type": "text",
+          "value": "
+",
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "
+",
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "position": {
+                        "end": {
+                          "column": 16,
+                          "line": 49,
+                          "offset": 1065,
+                        },
+                        "start": {
+                          "column": 4,
+                          "line": 49,
+                          "offset": 1053,
+                        },
+                      },
+                      "type": "text",
+                      "value": "unified.js",
+                    },
+                  ],
+                  "position": {
+                    "end": {
+                      "column": 16,
+                      "line": 49,
+                      "offset": 1065,
+                    },
+                    "start": {
+                      "column": 4,
+                      "line": 49,
+                      "offset": 1053,
+                    },
+                  },
+                  "properties": {},
+                  "tagName": "code",
+                  "type": "element",
+                },
+                {
+                  "position": {
+                    "end": {
+                      "column": 45,
+                      "line": 49,
+                      "offset": 1094,
+                    },
+                    "start": {
+                      "column": 16,
+                      "line": 49,
+                      "offset": 1065,
+                    },
+                  },
+                  "type": "text",
+                  "value": "  ast轉換工具，下面這兩個工具部分功能可以依賴這套件。",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 45,
+                  "line": 49,
+                  "offset": 1094,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 49,
+                  "offset": 1050,
+                },
+              },
+              "properties": {},
+              "tagName": "li",
+              "type": "element",
+            },
+            {
+              "type": "text",
+              "value": "
+",
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "position": {
+                        "end": {
+                          "column": 15,
+                          "line": 50,
+                          "offset": 1109,
+                        },
+                        "start": {
+                          "column": 4,
+                          "line": 50,
+                          "offset": 1098,
+                        },
+                      },
+                      "type": "text",
+                      "value": "remark.js",
+                    },
+                  ],
+                  "position": {
+                    "end": {
+                      "column": 15,
+                      "line": 50,
+                      "offset": 1109,
+                    },
+                    "start": {
+                      "column": 4,
+                      "line": 50,
+                      "offset": 1098,
+                    },
+                  },
+                  "properties": {},
+                  "tagName": "code",
+                  "type": "element",
+                },
+                {
+                  "position": {
+                    "end": {
+                      "column": 58,
+                      "line": 50,
+                      "offset": 1152,
+                    },
+                    "start": {
+                      "column": 15,
+                      "line": 50,
+                      "offset": 1109,
+                    },
+                  },
+                  "type": "text",
+                  "value": "   用於解析markdown語法的相關套件  (ast <--> markdown)",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 58,
+                  "line": 50,
+                  "offset": 1152,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 50,
+                  "offset": 1095,
+                },
+              },
+              "properties": {},
+              "tagName": "li",
+              "type": "element",
+            },
+            {
+              "type": "text",
+              "value": "
+",
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "position": {
+                        "end": {
+                          "column": 16,
+                          "line": 51,
+                          "offset": 1168,
+                        },
+                        "start": {
+                          "column": 4,
+                          "line": 51,
+                          "offset": 1156,
+                        },
+                      },
+                      "type": "text",
+                      "value": "rehype.js ",
+                    },
+                  ],
+                  "position": {
+                    "end": {
+                      "column": 16,
+                      "line": 51,
+                      "offset": 1168,
+                    },
+                    "start": {
+                      "column": 4,
+                      "line": 51,
+                      "offset": 1156,
+                    },
+                  },
+                  "properties": {},
+                  "tagName": "code",
+                  "type": "element",
+                },
+                {
+                  "position": {
+                    "end": {
+                      "column": 54,
+                      "line": 51,
+                      "offset": 1206,
+                    },
+                    "start": {
+                      "column": 16,
+                      "line": 51,
+                      "offset": 1168,
+                    },
+                  },
+                  "type": "text",
+                  "value": "  用於解析html語法的相關套件      (ast <--> html)",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 54,
+                  "line": 51,
+                  "offset": 1206,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 51,
+                  "offset": 1153,
+                },
+              },
+              "properties": {},
+              "tagName": "li",
+              "type": "element",
+            },
+            {
+              "type": "text",
+              "value": "
+",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 54,
+              "line": 51,
+              "offset": 1206,
+            },
+            "start": {
+              "column": 1,
+              "line": 49,
+              "offset": 1050,
+            },
+          },
+          "properties": {},
+          "tagName": "ol",
+          "type": "element",
+        },
+        {
+          "type": "text",
+          "value": "
+",
+        },
+        {
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 10,
+                  "line": 53,
+                  "offset": 1217,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 53,
+                  "offset": 1208,
+                },
+              },
+              "type": "text",
+              "value": "我的做法是，我先用",
+            },
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 21,
+                      "line": 53,
+                      "offset": 1228,
+                    },
+                    "start": {
+                      "column": 10,
+                      "line": 53,
+                      "offset": 1217,
+                    },
+                  },
+                  "type": "text",
+                  "value": "remark.js",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 21,
+                  "line": 53,
+                  "offset": 1228,
+                },
+                "start": {
+                  "column": 10,
+                  "line": 53,
+                  "offset": 1217,
+                },
+              },
+              "properties": {},
+              "tagName": "code",
+              "type": "element",
+            },
+            {
+              "position": {
+                "end": {
+                  "column": 54,
+                  "line": 53,
+                  "offset": 1261,
+                },
+                "start": {
+                  "column": 21,
+                  "line": 53,
+                  "offset": 1228,
+                },
+              },
+              "type": "text",
+              "value": "把markdown轉換成ast，然後透過這個ast去產生預覽內容。",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 54,
+              "line": 53,
+              "offset": 1261,
+            },
+            "start": {
+              "column": 1,
+              "line": 53,
+              "offset": 1208,
+            },
+          },
+          "properties": {},
+          "tagName": "p",
+          "type": "element",
+        },
+        {
+          "type": "text",
+          "value": "
+",
+        },
+        {
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 5,
+                  "line": 55,
+                  "offset": 1267,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 55,
+                  "offset": 1263,
+                },
+              },
+              "type": "text",
+              "value": "接著我用",
+            },
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 20,
+                      "line": 55,
+                      "offset": 1282,
+                    },
+                    "start": {
+                      "column": 5,
+                      "line": 55,
+                      "offset": 1267,
+                    },
+                  },
+                  "type": "text",
+                  "value": "remark2rehype",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 20,
+                  "line": 55,
+                  "offset": 1282,
+                },
+                "start": {
+                  "column": 5,
+                  "line": 55,
+                  "offset": 1267,
+                },
+              },
+              "properties": {},
+              "tagName": "code",
+              "type": "element",
+            },
+            {
+              "position": {
+                "end": {
+                  "column": 73,
+                  "line": 55,
+                  "offset": 1335,
+                },
+                "start": {
+                  "column": 20,
+                  "line": 55,
+                  "offset": 1282,
+                },
+              },
+              "type": "text",
+              "value": "把ast轉換成rehype ast，然後再透過這個html ast去產生table of content。",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 73,
+              "line": 55,
+              "offset": 1335,
+            },
+            "start": {
+              "column": 1,
+              "line": 55,
+              "offset": 1263,
+            },
+          },
+          "properties": {},
+          "tagName": "p",
+          "type": "element",
+        },
+        {
+          "type": "text",
+          "value": "
+",
+        },
+        {
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 31,
+                  "line": 57,
+                  "offset": 1367,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 57,
+                  "offset": 1337,
+                },
+              },
+              "type": "text",
+              "value": "最後我在把這個html ast轉換成html，顯示於網頁上。",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 31,
+              "line": 57,
+              "offset": 1367,
+            },
+            "start": {
+              "column": 1,
+              "line": 57,
+              "offset": 1337,
+            },
+          },
+          "properties": {},
+          "tagName": "p",
+          "type": "element",
+        },
+        {
+          "type": "text",
+          "value": "
+",
+        },
+        {
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 22,
+                  "line": 59,
+                  "offset": 1390,
+                },
+                "start": {
+                  "column": 4,
+                  "line": 59,
+                  "offset": 1372,
+                },
+              },
+              "type": "text",
+              "value": "Cloudflare R2 作為圖床",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 22,
+              "line": 59,
+              "offset": 1390,
+            },
+            "start": {
+              "column": 1,
+              "line": 59,
+              "offset": 1369,
+            },
+          },
+          "properties": {
+            "id": "cloudflare-r2-作為圖床",
+          },
+          "tagName": "h2",
+          "type": "element",
+        },
+        {
+          "type": "text",
+          "value": "
+",
+        },
+        {
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 15,
+                  "line": 60,
+                  "offset": 1405,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 60,
+                  "offset": 1391,
+                },
+              },
+              "type": "text",
+              "value": "剛開始我自己是打算把圖片放在",
+            },
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 21,
+                      "line": 60,
+                      "offset": 1411,
+                    },
+                    "start": {
+                      "column": 16,
+                      "line": 60,
+                      "offset": 1406,
+                    },
+                  },
+                  "type": "text",
+                  "value": "imgur",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 42,
+                  "line": 60,
+                  "offset": 1432,
+                },
+                "start": {
+                  "column": 15,
+                  "line": 60,
+                  "offset": 1405,
+                },
+              },
+              "properties": {
+                "href": "https://imgur.com/",
+              },
+              "tagName": "a",
+              "type": "element",
+            },
+            {
+              "position": {
+                "end": {
+                  "column": 1,
+                  "line": 61,
+                  "offset": 1470,
+                },
+                "start": {
+                  "column": 42,
+                  "line": 60,
+                  "offset": 1432,
+                },
+              },
+              "type": "text",
+              "value": "上，但是後來發現imgur有可能刪除圖片，導致圖片失效，剛好想到之前拜讀的
+",
+            },
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 6,
+                      "line": 61,
+                      "offset": 1475,
+                    },
+                    "start": {
+                      "column": 2,
+                      "line": 61,
+                      "offset": 1471,
+                    },
+                  },
+                  "type": "text",
+                  "value": "這篇文章",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 64,
+                  "line": 61,
+                  "offset": 1533,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 61,
+                  "offset": 1470,
+                },
+              },
+              "properties": {
+                "href": "https://ivonblog.com/posts/cloudflare-r2-image-hosting/",
+              },
+              "tagName": "a",
+              "type": "element",
+            },
+            {
+              "position": {
+                "end": {
+                  "column": 92,
+                  "line": 61,
+                  "offset": 1561,
+                },
+                "start": {
+                  "column": 64,
+                  "line": 61,
+                  "offset": 1533,
+                },
+              },
+              "type": "text",
+              "value": "，最後決定使用Cloudflare R2作為圖片的圖床。",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 92,
+              "line": 61,
+              "offset": 1561,
+            },
+            "start": {
+              "column": 1,
+              "line": 60,
+              "offset": 1391,
+            },
+          },
+          "properties": {},
+          "tagName": "p",
+          "type": "element",
+        },
+        {
+          "type": "text",
+          "value": "
+",
+        },
+        {
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 21,
+                  "line": 63,
+                  "offset": 1583,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 63,
+                  "offset": 1563,
+                },
+              },
+              "type": "text",
+              "value": "使用Cloudflare R2的好處是:",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 21,
+              "line": 63,
+              "offset": 1583,
+            },
+            "start": {
+              "column": 1,
+              "line": 63,
+              "offset": 1563,
+            },
+          },
+          "properties": {},
+          "tagName": "p",
+          "type": "element",
+        },
+        {
+          "type": "text",
+          "value": "
+",
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "
+",
+            },
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 28,
+                      "line": 64,
+                      "offset": 1611,
+                    },
+                    "start": {
+                      "column": 4,
+                      "line": 64,
+                      "offset": 1587,
+                    },
+                  },
+                  "type": "text",
+                  "value": "流量不收費 (這個是其他類似服務最難預測的費用)",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 28,
+                  "line": 64,
+                  "offset": 1611,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 64,
+                  "offset": 1584,
+                },
+              },
+              "properties": {},
+              "tagName": "li",
+              "type": "element",
+            },
+            {
+              "type": "text",
+              "value": "
+",
+            },
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 17,
+                      "line": 65,
+                      "offset": 1628,
+                    },
+                    "start": {
+                      "column": 4,
+                      "line": 65,
+                      "offset": 1615,
+                    },
+                  },
+                  "type": "text",
+                  "value": "使用量在一定額度內是免費的",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 17,
+                  "line": 65,
+                  "offset": 1628,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 65,
+                  "offset": 1612,
+                },
+              },
+              "properties": {},
+              "tagName": "li",
+              "type": "element",
+            },
+            {
+              "type": "text",
+              "value": "
+",
+            },
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 24,
+                      "line": 66,
+                      "offset": 1652,
+                    },
+                    "start": {
+                      "column": 4,
+                      "line": 66,
+                      "offset": 1632,
+                    },
+                  },
+                  "type": "text",
+                  "value": "有使用Cloudflare CDN的加速",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 24,
+                  "line": 66,
+                  "offset": 1652,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 66,
+                  "offset": 1629,
+                },
+              },
+              "properties": {},
+              "tagName": "li",
+              "type": "element",
+            },
+            {
+              "type": "text",
+              "value": "
+",
+            },
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 37,
+                      "line": 67,
+                      "offset": 1689,
+                    },
+                    "start": {
+                      "column": 4,
+                      "line": 67,
+                      "offset": 1656,
+                    },
+                  },
+                  "type": "text",
+                  "value": "跟aws s3相容的API，也就是說我們可以使用相關工具操作R2。",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 37,
+                  "line": 67,
+                  "offset": 1689,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 67,
+                  "offset": 1653,
+                },
+              },
+              "properties": {},
+              "tagName": "li",
+              "type": "element",
+            },
+            {
+              "type": "text",
+              "value": "
+",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 37,
+              "line": 67,
+              "offset": 1689,
+            },
+            "start": {
+              "column": 1,
+              "line": 64,
+              "offset": 1584,
+            },
+          },
+          "properties": {},
+          "tagName": "ol",
+          "type": "element",
+        },
+        {
+          "type": "text",
+          "value": "
+",
+        },
+        {
+          "children": [
+            {
+              "children": [],
+              "position": {
+                "end": {
+                  "column": 53,
+                  "line": 69,
+                  "offset": 1743,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 69,
+                  "offset": 1691,
+                },
+              },
+              "properties": {
+                "alt": "r2",
+                "src": "https://r2.bntw.dev/how-i-made-my-blog/r2.png",
+              },
+              "tagName": "img",
+              "type": "element",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 53,
+              "line": 69,
+              "offset": 1743,
+            },
+            "start": {
+              "column": 1,
+              "line": 69,
+              "offset": 1691,
+            },
+          },
+          "properties": {},
+          "tagName": "p",
+          "type": "element",
+        },
+        {
+          "type": "text",
+          "value": "
+",
+        },
+        {
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 5,
+                  "line": 71,
+                  "offset": 1749,
+                },
+                "start": {
+                  "column": 3,
+                  "line": 71,
+                  "offset": 1747,
+                },
+              },
+              "type": "text",
+              "value": "結果",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 5,
+              "line": 71,
+              "offset": 1749,
+            },
+            "start": {
+              "column": 1,
+              "line": 71,
+              "offset": 1745,
+            },
+          },
+          "properties": {
+            "id": "結果",
+          },
+          "tagName": "h1",
+          "type": "element",
+        },
+        {
+          "type": "text",
+          "value": "
+",
+        },
+        {
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 1,
+                  "line": 74,
+                  "offset": 1792,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 73,
+                  "offset": 1751,
+                },
+              },
+              "type": "text",
+              "value": "下面這張是在無痕模式下的lighthouse分數，可以看到四個指標都是100分。
+",
+            },
+            {
+              "children": [],
+              "position": {
+                "end": {
+                  "column": 92,
+                  "line": 74,
+                  "offset": 1883,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 74,
+                  "offset": 1792,
+                },
+              },
+              "properties": {
+                "alt": "lighthouse score with arc browser",
+                "src": "https://r2.bntw.dev/how-i-made-my-blog/lighthouse.png",
+              },
+              "tagName": "img",
+              "type": "element",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 92,
+              "line": 74,
+              "offset": 1883,
+            },
+            "start": {
+              "column": 1,
+              "line": 73,
+              "offset": 1751,
+            },
+          },
+          "properties": {},
+          "tagName": "p",
+          "type": "element",
+        },
+        {
+          "type": "text",
+          "value": "
+",
+        },
+        {
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 11,
+                  "line": 76,
+                  "offset": 1895,
+                },
+                "start": {
+                  "column": 3,
+                  "line": 76,
+                  "offset": 1887,
+                },
+              },
+              "type": "text",
+              "value": "未來可加入的功能",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 11,
+              "line": 76,
+              "offset": 1895,
+            },
+            "start": {
+              "column": 1,
+              "line": 76,
+              "offset": 1885,
+            },
+          },
+          "properties": {
+            "id": "未來可加入的功能",
+          },
+          "tagName": "h1",
+          "type": "element",
+        },
+        {
+          "type": "text",
+          "value": "
+",
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "
+",
+            },
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 10,
+                      "line": 77,
+                      "offset": 1905,
+                    },
+                    "start": {
+                      "column": 4,
+                      "line": 77,
+                      "offset": 1899,
+                    },
+                  },
+                  "type": "text",
+                  "value": "SEO 優化",
+                },
+                {
+                  "type": "text",
+                  "value": "
+",
+                },
+                {
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "
+",
+                    },
+                    {
+                      "children": [
+                        {
+                          "position": {
+                            "end": {
+                              "column": 50,
+                              "line": 78,
+                              "offset": 1955,
+                            },
+                            "start": {
+                              "column": 7,
+                              "line": 78,
+                              "offset": 1912,
+                            },
+                          },
+                          "type": "text",
+                          "value": "目前文章是不包含description與其他可以優化SEO的部分，未來會加入這些功能。",
+                        },
+                      ],
+                      "position": {
+                        "end": {
+                          "column": 50,
+                          "line": 78,
+                          "offset": 1955,
+                        },
+                        "start": {
+                          "column": 5,
+                          "line": 78,
+                          "offset": 1910,
+                        },
+                      },
+                      "properties": {},
+                      "tagName": "li",
+                      "type": "element",
+                    },
+                    {
+                      "type": "text",
+                      "value": "
+",
+                    },
+                  ],
+                  "position": {
+                    "end": {
+                      "column": 50,
+                      "line": 78,
+                      "offset": 1955,
+                    },
+                    "start": {
+                      "column": 5,
+                      "line": 78,
+                      "offset": 1910,
+                    },
+                  },
+                  "properties": {},
+                  "tagName": "ul",
+                  "type": "element",
+                },
+                {
+                  "type": "text",
+                  "value": "
+",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 50,
+                  "line": 78,
+                  "offset": 1955,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 77,
+                  "offset": 1896,
+                },
+              },
+              "properties": {},
+              "tagName": "li",
+              "type": "element",
+            },
+            {
+              "type": "text",
+              "value": "
+",
+            },
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 11,
+                      "line": 79,
+                      "offset": 1966,
+                    },
+                    "start": {
+                      "column": 4,
+                      "line": 79,
+                      "offset": 1959,
+                    },
+                  },
+                  "type": "text",
+                  "value": "WYSIWYG",
+                },
+                {
+                  "type": "text",
+                  "value": "
+",
+                },
+                {
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "
+",
+                    },
+                    {
+                      "children": [
+                        {
+                          "position": {
+                            "end": {
+                              "column": 58,
+                              "line": 80,
+                              "offset": 2024,
+                            },
+                            "start": {
+                              "column": 7,
+                              "line": 80,
+                              "offset": 1973,
+                            },
+                          },
+                          "type": "text",
+                          "value": "未來可以加入WYSIWYG，並棄用markdown，這樣可以讓我在寫文章時更方便 (這功能沒有很急)。",
+                        },
+                      ],
+                      "position": {
+                        "end": {
+                          "column": 58,
+                          "line": 80,
+                          "offset": 2024,
+                        },
+                        "start": {
+                          "column": 5,
+                          "line": 80,
+                          "offset": 1971,
+                        },
+                      },
+                      "properties": {},
+                      "tagName": "li",
+                      "type": "element",
+                    },
+                    {
+                      "type": "text",
+                      "value": "
+",
+                    },
+                  ],
+                  "position": {
+                    "end": {
+                      "column": 58,
+                      "line": 80,
+                      "offset": 2024,
+                    },
+                    "start": {
+                      "column": 5,
+                      "line": 80,
+                      "offset": 1971,
+                    },
+                  },
+                  "properties": {},
+                  "tagName": "ul",
+                  "type": "element",
+                },
+                {
+                  "type": "text",
+                  "value": "
+",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 58,
+                  "line": 80,
+                  "offset": 2024,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 79,
+                  "offset": 1956,
+                },
+              },
+              "properties": {},
+              "tagName": "li",
+              "type": "element",
+            },
+            {
+              "type": "text",
+              "value": "
+",
+            },
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 7,
+                      "line": 81,
+                      "offset": 2031,
+                    },
+                    "start": {
+                      "column": 4,
+                      "line": 81,
+                      "offset": 2028,
+                    },
+                  },
+                  "type": "text",
+                  "value": "RSS",
+                },
+                {
+                  "type": "text",
+                  "value": "
+",
+                },
+                {
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "
+",
+                    },
+                    {
+                      "children": [
+                        {
+                          "position": {
+                            "end": {
+                              "column": 38,
+                              "line": 82,
+                              "offset": 2069,
+                            },
+                            "start": {
+                              "column": 7,
+                              "line": 82,
+                              "offset": 2038,
+                            },
+                          },
+                          "type": "text",
+                          "value": "未來可以加入RSS，這樣可以讓訂閱者可以更方便的訂閱我的文章。",
+                        },
+                      ],
+                      "position": {
+                        "end": {
+                          "column": 38,
+                          "line": 82,
+                          "offset": 2069,
+                        },
+                        "start": {
+                          "column": 5,
+                          "line": 82,
+                          "offset": 2036,
+                        },
+                      },
+                      "properties": {},
+                      "tagName": "li",
+                      "type": "element",
+                    },
+                    {
+                      "type": "text",
+                      "value": "
+",
+                    },
+                  ],
+                  "position": {
+                    "end": {
+                      "column": 38,
+                      "line": 82,
+                      "offset": 2069,
+                    },
+                    "start": {
+                      "column": 5,
+                      "line": 82,
+                      "offset": 2036,
+                    },
+                  },
+                  "properties": {},
+                  "tagName": "ul",
+                  "type": "element",
+                },
+                {
+                  "type": "text",
+                  "value": "
+",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 38,
+                  "line": 82,
+                  "offset": 2069,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 81,
+                  "offset": 2025,
+                },
+              },
+              "properties": {},
+              "tagName": "li",
+              "type": "element",
+            },
+            {
+              "type": "text",
+              "value": "
+",
+            },
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 8,
+                      "line": 83,
+                      "offset": 2077,
+                    },
+                    "start": {
+                      "column": 4,
+                      "line": 83,
+                      "offset": 2073,
+                    },
+                  },
+                  "type": "text",
+                  "value": "留言系統",
+                },
+                {
+                  "type": "text",
+                  "value": "
+",
+                },
+                {
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "
+",
+                    },
+                    {
+                      "children": [
+                        {
+                          "position": {
+                            "end": {
+                              "column": 36,
+                              "line": 84,
+                              "offset": 2113,
+                            },
+                            "start": {
+                              "column": 7,
+                              "line": 84,
+                              "offset": 2084,
+                            },
+                          },
+                          "type": "text",
+                          "value": "未來可以加入留言系統，這樣可以讓讀者可以更方便的與我互動。",
+                        },
+                      ],
+                      "position": {
+                        "end": {
+                          "column": 36,
+                          "line": 84,
+                          "offset": 2113,
+                        },
+                        "start": {
+                          "column": 5,
+                          "line": 84,
+                          "offset": 2082,
+                        },
+                      },
+                      "properties": {},
+                      "tagName": "li",
+                      "type": "element",
+                    },
+                    {
+                      "type": "text",
+                      "value": "
+",
+                    },
+                  ],
+                  "position": {
+                    "end": {
+                      "column": 36,
+                      "line": 84,
+                      "offset": 2113,
+                    },
+                    "start": {
+                      "column": 5,
+                      "line": 84,
+                      "offset": 2082,
+                    },
+                  },
+                  "properties": {},
+                  "tagName": "ul",
+                  "type": "element",
+                },
+                {
+                  "type": "text",
+                  "value": "
+",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 36,
+                  "line": 84,
+                  "offset": 2113,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 83,
+                  "offset": 2070,
+                },
+              },
+              "properties": {},
+              "tagName": "li",
+              "type": "element",
+            },
+            {
+              "type": "text",
+              "value": "
+",
+            },
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 11,
+                      "line": 85,
+                      "offset": 2124,
+                    },
+                    "start": {
+                      "column": 4,
+                      "line": 85,
+                      "offset": 2117,
+                    },
+                  },
+                  "type": "text",
+                  "value": "亮色/暗色模式",
+                },
+                {
+                  "type": "text",
+                  "value": "
+",
+                },
+                {
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "
+",
+                    },
+                    {
+                      "children": [
+                        {
+                          "position": {
+                            "end": {
+                              "column": 55,
+                              "line": 86,
+                              "offset": 2179,
+                            },
+                            "start": {
+                              "column": 7,
+                              "line": 86,
+                              "offset": 2131,
+                            },
+                          },
+                          "type": "text",
+                          "value": "目前我只用了個暗色系的主題，未來可以加入亮色/暗色模式，這樣可以讓讀者可以根據自己的喜好來選擇。",
+                        },
+                      ],
+                      "position": {
+                        "end": {
+                          "column": 55,
+                          "line": 86,
+                          "offset": 2179,
+                        },
+                        "start": {
+                          "column": 5,
+                          "line": 86,
+                          "offset": 2129,
+                        },
+                      },
+                      "properties": {},
+                      "tagName": "li",
+                      "type": "element",
+                    },
+                    {
+                      "type": "text",
+                      "value": "
+",
+                    },
+                  ],
+                  "position": {
+                    "end": {
+                      "column": 55,
+                      "line": 86,
+                      "offset": 2179,
+                    },
+                    "start": {
+                      "column": 5,
+                      "line": 86,
+                      "offset": 2129,
+                    },
+                  },
+                  "properties": {},
+                  "tagName": "ul",
+                  "type": "element",
+                },
+                {
+                  "type": "text",
+                  "value": "
+",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 55,
+                  "line": 86,
+                  "offset": 2179,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 85,
+                  "offset": 2114,
+                },
+              },
+              "properties": {},
+              "tagName": "li",
+              "type": "element",
+            },
+            {
+              "type": "text",
+              "value": "
+",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 55,
+              "line": 86,
+              "offset": 2179,
+            },
+            "start": {
+              "column": 1,
+              "line": 77,
+              "offset": 1896,
+            },
+          },
+          "properties": {},
+          "tagName": "ol",
+          "type": "element",
+        },
+      ],
+      "position": {
+        "end": {
+          "column": 55,
+          "line": 86,
+          "offset": 2179,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "root",
+    }
+  }
+/>
+`;
