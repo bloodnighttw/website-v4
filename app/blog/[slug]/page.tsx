@@ -1,14 +1,13 @@
-import {
-    ast2post,
-    decodePostMetadata,
-    getPostPaths,
-    markdown2ast,
-} from "@/utils/blog";
 import { Metadata } from "next";
 import { NavXLWarp } from "@/utils/warp/navwarp";
 
+import mdast2hast from "@/utils/posts/mdast2hast";
+import HastArticle from "@/utils/posts/HastArticle";
+import HastTOC from "@/utils/posts/HastTableOfContent";
+import { getAllSlugs, getMDASTBySlug, getMetadata } from "@/utils/blog";
+
 export async function generateStaticParams() {
-    const posts = await getPostPaths();
+    const posts = await getAllSlugs();
 
     return posts.map((post_path) => {
         return {
@@ -24,11 +23,6 @@ interface BlogProps {
     slug: string;
 }
 
-async function getTOCAndContent(name: string) {
-    const ast = await markdown2ast(name);
-    return await ast2post(ast);
-}
-
 export async function generateMetadata({
     params,
 }: {
@@ -36,7 +30,8 @@ export async function generateMetadata({
 }): Promise<Metadata> {
     const name = (await params).slug;
 
-    const metadata = await decodePostMetadata(name);
+    const mdast = await getMDASTBySlug(name);
+    const metadata = getMetadata(mdast);
 
     return {
         title: metadata.title,
@@ -82,10 +77,11 @@ export async function generateMetadata({
 export default async function Blog({ params }: { params: Promise<BlogProps> }) {
     const name = (await params).slug;
 
-    const post = await getTOCAndContent(name);
-    const metadata = await decodePostMetadata(name);
-
     const nav = await NavXLWarp({ title: "blog" });
+
+    const mdast = await getMDASTBySlug(name);
+    const hast = await mdast2hast(mdast);
+    const metadata = getMetadata(mdast);
 
     return (
         <>
@@ -98,12 +94,7 @@ export default async function Blog({ params }: { params: Promise<BlogProps> }) {
                         </h1>
                         <hr className="my-2 text-stone-100" />
 
-                        <div
-                            className="toc"
-                            dangerouslySetInnerHTML={{
-                                __html: post.rawTableOfContent,
-                            }}
-                        />
+                        <HastTOC ast={hast} />
                     </div>
                 </div>
                 <div className="article mx-auto">
@@ -111,10 +102,7 @@ export default async function Blog({ params }: { params: Promise<BlogProps> }) {
                     <p className="mt-2 text-sm text-stone-400">
                         {metadata.date.toDateString()}
                     </p>
-                    <article
-                        dangerouslySetInnerHTML={{ __html: post.rawHTML }}
-                        className=" "
-                    />
+                    <HastArticle hast={hast} />
                 </div>
             </div>
         </>
