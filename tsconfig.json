@@ -22,6 +22,12 @@
             "@/*": ["./*"]
         }
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+    "include": [
+      "next-env.d.ts",
+      "**/*.ts",
+      "**/*.tsx",
+      ".next/types/**/*.ts",
+      "../../Library/Caches/JetBrains/WebStorm2024.3/javascript/typings/mocha/10.0.10/node_modules/@types/mocha/index.d.ts"
+    ],
     "exclude": ["node_modules"]
 }

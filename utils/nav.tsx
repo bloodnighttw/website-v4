@@ -23,9 +23,10 @@ const jump = (
     </svg>
 );
 
-interface NavProps {
+export interface NavProps {
     title: string;
     size?: NavSize;
+    contents?: string[];
 }
 
 enum NavSize {
@@ -46,7 +47,7 @@ export function Nav(props: NavProps) {
 
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
-            console.log("hi");
+            // console.log(props.contents);
             if (
                 !(
                     dropdownRef.current &&
@@ -134,13 +135,13 @@ export function Nav(props: NavProps) {
 }
 
 export function NavLG(props: NavProps) {
-    return <Nav title={props.title} size={NavSize.lg} />;
+    return <Nav size={NavSize.lg} {...props} />;
 }
 
 export function NavXL(props: NavProps) {
-    return <Nav title={props.title} size={NavSize.xl} />;
+    return <Nav size={NavSize.xl} {...props} />;
 }
 
 export function NavMD(props: NavProps) {
-    return <Nav title={props.title} size={NavSize.sm} />;
+    return <Nav size={NavSize.sm} {...props} />;
 }

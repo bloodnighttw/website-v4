@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { NavLG } from "../nav";
+import { NavLG } from "@/utils/nav";
 
 export default function About() {
     return (

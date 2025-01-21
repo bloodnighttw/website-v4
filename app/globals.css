@@ -58,7 +58,7 @@
         @apply list-inside gap-0 text-ellipsis text-lg font-extralight text-stone-400 rounded;
     }
 
-    .toc ul li ul {
+    .toc ul{
         @apply ml-4 scale-100 text-start;
         font-size: 0.97em;
     }
@@ -68,10 +68,14 @@
     }
 
     .article {
-        @apply prose prose-stone prose-invert prose-ul:m-0 prose-li:m-0 w-full duration-200;
+        @apply prose prose-stone prose-invert prose-ul:m-0 prose-li:m-0 w-full duration-200 scroll-m-16;
         /* we preserve 0.5 as right space */
         /*@apply xl:-translate-x-[18.5rem];*/
         max-width: 56rem;
+    }
+
+    .article :target {
+        scroll-margin-top: 4rem;
     }
 
     .sidebar{
