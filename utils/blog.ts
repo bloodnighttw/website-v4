@@ -38,8 +38,9 @@ export async function getMDASTBySlug(slug: string) {
 }
 
 export function getMetadata(ast: Root): Metadata {
-    const reviver = (key: string, value: never) => {
+    const reviver = (key: unknown, value: unknown) => {
         if (key === "date") {
+            // @ts-expect-error value is always a string
             return new Date(value);
         }
         return value;
