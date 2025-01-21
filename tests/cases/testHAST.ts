@@ -1,6 +1,6 @@
 import { Root } from "hast";
 
-export const testHAST:Root = {
+export const testHAST: Root = {
     type: "root",
     children: [
         {
