@@ -48,12 +48,7 @@ export function Nav(props: NavProps) {
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
             // console.log(props.contents);
-            if (
-                !(
-                    dropdownRef.current &&
-                    dropdownRef.current.contains(event.target as Node)
-                )
-            ) {
+            if (!dropdownRef.current?.contains(event.target as Node)) {
                 setDropdown(false);
             }
         }
