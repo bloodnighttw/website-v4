@@ -15,11 +15,16 @@ interface YAMLNode {
     value: string;
 }
 
-export function yamlParse<T>(ast: Root): T | null {
+type Reviver = (key: unknown, value: unknown) => unknown;
+
+export function yamlParse<T>(
+    ast: Root,
+    reviver: Reviver | undefined = undefined,
+): T | null {
     const yamlContent = select("yaml", ast) as YAMLNode;
 
     if (yamlContent) {
-        return yaml.parse(yamlContent.value) as T;
+        return yaml.parse(yamlContent.value, { reviver }) as T;
     }
 
     return null;
