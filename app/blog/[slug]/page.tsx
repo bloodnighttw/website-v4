@@ -77,11 +77,11 @@ export async function generateMetadata({
 export default async function Blog({ params }: { params: Promise<BlogProps> }) {
     const name = (await params).slug;
 
-    const nav = await NavXLWarp({ title: "blog" });
-
     const mdast = await getMDASTBySlug(name);
     const hast = await mdast2hast(mdast);
     const metadata = getMetadata(mdast);
+
+    const nav = await NavXLWarp({ title: metadata.title });
 
     return (
         <>
