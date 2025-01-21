@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getAllMetadata } from "@/utils/blog";
+import { getMetadatasWithSlug } from "@/utils/blog";
 
 const BASE_URL = "https://bntw.dev";
 
@@ -31,10 +31,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         },
     ];
 
-    const allPosts = await getAllMetadata();
+    const allPosts = await getMetadatasWithSlug();
 
     const posts: MetadataRoute.Sitemap = allPosts.map((post) => ({
-        url: `${BASE_URL}/blog/${post.path}`,
+        url: `${BASE_URL}/blog/${post.slug}`,
         lastModified: post.date,
         changeFrequency: "daily",
         priority: 0.7,
