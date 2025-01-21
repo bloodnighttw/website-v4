@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
-import lunr from "lunr";
 
 const variants = {
     hidden: { opacity: 0 },
