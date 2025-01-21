@@ -1,6 +1,6 @@
-import { getAllMetadata } from "@/utils/blog";
 import Link from "next/link";
 import { NavLgWarp } from "@/utils/warp/navwarp";
+import { getMetadatasWithSlug } from "@/utils/blog";
 
 export const metadata = {
     title: "Bloodnighttw's Blog",
@@ -11,10 +11,9 @@ export const metadata = {
 };
 
 export default async function Blog() {
-    const posts = await getAllMetadata();
+    const posts = await getMetadatasWithSlug();
     const nav = await NavLgWarp({
         title: "blog",
-        contents: posts.map((post) => post.summery),
     });
 
     return (
@@ -26,10 +25,10 @@ export default async function Blog() {
                         a.date < b.date ? 1 : a.date == b.date ? 0 : -1,
                     )
                     .map((post) => (
-                        <Link href={`/blog/${post.path}`} key={post.path}>
+                        <Link href={`/blog/${post.slug}`} key={post.slug}>
                             <div
                                 className="mx-auto w-full rounded border border-stone-700 p-4 duration-200 hover:bg-stone-800 sm:hover:scale-105"
-                                key={post.path}
+                                key={post.slug}
                             >
                                 <h1 className="line-clamp-1 text-3xl">
                                     {post.title}
