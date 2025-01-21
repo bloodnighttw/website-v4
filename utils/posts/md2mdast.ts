@@ -26,7 +26,7 @@ const markdown2astUnified = unified()
 // This function is exported and can be used in other modules.
 export default async function markdown2ast(file: string) {
     const content = await fs.promises.readFile(
-        path.join(process.cwd(), "posts", `${file}.md`),
+        path.join(process.cwd(), file),
         "utf8",
     );
     return markdown2astUnified.parse(content);
