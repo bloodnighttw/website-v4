@@ -4,7 +4,7 @@ import {
     generateSummary,
     generateThumbnail,
     yamlParse,
-} from "@/utils/posts/mdast2hast";
+} from "@/utils/posts/mdast2metadata";
 
 test("mdast2metadata | yaml", async () => {
     const md = await markdown2ast("cfr2");
