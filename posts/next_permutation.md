@@ -41,6 +41,10 @@ categories:
 具體做法如圖
 ![next_permutation](https://r2.bntw.dev/next_permutation/leetcode.jpeg)
 
+## 例外狀況
+
+可以發現，在遞減數列中，這個方法不會奏效，所以當我們知道這個數列是遞減的時候，我們就直接reverse整個數列。
+
 # 解答 (javascript)
 ```javascript
 /**
