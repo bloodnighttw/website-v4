@@ -41,7 +41,7 @@ categories:
 具體做法如圖
 ![next_permutation](https://r2.bntw.dev/next_permutation/leetcode.jpeg)
 
-# 解答
+# 解答 (javascript)
 ```javascript
 /**
  * @param {number[]} nums
