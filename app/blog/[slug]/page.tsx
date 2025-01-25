@@ -6,6 +6,7 @@ import HastArticle from "@/utils/posts/HastArticle";
 import HastTOC from "@/utils/posts/HastTableOfContent";
 import { getAllSlugs, getMDASTBySlug, getMetadata } from "@/utils/blog";
 import "./codeblock.css";
+import "@catppuccin/highlightjs/css/catppuccin-mocha.css";
 
 export async function generateStaticParams() {
     const posts = await getAllSlugs();
