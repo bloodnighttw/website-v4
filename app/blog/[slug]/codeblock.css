@@ -1,0 +1,8 @@
+.hljs div:before {
+    content: attr(data-line-number);
+    color: #6a737d;
+    display: inline-block;
+    width: 2em;
+    margin-right: 1em;
+    text-align: right
+}

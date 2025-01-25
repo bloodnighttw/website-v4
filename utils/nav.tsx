@@ -39,7 +39,7 @@ export function Nav(props: NavProps) {
     const sizeMapping = [
         "max-w-2xl text-ellipsis duration-200",
         "max-w-4xl text-ellipsis duration-200",
-        "max-w-4xl text-ellipsis duration-200 xl:max-w-[75rem]",
+        "max-w-[57rem] text-ellipsis duration-200 xl:max-w-[75rem]",
     ];
 
     const [dropdown, setDropdown] = useState(false);
@@ -48,12 +48,7 @@ export function Nav(props: NavProps) {
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
             // console.log(props.contents);
-            if (
-                !(
-                    dropdownRef.current &&
-                    dropdownRef.current.contains(event.target as Node)
-                )
-            ) {
+            if (!dropdownRef.current?.contains(event.target as Node)) {
                 setDropdown(false);
             }
         }
