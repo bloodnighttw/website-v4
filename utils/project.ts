@@ -1,11 +1,13 @@
 import path from "node:path";
 import fs from "node:fs";
+import markdown2ast from "@/utils/posts/md2mdast";
+import { yamlParse } from "@/utils/posts/mdast2metadata";
 
 export interface ProjectMetadata {
     name: string;
     description: string;
     url: string;
-    tags: string[];
+    tags: string[] | null;
 }
 
 export async function getProjects(): Promise<ProjectMetadata[]> {
@@ -18,7 +20,8 @@ export async function getProjects(): Promise<ProjectMetadata[]> {
                 path.join(folder, file),
                 "utf8",
             );
-            return JSON.parse(content) as ProjectMetadata;
+            const ast = await markdown2ast(content);
+            return yamlParse<ProjectMetadata>(ast)!;
         });
 
     return Promise.all(i);
