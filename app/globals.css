@@ -214,7 +214,7 @@
 }
 
 @utility menu-bg {
-    @apply fixed z-30 flex h-dvh w-full -translate-y-[8.125rem] flex-col bg-black/80 bg-stone-700 backdrop-blur-sm;
+    @apply fixed z-30 flex h-dvh w-full -translate-y-[8.125rem] flex-col bg-stone-700/80 backdrop-blur-sm;
 
     & .menu {
         @apply m-auto grid max-h-[30rem] w-full max-w-[30rem] grid-cols-1 gap-y-3 rounded-lg bg-stone-900 px-8 py-4 text-center shadow-lg;
