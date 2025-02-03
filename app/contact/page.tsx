@@ -66,7 +66,7 @@ export default async function Contact() {
                         <Image
                             src={info.image}
                             alt={info.name}
-                            className={`my-auto h-8 w-8 rounded ${info.whiteBackground ? "bg-white" : ""}`}
+                            className={`my-auto h-8 w-8 rounded-sm ${info.whiteBackground ? "bg-white" : ""}`}
                             width="32"
                             height="32"
                         />

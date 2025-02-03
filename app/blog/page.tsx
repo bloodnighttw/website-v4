@@ -27,7 +27,7 @@ export default async function Blog() {
                     .map((post) => (
                         <Link href={`/blog/${post.slug}`} key={post.slug}>
                             <div
-                                className="mx-auto w-full rounded border border-stone-700 p-4 duration-200 hover:bg-stone-800 sm:hover:scale-105"
+                                className="mx-auto w-full rounded-sm border border-stone-700 p-4 duration-200 hover:bg-stone-800 sm:hover:scale-105"
                                 key={post.slug}
                             >
                                 <h1 className="line-clamp-1 text-3xl">

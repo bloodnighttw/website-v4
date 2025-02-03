@@ -1,6 +1,241 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/typography';
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@utility introduce {
+  @apply flex min-h-screen items-center justify-center py-12;
+}
+
+@utility introduce-image {
+  @apply h-28 w-28 items-center rounded-full sm:h-40 sm:w-40;
+}
+
+@utility introduce-card {
+  @apply flex flex-col items-center gap-x-12 gap-y-4 sm:flex-row-reverse sm:items-start;
+}
+
+@utility introduce-text {
+  @apply flex flex-col sm:h-40 sm:w-96;
+
+  & > * {
+    @apply justify-center text-center sm:justify-start sm:text-start;
+  }
+
+  & > h1 {
+    @apply text-5xl font-bold;
+  }
+
+  & > .rwd-show {
+    @apply sm:hidden;
+  }
+
+  & > .rwd-hidden {
+    @apply hidden sm:block;
+  }
+
+  & > p {
+    @apply text-lg sm:text-sm;
+  }
+
+  & > .introduce-links {
+    @apply mt-4 flex flex-row justify-center gap-x-2 text-lg sm:mt-auto sm:justify-start;
+  }
+
+  & > .introduce-links > a {
+    @apply duration-200 hover:text-blue-500;
+  }
+}
+
+@utility rwd-show {
+  .introduce-text > & {
+    @apply sm:hidden;
+  }
+}
+
+@utility rwd-hidden {
+  .introduce-text > & {
+    @apply hidden sm:block;
+  }
+}
+
+@utility introduce-links {
+  .introduce-text > & {
+    @apply mt-4 flex flex-row justify-center gap-x-2 text-lg sm:mt-auto sm:justify-start;
+  }
+
+  .introduce-text > & > a {
+    @apply duration-200 hover:text-blue-500;
+  }
+}
+
+@utility toc {
+  @apply list-inside gap-0 text-ellipsis text-lg font-extralight text-stone-400 rounded-sm;
+
+  & ul {
+    @apply ml-4 scale-100 text-start;
+    font-size: 0.97em;
+  }
+
+  & div {
+    @apply rounded-sm py-0.5 duration-200 hover:bg-stone-800 hover:px-2 hover:text-stone-100;
+  }
+}
+
+@utility article {
+  @apply prose prose-stone prose-invert prose-ul:m-0 prose-li:m-0 w-full duration-200 scroll-m-16;
+  /* we preserve 0.5 as right space */
+  /*@apply xl:-translate-x-[18.5rem];*/
+  max-width: 56rem;
+
+  & :target {
+    scroll-margin-top: 4rem;
+  }
+
+  & code {
+    @apply rounded-sm bg-stone-700 font-extralight before:content-none after:content-none p-1;
+  }
+
+  & pre code {
+    @apply bg-transparent p-0;
+  }
+}
+
+@utility sidebar {
+  @apply hidden xl:block;
+}
+
+@utility toc-card {
+  @apply sticky flex-col overflow-y-auto top-16 left-1/2 z-20 rounded-sm backdrop-blur-sm duration-200;
+  /* we preserve 0.5 as left space */
+  /*@apply xl:translate-x-[64.5rem] xl:block duration-200;*/
+  width: 18rem;
+}
+
+@utility about {
+  @apply mx-auto max-w-4xl space-y-8 text-xl px-2;
+
+  & strong {
+    @apply font-extrabold;
+  }
+
+  & a {
+    @apply underline;
+  }
+}
+
+@utility navbar {
+  @apply sticky top-0 z-10 my-8 bg-stone-900/65 backdrop-blur-sm;
+}
+
+@utility navbar-panel {
+  @apply mx-auto flex gap-2 py-4 px-2;
+
+  & p {
+    @apply my-auto text-xl;
+  }
+
+  & .back {
+    @apply my-auto mr-4 cursor-pointer rounded-sm border border-stone-700 px-4 py-1 text-sm duration-200 hover:bg-stone-800;
+  }
+
+  & .jump {
+    @apply my-auto p-2 hover:text-blue-500 hover:bg-stone-800 rounded-sm duration-200 cursor-pointer active:scale-90 border border-stone-700;
+  }
+
+  & .jump svg {
+    @apply my-auto;
+  }
+}
+
+@utility back {
+  .navbar-panel & {
+    @apply my-auto mr-4 cursor-pointer rounded-sm border border-stone-700 px-4 py-1 text-sm duration-200 hover:bg-stone-800;
+  }
+}
+
+@utility jump {
+  .navbar-panel & {
+    @apply my-auto p-2 hover:text-blue-500 hover:bg-stone-800 rounded-sm duration-200 cursor-pointer active:scale-90 border border-stone-700;
+  }
+
+  .navbar-panel & svg {
+    @apply my-auto;
+  }
+}
+
+@utility contact {
+  @apply mx-auto grid max-w-2xl space-y-4 text-center px-2;
+}
+
+@utility contact-card {
+  @apply mx-auto grid w-full grid-cols-3 rounded-sm border border-stone-700 p-4 duration-200 hover:bg-stone-800 sm:hover:scale-105;
+
+  & .name {
+    @apply m-auto justify-center text-xl;
+  }
+
+  & .id {
+    @apply my-auto hidden text-right text-sm text-stone-400 md:block;
+  }
+}
+
+@utility name {
+  .contact-card & {
+    @apply m-auto justify-center text-xl;
+  }
+}
+
+@utility id {
+  .contact-card & {
+    @apply my-auto hidden text-right text-sm text-stone-400 md:block;
+  }
+}
+
+@utility menu-bg {
+  @apply fixed z-30 h-dvh w-full -translate-y-[8.125rem] bg-stone-700 bg-black/80 backdrop-blur-sm flex flex-col;
+
+  & .menu {
+    @apply m-auto max-h-[30rem] w-full max-w-[30rem] grid grid-cols-1 gap-y-3 rounded-lg bg-stone-900 px-8 py-4 shadow-lg text-center;
+  }
+
+  & .menu .dropdown-item {
+    @apply border border-stone-600 p-4 rounded-sm hover:scale-105 hover:bg-stone-800 duration-200;
+  }
+}
+
+@utility menu {
+  .menu-bg & {
+    @apply m-auto max-h-[30rem] w-full max-w-[30rem] grid grid-cols-1 gap-y-3 rounded-lg bg-stone-900 px-8 py-4 shadow-lg text-center;
+  }
+
+  .menu-bg & .dropdown-item {
+    @apply border border-stone-600 p-4 rounded-sm hover:scale-105 hover:bg-stone-800 duration-200;
+  }
+}
+
+@utility dropdown-item {
+  .menu-bg .menu & {
+    @apply border border-stone-600 p-4 rounded-sm hover:scale-105 hover:bg-stone-800 duration-200;
+  }
+}
 
 @layer components {
     html {
@@ -8,156 +243,5 @@
     }
     body {
         @apply text-white;
-    }
-
-    .introduce {
-        @apply flex min-h-screen items-center justify-center py-12;
-    }
-
-    .introduce-image {
-        @apply h-28 w-28 items-center rounded-full sm:h-40 sm:w-40;
-    }
-
-    .introduce-card {
-        @apply flex flex-col items-center gap-x-12 gap-y-4 sm:flex-row-reverse sm:items-start;
-    }
-
-    .introduce-text {
-        @apply flex flex-col sm:h-40 sm:w-96;
-    }
-
-    .introduce-text > * {
-        @apply justify-center text-center sm:justify-start sm:text-start;
-    }
-
-    .introduce-text > h1 {
-        @apply text-5xl font-bold;
-    }
-
-    .introduce-text > .rwd-show {
-        @apply sm:hidden;
-    }
-
-    .introduce-text > .rwd-hidden {
-        @apply hidden sm:block;
-    }
-
-    .introduce-text > p {
-        @apply text-lg sm:text-sm;
-    }
-
-    .introduce-text > .introduce-links {
-        @apply mt-4 flex flex-row justify-center gap-x-2 text-lg sm:mt-auto sm:justify-start;
-    }
-
-    .introduce-text > .introduce-links > a {
-        @apply duration-200 hover:text-blue-500;
-    }
-
-    .toc {
-        @apply list-inside gap-0 text-ellipsis text-lg font-extralight text-stone-400 rounded;
-    }
-
-    .toc ul{
-        @apply ml-4 scale-100 text-start;
-        font-size: 0.97em;
-    }
-
-    .toc div {
-        @apply rounded py-0.5 duration-200 hover:bg-stone-800 hover:px-2 hover:text-stone-100;
-    }
-
-    .article {
-        @apply prose prose-stone prose-invert prose-ul:m-0 prose-li:m-0 w-full duration-200 scroll-m-16;
-        /* we preserve 0.5 as right space */
-        /*@apply xl:-translate-x-[18.5rem];*/
-        max-width: 56rem;
-    }
-
-    .article :target {
-        scroll-margin-top: 4rem;
-    }
-
-    .sidebar{
-        @apply hidden xl:block
-    }
-
-    .toc-card {
-        @apply sticky flex-col overflow-y-auto top-16 left-1/2 z-20 rounded backdrop-blur bg-opacity-25 duration-200;
-        /* we preserve 0.5 as left space */
-        /*@apply xl:translate-x-[64.5rem] xl:block duration-200;*/
-        width: 18rem;
-    }
-
-    .article code {
-        @apply rounded bg-stone-700 font-extralight before:content-none after:content-none p-1;
-    }
-
-    .article pre code {
-        @apply bg-transparent p-0;
-    }
-
-    .about {
-        @apply mx-auto max-w-4xl space-y-8 text-xl px-2;
-    }
-
-    .about strong {
-        @apply font-extrabold;
-    }
-
-    .about a {
-        @apply underline;
-    }
-
-    .navbar {
-        @apply sticky top-0 z-10 my-8 bg-stone-900 bg-opacity-65 backdrop-blur;
-    }
-
-    .navbar-panel {
-        @apply mx-auto flex gap-2 py-4 px-2;
-    }
-
-    .navbar-panel p {
-        @apply my-auto text-xl;
-    }
-
-    .navbar-panel .back {
-        @apply my-auto mr-4 cursor-pointer rounded border border-stone-700 px-4 py-1 text-sm duration-200 hover:bg-stone-800;
-    }
-
-    .navbar-panel .jump{
-        @apply my-auto p-2 hover:text-blue-500 hover:bg-stone-800 rounded duration-200 cursor-pointer active:scale-90 border border-stone-700;
-    }
-
-    .navbar-panel .jump svg{
-        @apply my-auto
-    }
-
-    .contact {
-        @apply mx-auto grid max-w-2xl space-y-4 text-center px-2;
-    }
-
-    .contact-card {
-        @apply mx-auto grid w-full grid-cols-3 rounded border border-stone-700 p-4 duration-200 hover:bg-stone-800 sm:hover:scale-105;
-    }
-
-    .contact-card .name {
-        @apply m-auto justify-center text-xl;
-    }
-
-    .contact-card .id {
-        @apply my-auto hidden text-right text-sm text-stone-400 md:block;
-    }
-
-    .menu-bg {
-        @apply fixed z-30 h-dvh w-full -translate-y-[8.125rem] bg-stone-700 bg-opacity-80 backdrop-blur flex flex-col;
-    }
-
-    .menu-bg .menu {
-        @apply m-auto max-h-[30rem] w-full max-w-[30rem] grid grid-cols-1 gap-y-3 rounded-lg bg-stone-900 px-8 py-4 shadow-lg text-center;
-    }
-
-    .menu-bg .menu .dropdown-item{
-        @apply border border-stone-600 p-4 rounded hover:scale-105 hover:bg-stone-800 duration-200
     }
 }
