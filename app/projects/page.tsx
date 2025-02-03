@@ -6,8 +6,7 @@ export default async function Projects() {
 
     return (
         <>
-            <NavLG title="projects" />
-            <div className="mx-auto mt-8 max-w-4xl px-2">
+            <NavLG title="projects">
                 {projects.map((project) => (
                     <a href={project.url} key={project.name}>
                         <div
@@ -24,7 +23,7 @@ export default async function Projects() {
                         <br />
                     </a>
                 ))}
-            </div>
+            </NavLG>
         </>
     );
 }
