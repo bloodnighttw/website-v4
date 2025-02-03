@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin '@tailwindcss/typography';
 
@@ -11,236 +11,234 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
-  }
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
 }
 
 @utility introduce {
-  @apply flex min-h-screen items-center justify-center py-12;
+    @apply flex min-h-screen items-center justify-center py-12;
 }
 
 @utility introduce-image {
-  @apply h-28 w-28 items-center rounded-full sm:h-40 sm:w-40;
+    @apply h-28 w-28 items-center rounded-full sm:h-40 sm:w-40;
 }
 
 @utility introduce-card {
-  @apply flex flex-col items-center gap-x-12 gap-y-4 sm:flex-row-reverse sm:items-start;
+    @apply flex flex-col items-center gap-x-12 gap-y-4 sm:flex-row-reverse sm:items-start;
 }
 
 @utility introduce-text {
-  @apply flex flex-col sm:h-40 sm:w-96;
+    @apply flex flex-col sm:h-40 sm:w-96;
 
-  & > * {
-    @apply justify-center text-center sm:justify-start sm:text-start;
-  }
+    & > * {
+        @apply justify-center text-center sm:justify-start sm:text-start;
+    }
 
-  & > h1 {
-    @apply text-5xl font-bold;
-  }
+    & > h1 {
+        @apply text-5xl font-bold;
+    }
 
-  & > .rwd-show {
-    @apply sm:hidden;
-  }
+    & > .rwd-show {
+        @apply sm:hidden;
+    }
 
-  & > .rwd-hidden {
-    @apply hidden sm:block;
-  }
+    & > .rwd-hidden {
+        @apply hidden sm:block;
+    }
 
-  & > p {
-    @apply text-lg sm:text-sm;
-  }
+    & > p {
+        @apply text-lg sm:text-sm;
+    }
 
-  & > .introduce-links {
-    @apply mt-4 flex flex-row justify-center gap-x-2 text-lg sm:mt-auto sm:justify-start;
-  }
+    & > .introduce-links {
+        @apply mt-4 flex flex-row justify-center gap-x-2 text-lg sm:mt-auto sm:justify-start;
+    }
 
-  & > .introduce-links > a {
-    @apply duration-200 hover:text-blue-500;
-  }
+    & > .introduce-links > a {
+        @apply duration-200 hover:text-blue-500;
+    }
 }
 
 @utility rwd-show {
-  .introduce-text > & {
-    @apply sm:hidden;
-  }
+    .introduce-text > & {
+        @apply sm:hidden;
+    }
 }
 
 @utility rwd-hidden {
-  .introduce-text > & {
-    @apply hidden sm:block;
-  }
+    .introduce-text > & {
+        @apply hidden sm:block;
+    }
 }
 
 @utility introduce-links {
-  .introduce-text > & {
-    @apply mt-4 flex flex-row justify-center gap-x-2 text-lg sm:mt-auto sm:justify-start;
-  }
+    .introduce-text > & {
+        @apply mt-4 flex flex-row justify-center gap-x-2 text-lg sm:mt-auto sm:justify-start;
+    }
 
-  .introduce-text > & > a {
-    @apply duration-200 hover:text-blue-500;
-  }
+    .introduce-text > & > a {
+        @apply duration-200 hover:text-blue-500;
+    }
 }
 
 @utility toc {
-  @apply list-inside gap-0 text-ellipsis text-lg font-extralight text-stone-400 rounded-sm;
+    @apply list-inside gap-0 rounded-sm text-lg font-extralight text-ellipsis text-stone-400;
 
-  & ul {
-    @apply ml-4 scale-100 text-start;
-    font-size: 0.97em;
-  }
+    & ul {
+        @apply ml-4 scale-100 text-start;
+        font-size: 0.97em;
+    }
 
-  & div {
-    @apply rounded-sm py-0.5 duration-200 hover:bg-stone-800 hover:px-2 hover:text-stone-100;
-  }
+    & div {
+        @apply rounded-sm py-0.5 duration-200 hover:bg-stone-800 hover:px-2 hover:text-stone-100;
+    }
 }
 
 @utility article {
-  @apply prose prose-ul:m-0 prose-headings:text-stone-100 prose-li:m-0 w-full duration-200 scroll-m-16 marker:text-stone-300 text-stone-300;
-  /* we preserve 0.5 as right space */
-  /*@apply xl:-translate-x-[18.5rem];*/
-  max-width: 56rem;
+    @apply prose prose-ul:m-0 prose-headings:text-stone-100 prose-li:m-0 w-full scroll-m-16 text-stone-300 duration-200 marker:text-stone-300;
+    /* we preserve 0.5 as right space */
+    /*@apply xl:-translate-x-[18.5rem];*/
+    max-width: 56rem;
 
+    & :target {
+        scroll-margin-top: 4rem;
+    }
 
-  & :target {
-    scroll-margin-top: 4rem;
-  }
+    & pre {
+        @apply bg-stone-800 px-0.5 py-4;
+    }
 
-  & pre {
-    @apply bg-stone-800 px-0.5 py-4
-  }
+    & code {
+        @apply rounded-sm font-extralight text-stone-300 before:content-none after:content-none;
+    }
 
-  & code {
-    @apply rounded-sm font-extralight before:content-none after:content-none text-stone-300;
-  }
-
-  & *{
-    @apply text-stone-300
-  }
-
+    & * {
+        @apply text-stone-300;
+    }
 }
 
 @utility sidebar {
-  @apply hidden xl:block;
+    @apply hidden xl:block;
 }
 
 @utility toc-card {
-  @apply sticky flex-col overflow-y-auto top-16 left-1/2 z-20 rounded-sm backdrop-blur-sm duration-200;
-  /* we preserve 0.5 as left space */
-  /*@apply xl:translate-x-[64.5rem] xl:block duration-200;*/
-  width: 18rem;
+    @apply sticky top-16 left-1/2 z-20 flex-col overflow-y-auto rounded-sm backdrop-blur-sm duration-200;
+    /* we preserve 0.5 as left space */
+    /*@apply xl:translate-x-[64.5rem] xl:block duration-200;*/
+    width: 18rem;
 }
 
 @utility about {
-  @apply mx-auto max-w-4xl space-y-8 text-xl px-2;
+    @apply space-y-8 text-xl;
 
-  & strong {
-    @apply font-extrabold;
-  }
+    & strong {
+        @apply font-extrabold;
+    }
 
-  & a {
-    @apply underline;
-  }
+    & a {
+        @apply underline;
+    }
 }
 
 @utility navbar {
-  @apply sticky top-0 z-10 my-8 bg-stone-900/65 backdrop-blur-sm;
+    @apply sticky top-0 z-10 my-8 bg-stone-900/65 backdrop-blur-sm;
 }
 
 @utility navbar-panel {
-  @apply mx-auto flex gap-2 py-4 px-2;
+    @apply mx-auto flex gap-2 px-2 py-4;
 
-  & p {
-    @apply my-auto text-xl;
-  }
+    & p {
+        @apply my-auto text-xl;
+    }
 
-  & .back {
-    @apply my-auto mr-4 cursor-pointer rounded-sm border border-stone-700 px-4 py-1 text-sm duration-200 hover:bg-stone-800;
-  }
+    & .back {
+        @apply my-auto mr-4 cursor-pointer rounded-sm border border-stone-700 px-4 py-1 text-sm duration-200 hover:bg-stone-800;
+    }
 
-  & .jump {
-    @apply my-auto p-2 hover:text-blue-500 hover:bg-stone-800 rounded-sm duration-200 cursor-pointer active:scale-90 border border-stone-700;
-  }
+    & .jump {
+        @apply my-auto cursor-pointer rounded-sm border border-stone-700 p-2 duration-200 hover:bg-stone-800 hover:text-blue-500 active:scale-90;
+    }
 
-  & .jump svg {
-    @apply my-auto;
-  }
+    & .jump svg {
+        @apply my-auto;
+    }
 }
 
 @utility back {
-  .navbar-panel & {
-    @apply my-auto mr-4 cursor-pointer rounded-sm border border-stone-700 px-4 py-1 text-sm duration-200 hover:bg-stone-800;
-  }
+    .navbar-panel & {
+        @apply my-auto mr-4 cursor-pointer rounded-sm border border-stone-700 px-4 py-1 text-sm duration-200 hover:bg-stone-800;
+    }
 }
 
 @utility jump {
-  .navbar-panel & {
-    @apply my-auto p-2 hover:text-blue-500 hover:bg-stone-800 rounded-sm duration-200 cursor-pointer active:scale-90 border border-stone-700;
-  }
+    .navbar-panel & {
+        @apply my-auto cursor-pointer rounded-sm border border-stone-700 p-2 duration-200 hover:bg-stone-800 hover:text-blue-500 active:scale-90;
+    }
 
-  .navbar-panel & svg {
-    @apply my-auto;
-  }
+    .navbar-panel & svg {
+        @apply my-auto;
+    }
 }
 
 @utility contact {
-  @apply mx-auto grid max-w-2xl space-y-4 text-center px-2;
+    @apply grid space-y-4 text-center;
 }
 
 @utility contact-card {
-  @apply mx-auto grid w-full grid-cols-3 rounded-sm border border-stone-700 p-4 duration-200 hover:bg-stone-800 sm:hover:scale-105;
+    @apply mx-auto grid w-full grid-cols-3 rounded-sm border border-stone-700 p-4 duration-200 hover:bg-stone-800 sm:hover:scale-105;
 
-  & .name {
-    @apply m-auto justify-center text-xl;
-  }
+    & .name {
+        @apply m-auto justify-center text-xl;
+    }
 
-  & .id {
-    @apply my-auto hidden text-right text-sm text-stone-400 md:block;
-  }
+    & .id {
+        @apply my-auto hidden text-right text-sm text-stone-400 md:block;
+    }
 }
 
 @utility name {
-  .contact-card & {
-    @apply m-auto justify-center text-xl;
-  }
+    .contact-card & {
+        @apply m-auto justify-center text-xl;
+    }
 }
 
 @utility id {
-  .contact-card & {
-    @apply my-auto hidden text-right text-sm text-stone-400 md:block;
-  }
+    .contact-card & {
+        @apply my-auto hidden text-right text-sm text-stone-400 md:block;
+    }
 }
 
 @utility menu-bg {
-  @apply fixed z-30 h-dvh w-full -translate-y-[8.125rem] bg-stone-700 bg-black/80 backdrop-blur-sm flex flex-col;
+    @apply fixed z-30 flex h-dvh w-full -translate-y-[8.125rem] flex-col bg-black/80 bg-stone-700 backdrop-blur-sm;
 
-  & .menu {
-    @apply m-auto max-h-[30rem] w-full max-w-[30rem] grid grid-cols-1 gap-y-3 rounded-lg bg-stone-900 px-8 py-4 shadow-lg text-center;
-  }
+    & .menu {
+        @apply m-auto grid max-h-[30rem] w-full max-w-[30rem] grid-cols-1 gap-y-3 rounded-lg bg-stone-900 px-8 py-4 text-center shadow-lg;
+    }
 
-  & .menu .dropdown-item {
-    @apply border border-stone-600 p-4 rounded-sm hover:scale-105 hover:bg-stone-800 duration-200;
-  }
+    & .menu .dropdown-item {
+        @apply rounded-sm border border-stone-600 p-4 duration-200 hover:scale-105 hover:bg-stone-800;
+    }
 }
 
 @utility menu {
-  .menu-bg & {
-    @apply m-auto max-h-[30rem] w-full max-w-[30rem] grid grid-cols-1 gap-y-3 rounded-lg bg-stone-900 px-8 py-4 shadow-lg text-center;
-  }
+    .menu-bg & {
+        @apply m-auto grid max-h-[30rem] w-full max-w-[30rem] grid-cols-1 gap-y-3 rounded-lg bg-stone-900 px-8 py-4 text-center shadow-lg;
+    }
 
-  .menu-bg & .dropdown-item {
-    @apply border border-stone-600 p-4 rounded-sm hover:scale-105 hover:bg-stone-800 duration-200;
-  }
+    .menu-bg & .dropdown-item {
+        @apply rounded-sm border border-stone-600 p-4 duration-200 hover:scale-105 hover:bg-stone-800;
+    }
 }
 
 @utility dropdown-item {
-  .menu-bg .menu & {
-    @apply border border-stone-600 p-4 rounded-sm hover:scale-105 hover:bg-stone-800 duration-200;
-  }
+    .menu-bg .menu & {
+        @apply rounded-sm border border-stone-600 p-4 duration-200 hover:scale-105 hover:bg-stone-800;
+    }
 }
 
 @layer components {

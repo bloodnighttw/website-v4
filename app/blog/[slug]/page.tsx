@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { NavXLWarp } from "@/utils/warp/navwarp";
 
 import mdast2hast from "@/utils/posts/mdast2hast";
 import HastArticle from "@/utils/posts/HastArticle";
@@ -7,6 +6,7 @@ import HastTOC from "@/utils/posts/HastTableOfContent";
 import { getAllSlugs, getMDASTBySlug, getMetadata } from "@/utils/blog";
 import "./codeblock.css";
 import "@catppuccin/highlightjs/css/catppuccin-mocha.css";
+import { NavXL } from "@/utils/nav";
 
 export async function generateStaticParams() {
     const posts = await getAllSlugs();
@@ -83,30 +83,31 @@ export default async function Blog({ params }: { params: Promise<BlogProps> }) {
     const hast = await mdast2hast(mdast);
     const metadata = getMetadata(mdast);
 
-    const nav = await NavXLWarp({ title: metadata.title });
-
     return (
         <>
-            {nav}
-            <div className="m-auto flex w-full max-w-[75rem] flex-row-reverse gap-4 p-2">
-                <div className="sidebar">
-                    <div className="toc-card">
-                        <h1 className="text-xl text-stone-200">
-                            Table of Content
-                        </h1>
-                        <hr className="my-2 text-stone-100" />
+            <NavXL title={metadata.title}>
+                <div className="flex flex-row-reverse gap-4">
+                    <div className="sidebar">
+                        <div className="toc-card">
+                            <h1 className="text-xl text-stone-200">
+                                Table of Content
+                            </h1>
+                            <hr className="my-2 text-stone-100" />
 
-                        <HastTOC ast={hast} />
+                            <HastTOC ast={hast} />
+                        </div>
+                    </div>
+                    <div className="article mx-auto">
+                        <p className="m-0 text-4xl sm:hidden">
+                            {metadata.title}
+                        </p>
+                        <p className="mt-2 text-sm text-stone-400">
+                            {metadata.date.toDateString()}
+                        </p>
+                        <HastArticle hast={hast} />
                     </div>
                 </div>
-                <div className="article mx-auto">
-                    <p className="m-0 text-4xl sm:hidden">{metadata.title}</p>
-                    <p className="mt-2 text-sm text-stone-400">
-                        {metadata.date.toDateString()}
-                    </p>
-                    <HastArticle hast={hast} />
-                </div>
-            </div>
+            </NavXL>
         </>
     );
 }
