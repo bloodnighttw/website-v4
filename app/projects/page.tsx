@@ -1,6 +1,5 @@
 import { getProjects } from "@/utils/project";
 import { NavLG } from "@/utils/nav";
-import Link from "next/link";
 
 export default async function Projects() {
     const projects = await getProjects();
@@ -18,7 +17,9 @@ export default async function Projects() {
                             <h1 className="line-clamp-1 text-2xl">
                                 {project.name}
                             </h1>
-                            <p className="text-stone-300">{project.description}</p>
+                            <p className="text-stone-300">
+                                {project.description}
+                            </p>
                         </div>
                         <br />
                     </a>
