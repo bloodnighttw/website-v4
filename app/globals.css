@@ -100,22 +100,28 @@
 }
 
 @utility article {
-  @apply prose prose-stone prose-invert prose-ul:m-0 prose-li:m-0 w-full duration-200 scroll-m-16;
+  @apply prose prose-ul:m-0 prose-headings:text-stone-100 prose-li:m-0 w-full duration-200 scroll-m-16 marker:text-stone-300 text-stone-300;
   /* we preserve 0.5 as right space */
   /*@apply xl:-translate-x-[18.5rem];*/
   max-width: 56rem;
+
 
   & :target {
     scroll-margin-top: 4rem;
   }
 
-  & code {
-    @apply rounded-sm bg-stone-700 font-extralight before:content-none after:content-none p-1;
+  & pre {
+    @apply bg-stone-800 px-0.5 py-4
   }
 
-  & pre code {
-    @apply bg-transparent p-0;
+  & code {
+    @apply rounded-sm font-extralight before:content-none after:content-none text-stone-300;
   }
+
+  & *{
+    @apply text-stone-300
+  }
+
 }
 
 @utility sidebar {
