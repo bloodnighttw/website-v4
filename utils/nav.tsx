@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 
 const variants = {
@@ -23,10 +23,14 @@ const jump = (
     </svg>
 );
 
-export interface NavProps {
+interface BaseProps {
     title: string;
     size?: NavSize;
-    contents?: string[];
+}
+
+export interface NavProps extends BaseProps {
+    children: ReactNode;
+    size?: undefined;
 }
 
 enum NavSize {
@@ -35,7 +39,7 @@ enum NavSize {
     "xl",
 }
 
-export function Nav(props: NavProps) {
+function Nav(props: BaseProps) {
     const sizeMapping = [
         "max-w-2xl text-ellipsis duration-200",
         "max-w-4xl text-ellipsis duration-200",
@@ -130,13 +134,34 @@ export function Nav(props: NavProps) {
 }
 
 export function NavLG(props: NavProps) {
-    return <Nav size={NavSize.lg} {...props} />;
+    return (
+        <>
+            <Nav size={NavSize.lg} title={props.title} />
+            <div className="mx-auto w-full max-w-4xl px-2">
+                {props.children}
+            </div>
+        </>
+    );
 }
 
 export function NavXL(props: NavProps) {
-    return <Nav size={NavSize.xl} {...props} />;
+    return (
+        <>
+            <Nav size={NavSize.xl} title={props.title} />
+            <div className="mx-auto w-full max-w-[75rem] px-2">
+                {props.children}
+            </div>
+        </>
+    );
 }
 
 export function NavMD(props: NavProps) {
-    return <Nav size={NavSize.sm} {...props} />;
+    return (
+        <>
+            <Nav size={NavSize.sm} title={props.title} />
+            <div className="mx-auto w-full max-w-2xl px-2">
+                {props.children}
+            </div>
+        </>
+    );
 }

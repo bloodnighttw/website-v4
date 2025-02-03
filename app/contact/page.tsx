@@ -1,5 +1,5 @@
+import { NavMD } from "@/utils/nav";
 import Image from "next/image";
-import { NavMdWarp } from "@/utils/warp/navwarp";
 
 interface ContactInformation {
     name: string;
@@ -50,31 +50,29 @@ const Contacts: ContactInformation[] = [
 ];
 
 export default async function Contact() {
-    const nav = await NavMdWarp({ title: "contact" });
-
     return (
         <>
-            {nav}
-
-            <div className="contact">
-                {Contacts.map((info) => (
-                    <a
-                        href={info.link}
-                        key={info.link}
-                        className="contact-card"
-                    >
-                        <Image
-                            src={info.image}
-                            alt={info.name}
-                            className={`my-auto h-8 w-8 rounded ${info.whiteBackground ? "bg-white" : ""}`}
-                            width="32"
-                            height="32"
-                        />
-                        <div className="name">{info.name}</div>
-                        <div className="id">{info.id ?? ""}</div>
-                    </a>
-                ))}
-            </div>
+            <NavMD title="contact">
+                <div className="contact">
+                    {Contacts.map((info) => (
+                        <a
+                            href={info.link}
+                            key={info.link}
+                            className="contact-card"
+                        >
+                            <Image
+                                src={info.image}
+                                alt={info.name}
+                                className={`my-auto h-8 w-8 rounded-sm ${info.whiteBackground ? "bg-white" : ""}`}
+                                width="32"
+                                height="32"
+                            />
+                            <div className="name">{info.name}</div>
+                            <div className="id">{info.id ?? ""}</div>
+                        </a>
+                    ))}
+                </div>
+            </NavMD>
         </>
     );
 }
