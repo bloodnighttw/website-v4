@@ -16,11 +16,7 @@ export async function getProjects(): Promise<ProjectMetadata[]> {
     const i = files
         .filter((file) => file.endsWith(".md"))
         .map(async (file) => {
-            const content = await fs.promises.readFile(
-                path.join(folder, file),
-                "utf8",
-            );
-            const ast = await markdown2ast(content);
+            const ast = await markdown2ast(`projects/${file}`);
             return yamlParse<ProjectMetadata>(ast)!;
         });
 
