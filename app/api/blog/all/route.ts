@@ -1,5 +1,3 @@
-import fs from "node:fs";
-import path from "node:path";
 import { getAllSlugs, getMDASTBySlug } from "@/utils/blog";
 import { toString } from "mdast-util-to-string";
 import { visit } from "unist-util-visit";
@@ -7,10 +5,6 @@ import { visit } from "unist-util-visit";
 export const dynamic = "force-static";
 
 export async function GET() {
-    if (!fs.existsSync(path.join(process.cwd(), "public"))) {
-        await fs.promises.mkdir(path.join(process.cwd(), "public"));
-    }
-
     const slug = await getAllSlugs();
 
     const all = slug.map(async (s) => {
