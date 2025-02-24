@@ -94,15 +94,57 @@ sourceSets {
 2. 把`index.html`移到`src/`底下。
 3. 把``src/``底下的所有東西匯入到 ``src/main/frontend/``。
 4. 把其餘資料匯入到 project root （包含`package.json`與其他設定檔）。
-5. 進入 ``vite.config.ts``修改root
-```json lines
-{
-...
-root: 'src/main/frontend',
-...
-}
-```
+5. 進入 ``vite.config.ts``修改root，並修改 build的output path
+    ```json lines
+    {
+    ...
+      root: 'src/main/frontend',
+      build: {
+        outDir: "../resources/frontend-generated",
+      },
+    ...
+    }
+    ```
+6. 在.gitignore中忽略掉 `src/main/frontend` 不然build出來檔案上版本控制就糟糕了
+7. 設定springboot，讓伺服器可以給user這些資料，並將部分request forward到react.
+    ```java
+    package dev.bntw.shurl;
+
+   import org.springframework.context.annotation.Configuration;
+   import org.springframework.util.AntPathMatcher;
+   import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
+   import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+   import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+   import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+   
+   @Configuration
+   public class FrontendConfig implements WebMvcConfigurer {
+   @Override
+   public void addResourceHandlers(ResourceHandlerRegistry registry) {
+   
+           registry.addResourceHandler("/**")
+                   .addResourceLocations("classpath:/frontend-generated/")
+                   .resourceChain(true);
+       }
+   
+       @Override
+       public void addViewControllers(ViewControllerRegistry registry) {
+           registry.addViewController("/{spring:[a-zA-Z\\-_]+}")
+                   .setViewName("forward:/index.html");
+           registry.addViewController("/**/{spring:[a-zA-Z\\-_]+}")
+                   .setViewName("forward:/index.html");
+       }
+   
+       @Override
+       public void configurePathMatch(PathMatchConfigurer configurer) {
+           configurer.setPathMatcher(new AntPathMatcher());
+       }
+   }
+
+    ``` 
 
 你可以參考 [我的專案](https://github.com/bloodnighttw/shurl) 來看設定是如做的。
 
 ![project image](https://r2.bntw.dev/Screenshot%20from%202025-02-25%2001-52-41.png)
+
+之後在build springboot前記得要把frontend buil
