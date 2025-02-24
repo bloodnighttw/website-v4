@@ -1,7 +1,15 @@
-# 將 react + vite 整合進 Springboot
+---
+title: 將 react + vite 整合進 Springboot
+date: 2025-02-25
+categories:
+  - springboot
+  - react
+  - frontend
+  - vite
+---
 
 
-## 前言
+# 前言
 最近我在寫一個短網址專案，使用springboot作為後端連接資料庫，前端則打算使用React進行開發（因為我熟這個）。
 
 一般而言，我們可以用reverse proxy，把request是 `/api` 開頭的流量導入至後端，其他的request則導向React的程式，這不難實現
@@ -12,7 +20,7 @@
 
 所以我就在想，能不能整合vite build好的檔案，讓springboot傳送react的程式給前端，並在特定情況下，會自動達成一個短網址服務要作的事情。
 
-## 作法簡介
+# 作法簡介
 一般而言，這是springboot專案建立之後的檔案結構這邊com.example.demo其實是com/example/demo，不過因為是java的package所以用`.`表示。
 ```
 .
@@ -65,7 +73,7 @@ my-vue-app/
 
 而我想要``src/main/backend``底下包含後端的邏輯，``src/main/frontend``包含backend的邏輯。
 
-### 修改gradle java存放位置
+## 修改gradle java存放位置
 1. 修改 ``src/main/java`` -> ``src/main/backend`` 
 2. 進入 ``gradle.build.kts`` （我用kotlin dsl） 新增這個東西，來修改java的位置。
 
@@ -95,4 +103,4 @@ root: 'src/main/frontend',
 }
 ```
 
-你可以參考 [我的專案](https://github.com/bloodnighttw/shurl)來看設定是如做的。
+你可以參考 [我的專案](https://github.com/bloodnighttw/shurl) 來看設定是如做的。
