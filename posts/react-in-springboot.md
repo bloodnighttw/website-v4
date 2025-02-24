@@ -104,3 +104,5 @@ root: 'src/main/frontend',
 ```
 
 你可以參考 [我的專案](https://github.com/bloodnighttw/shurl) 來看設定是如做的。
+
+![project image](https://r2.bntw.dev/Screenshot%20from%202025-02-25%2001-52-41.png)
