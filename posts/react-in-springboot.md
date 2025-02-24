@@ -147,4 +147,6 @@ sourceSets {
 
 ![project image](https://r2.bntw.dev/Screenshot%20from%202025-02-25%2001-52-41.png)
 
-之後在build springboot前記得要把frontend buil
+# 需要注意的事項
+1. 之後在build springboot前記得要把frontend build起來。
+2. 沒辦法享受到 vite 的 HMR，需要的話還是用vite開dev server會比較好。
